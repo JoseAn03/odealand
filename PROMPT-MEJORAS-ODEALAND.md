@@ -1,5 +1,5 @@
 # ODEALAND — Brief para IA desarrolladora de videojuegos
-**Código fuente:** https://github.com/JoseAn03/odealand/raw/main/odealand-fuente-v0.2.zip
+**Código fuente:** https://github.com/JoseAn03/odealand/raw/main/odealand-fuente-v0.4.zip
 **Motor:** Godot 4.7 · **Target:** Android (APK) + PC · **Género:** RPG 3D educativo (Mario Galaxy + cyberpunk)
 
 ---
@@ -12,7 +12,8 @@ Actuá como **desarrollador senior de videojuegos** (Godot 4 + GDScript), expert
 |---|---|
 | `project.godot` | Config (autoload `GameState`, escena principal `scenes/galaxy.tscn`, renderer `gl_compatibility`) |
 | `scripts/galaxy.gd` (~830 líneas) | Escena 3D: planetas, avatar, cámara, UI, input |
-| `scripts/game_data.gd` | 8 capítulos, 24 misiones, 8 jefes, 9 niveles (datos reales) |
+| `scripts/game_data.gd` | 8 capítulos, 24 misiones, 8 jefes, 9 niveles (datos base) |
+| `data/odea_content.json` | **TODO el contenido de la app web** (155 KB): 24 misiones de campaña + 8 jefes + 168 diarias + 8 semanales + 46 de empleo + 22 retos + 31 recompensas + 24 logros + vida/hábitos |
 | `scripts/game_state.gd` | XP, nivel, misiones completadas, guardado en `user://odea_save.json` |
 | `scenes/galaxy.tscn` | Escena principal |
 
@@ -40,8 +41,14 @@ Actuá como **desarrollador senior de videojuegos** (Godot 4 + GDScript), expert
 **FASE 4 — Jefes y combate**
 - 8 jefes con patrones, barra de vida y **"combate de datos"** (mini-retos: elegir la consulta SQL correcta, detectar el error, interpretar una métrica). Recompensas por victoria.
 
-**FASE 5 — Contenido**
-- Integrar TODAS las misiones de la app web (`odea.html`: campaña + empleo + diario) y añadir **3 misiones secundarias por planeta** + logros.
+**FASE 5 — Contenido (TRASPASO TOTAL de la app web)**
+- Cargar `data/odea_content.json` (con `FileAccess` + `JSON.parse_string`) e integrar **TODO**:
+  - 24 misiones de campaña + 8 jefes + 40 misiones de campaña extendida (CAP_MISSIONS)
+  - **168 misiones diarias** (56 días × 3 slots A/B/C) organizadas por semana (8 semanales)
+  - **46 misiones de empleo** + 22 retos + 31 recompensas + 24 logros
+  - Contenido de vida: hábitos (12), crecimiento, hijo, pareja y poder (KID_*/CPL_*/POW_*/MEN_*)
+- Repartir ese contenido por los 8 planetas (cada capítulo con sus misiones + diarias temáticas) y añadir 3 misiones secundarias por planeta.
+- UI para navegar tanto el Plan Diario como la Campaña, con progreso y guardado.
 
 **FASE 6 — Pulido**
 - Sonidos (pasos, salto, moneda, jefes), música por planeta, transiciones, VFX (explosiones, brillos), vibración háptica, ajustes guardables, 60 fps en móvil medio.

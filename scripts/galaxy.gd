@@ -218,7 +218,7 @@ func _physics_process(delta: float) -> void:
 				current_chapter = target_chapter
 				avatar.wave()
 				_open_missions(target_chapter)
-				_toast("¡Llegaste a %s!" % str(GameData.CHAPTERS[target_chapter].title))
+				_toast("¡Llegaste a %s!" % ContentDB.world_title(target_chapter))
 	motion.step(delta, direction, running)
 
 func _process(delta: float) -> void:
@@ -303,9 +303,8 @@ func _planet_pos(i: int) -> Vector3:
 	return Vector3(cos(ang) * rad, 0.0, sin(ang) * rad)
 
 func _build_planets() -> void:
-	for i: int in range(CHAPTER_COUNT):
-		var ch: Dictionary = GameData.CHAPTERS[i]
-		var base: Color = Color(ch.color)
+	for i: int in range(ContentDB.world_count()):
+		var base: Color = ContentDB.world_color(i)
 		var pos: Vector3 = _planet_pos(i)
 		var radius: float = 2.1 + float(i % 3) * 0.45      # planetas PEQUENOS
 		var node: Node3D = Node3D.new()
@@ -822,6 +821,49 @@ func _open_content() -> void:
 	controls.set_enabled(false)
 	motion.stop_horizontal()
 
+func _world_total(w: int) -> int:
+	return ContentDB.world_missions(w).size()
+
+func _world_done(w: int) -> int:
+	var c := 0
+	for m: Dictionary in ContentDB.world_missions(w):
+		if GameState.is_done(str(ContentDB.fields(m).id)):
+			c += 1
+	return c
+
+func _world_complete(w: int) -> bool:
+	var t := _world_total(w)
+	return t > 0 and _world_done(w) >= t
+
+func _world_unlocked(w: int) -> bool:
+	if w <= 0:
+		return true
+	if w == ContentDB.world_count() - 1:
+		return true
+	return _world_complete(w - 1)
+
+func _fill_progreso_world() -> void:
+	var total: int = 0
+	var done: int = 0
+	for w: int in range(ContentDB.world_count() - 1):
+		total += _world_total(w)
+		done += _world_done(w)
+	var lbl: Label = Label.new()
+	lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	lbl.add_theme_font_size_override("font_size", 16)
+	lbl.text = "Progreso total: %d / %d\n\nXP: %d\n\nNivel: %s" % [done, total, GameState.xp, GameState.level_name()]
+	missions_box.add_child(lbl)
+	for w: int in range(ContentDB.world_count() - 1):
+		var wd: int = _world_done(w)
+		var wt: int = _world_total(w)
+		var mark: String = "✅" if wt > 0 and wd >= wt else ("🔓" if _world_unlocked(w) else "🔒")
+		var wlbl: Label = Label.new()
+		wlbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		wlbl.add_theme_font_size_override("font_size", 14)
+		wlbl.add_theme_color_override("font_color", ContentDB.world_color(w))
+		wlbl.text = "%s %s %s — %d/%d" % [mark, ContentDB.world_icon(w), ContentDB.world_title(w), wd, wt]
+		missions_box.add_child(wlbl)
+
 func _toggle_side(show_it: bool) -> void:
 	if panel_side == null:
 		return
@@ -842,26 +884,24 @@ func _fill_side() -> void:
 	side_box.add_child(title)
 	var total: int = 0
 	var done: int = 0
-	for m: Dictionary in GameData.MISSIONS:
-		total += 1
-		if GameState.is_done(str(m.id)):
-			done += 1
+	for w: int in range(ContentDB.world_count() - 1):
+		total += _world_total(w)
+		done += _world_done(w)
 	var gen: Label = Label.new()
 	gen.add_theme_font_size_override("font_size", 13)
 	gen.text = "Misiones: %d / %d   ·   XP: %d" % [done, total, GameState.xp]
 	side_box.add_child(gen)
 	side_box.add_child(HSeparator.new())
-	for i: int in range(CHAPTER_COUNT):
-		var chd: Dictionary = GameData.CHAPTERS[i]
+	for w: int in range(ContentDB.world_count() - 1):
+		var wd: int = _world_done(w)
+		var wt: int = _world_total(w)
+		var mark: String = "✅" if wt > 0 and wd >= wt else ("🔓" if _world_unlocked(w) else "🔒")
 		var lbl: Label = Label.new()
 		lbl.add_theme_font_size_override("font_size", 12)
 		lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		lbl.custom_minimum_size = Vector2(280, 0)
-		var dc: int = GameState.chapter_done(i)
-		var tc: int = GameState.chapter_total(i)
-		var mark: String = "✅" if GameState.chapter_complete(i) else ("🔓" if GameState.chapter_unlocked(i) else "🔒")
-		lbl.text = "%s %s — %d/%d" % [mark, str(chd.title), dc, tc]
-		lbl.add_theme_color_override("font_color", Color(chd.color))
+		lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		lbl.text = "%s %s %s — %d/%d" % [mark, ContentDB.world_icon(w), ContentDB.world_title(w), wd, wt]
+		lbl.add_theme_color_override("font_color", ContentDB.world_color(w))
 		side_box.add_child(lbl)
 	side_box.add_child(HSeparator.new())
 	var close: Button = Button.new()
@@ -876,28 +916,42 @@ func _open_missions(ch: int) -> void:
 		return
 	for c: Node in missions_box.get_children():
 		c.queue_free()
-	var chd: Dictionary = GameData.CHAPTERS[ch]
-	mission_title.text = "%s — %s" % [str(chd.code), str(chd.title)]
-	mission_title.add_theme_color_override("font_color", Color(chd.color))
-	if not GameState.chapter_unlocked(ch):
+	mission_title.text = "%s %s" % [ContentDB.world_icon(ch), ContentDB.world_title(ch)]
+	mission_title.add_theme_color_override("font_color", ContentDB.world_color(ch))
+	if not _world_unlocked(ch):
 		var lock_lbl: Label = Label.new()
-		lock_lbl.text = "🔒 Completá el capítulo anterior para desbloquear"
+		lock_lbl.text = "🔒 Completá el mundo anterior para desbloquear"
 		lock_lbl.add_theme_font_size_override("font_size", 13)
 		missions_box.add_child(lock_lbl)
-	for m: Dictionary in GameData.MISSIONS:
-		if int(m.chapter) != ch:
-			continue
+		_fix_text(missions_box)
+		panel_missions.visible = true
+		walking = false
+		controls.set_enabled(false)
+		motion.stop_horizontal()
+		return
+	if ch == ContentDB.world_count() - 1:
+		_fill_progreso_world()
+		_fix_text(missions_box)
+		panel_missions.visible = true
+		walking = false
+		controls.set_enabled(false)
+		motion.stop_horizontal()
+		return
+	for m: Dictionary in ContentDB.world_missions(ch):
+		var f: Dictionary = ContentDB.fields(m)
+		var done: bool = GameState.is_done(str(f.id))
 		var row: HBoxContainer = HBoxContainer.new()
+		row.add_theme_constant_override("separation", 8)
 		var lbl: Label = Label.new()
 		lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		lbl.add_theme_font_size_override("font_size", 13)
 		lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		lbl.custom_minimum_size = Vector2(270, 0)
-		lbl.text = "%s  (+%d XP)" % [str(m.title), int(m.xp)]
-		if GameState.is_done(str(m.id)):
+		var xp_part: String = "  (+%d XP)" % int(f.xp) if int(f.xp) > 0 else ""
+		lbl.text = ("✅ " if done else "🔓 ") + str(f.title) + xp_part
+		if done:
 			lbl.add_theme_color_override("font_color", Color(0.45, 1.0, 0.6))
 		row.add_child(lbl)
-		if not GameState.is_done(str(m.id)):
+		if not done:
 			var b: Button = Button.new()
 			b.text = "COMPLETAR"
 			b.custom_minimum_size = Vector2(160, 58)
@@ -911,7 +965,7 @@ func _open_missions(ch: int) -> void:
 				Haptics.vibrate(40)
 				_refresh_hud()
 				_open_missions(cc)
-				_toast("+%d XP! ✓ Evidencia registrada" % int(mm.xp))
+				_toast("+%d XP! ✓" % int(mm.get("xp", 0)))
 			)
 			row.add_child(b)
 		else:
@@ -920,17 +974,6 @@ func _open_missions(ch: int) -> void:
 			ok.add_theme_color_override("font_color", Color(0.45, 1.0, 0.6))
 			row.add_child(ok)
 		missions_box.add_child(row)
-	for bs: Dictionary in GameData.BOSSES:
-		if int(bs.chapter) != ch:
-			continue
-		var boss: Label = Label.new()
-		boss.add_theme_font_size_override("font_size", 14)
-		boss.add_theme_color_override("font_color", Color(1.0, 0.2, 0.33))
-		boss.text = ("👑 JEFE DERROTADO: " if GameState.chapter_complete(ch) else "⚔️ JEFE FINAL: ") + str(bs.name)
-		boss.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		boss.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		missions_box.add_child(boss)
-		break
 	_fix_text(missions_box)
 	panel_missions.visible = true
 	walking = false
@@ -967,13 +1010,13 @@ func _tap(pos: Vector2) -> void:
 	if ch < 0:
 		_toast("Tocá un planeta para viajar 🌍")
 		return
-	if not GameState.chapter_unlocked(ch):
-		_toast("🔒 Ese mundo está bloqueado: completá el capítulo anterior")
+	if not _world_unlocked(ch):
+		_toast("🔒 Ese mundo está bloqueado: completá el mundo anterior")
 		return
 	walking = true
 	target_chapter = ch
 	target_pos = planets[ch].pos
-	_toast("Viajando a %s..." % str(GameData.CHAPTERS[ch].title))
+	_toast("Viajando a %s..." % ContentDB.world_title(ch))
 
 var marker_pos: Vector2 = Vector2.ZERO
 var marker_t: float = 0.0

@@ -189,7 +189,7 @@ func close_panel() -> void:
 	emit_signal("closed")
 
 func _next_mission() -> Dictionary:
-	for m: Dictionary in GameData.MISSIONS:
+	for m: Dictionary in ContentDB.playbook_missions():
 		if not GameState.is_done(str(m.id)):
 			return m
 	return {}
@@ -217,7 +217,7 @@ func _complete_today() -> void:
 
 func _tab_data() -> Array:
 	match current_tab:
-		0: return ContentDB.campaign()
+		0: return ContentDB.playbook_missions()
 		1:
 			var out: Array = []
 			out.append_array(ContentDB.daily_obligatorias())
@@ -246,24 +246,30 @@ func _fill() -> void:
 	more_btn.visible = (page_offset + PAGE_SIZE) < items.size()
 
 func _fill_progreso() -> void:
-	var total: int = GameData.MISSIONS.size()
+	var missions: Array = ContentDB.playbook_missions()
+	var total: int = missions.size()
 	var done: int = 0
-	for m: Dictionary in GameData.MISSIONS:
+	for m: Dictionary in missions:
 		if GameState.is_done(str(m.id)):
 			done += 1
 	var lbl: Label = Label.new()
 	lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	lbl.add_theme_font_size_override("font_size", 16)
-	lbl.text = "Misiones de campaña: %d / %d\n\nXP total: %d\n\nNivel: %s" % [done, total, GameState.xp, GameState.level_name()]
+	lbl.text = "Misiones del plan: %d / %d\n\nXP total: %d\n\nNivel: %s" % [done, total, GameState.xp, GameState.level_name()]
 	list_box.add_child(lbl)
-	for i: int in range(GameData.CHAPTERS.size()):
-		var chd: Dictionary = GameData.CHAPTERS[i]
+	for p: Dictionary in ContentDB.playbook_planets():
+		var pdone: int = 0
+		var ptotal: int = 0
+		for pm: Dictionary in missions:
+			if int(pm.planet) == int(p.id):
+				ptotal += 1
+				if GameState.is_done(str(pm.id)):
+					pdone += 1
 		var cl: Label = Label.new()
 		cl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		cl.add_theme_font_size_override("font_size", 14)
-		var mark: String = "✅" if GameState.chapter_complete(i) else ("🔓" if GameState.chapter_unlocked(i) else "🔒")
-		cl.text = "%s %s — %d/%d" % [mark, str(chd.title), GameState.chapter_done(i), GameState.chapter_total(i)]
-		cl.add_theme_color_override("font_color", Color(chd.color))
+		var mark: String = "✅" if ptotal > 0 and pdone >= ptotal else ("🔓" if pdone > 0 else "🔒")
+		cl.text = "%s %s (%s) — %d/%d" % [mark, str(p.title), str(p.days), pdone, ptotal]
 		list_box.add_child(cl)
 
 func _row(m: Dictionary) -> Button:
@@ -275,8 +281,24 @@ func _row(m: Dictionary) -> Button:
 	b.add_theme_font_size_override("font_size", 14)
 	var status: String = "✅ " if GameState.is_done(str(f.id)) else "🔓 "
 	b.text = status + str(f.title) + "  (+%d XP)" % int(f.xp)
+	var detail_text: String = str(f.desc)
+	if m.has("objective") and str(m.objective) != "":
+		detail_text += "\n\n🎯 Objetivo: " + str(m.objective)
+	if m.has("done_criteria") and str(m.done_criteria) != "":
+		detail_text += "\n\n✅ Terminado: " + str(m.done_criteria)
+	if m.has("evidence"):
+		var ev: Variant = m.evidence
+		if typeof(ev) == TYPE_ARRAY:
+			var ev_arr: Array = ev
+			if ev_arr.size() > 0:
+				var evs: String = ""
+				for e in ev_arr:
+					if evs != "":
+						evs += ", "
+					evs += str(e)
+				detail_text += "\n\n📎 Evidencia: " + evs
 	var t: String = str(f.title)
-	var d: String = str(f.desc)
+	var d: String = detail_text
 	var x: int = int(f.xp)
 	b.pressed.connect(func() -> void: _show_detail(t, d, x))
 	return b

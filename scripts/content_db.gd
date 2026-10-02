@@ -3,11 +3,14 @@ extends Node
 ## Expone listas de contenido por pestaña y utilidades de paginación/mapeo de campos.
 
 const CONTENT_PATH: String = "res://data/odea_content.json"
+const PLAYBOOK_PATH: String = "res://data/playbook_45_days.json"
 
 var data: Dictionary = {}
+var playbook: Dictionary = {}
 
 func _ready() -> void:
 	load_content()
+	load_playbook()
 
 func load_content() -> void:
 	var f: FileAccess = FileAccess.open(CONTENT_PATH, FileAccess.READ)
@@ -18,6 +21,16 @@ func load_content() -> void:
 	f.close()
 	if typeof(parsed) == TYPE_DICTIONARY:
 		data = parsed
+
+func load_playbook() -> void:
+	var f: FileAccess = FileAccess.open(PLAYBOOK_PATH, FileAccess.READ)
+	if f == null:
+		push_warning("ContentDB: no se pudo abrir %s" % PLAYBOOK_PATH)
+		return
+	var parsed: Variant = JSON.parse_string(f.get_as_text())
+	f.close()
+	if typeof(parsed) == TYPE_DICTIONARY:
+		playbook = parsed
 
 func _list(key: String) -> Array:
 	var v: Variant = data.get(key, [])
@@ -34,6 +47,25 @@ func jobs() -> Array: return _list("employmentMissions")
 func retos() -> Array: return _list("RETOS")
 func logros() -> Array: return _list("achievements")
 func recompensas() -> Array: return _list("REWARDS")
+
+# ── Playbook 45 días (Fase 2) ─────────────────────────
+func playbook_missions() -> Array:
+	var v: Variant = playbook.get("missions", [])
+	if typeof(v) == TYPE_ARRAY:
+		return v
+	return []
+
+func playbook_planets() -> Array:
+	var v: Variant = playbook.get("planets", [])
+	if typeof(v) == TYPE_ARRAY:
+		return v
+	return []
+
+func playbook_bosses() -> Array:
+	var v: Variant = playbook.get("bosses", [])
+	if typeof(v) == TYPE_ARRAY:
+		return v
+	return []
 
 func vida() -> Array:
 	var out: Array = []

@@ -193,6 +193,7 @@ func _physics_process(delta: float) -> void:
 			if motion.grounded:
 				walking = false
 				current_chapter = target_chapter
+				avatar.wave()
 				_open_missions(target_chapter)
 				_toast("¡Llegaste a %s!" % str(GameData.CHAPTERS[target_chapter].title))
 	motion.step(delta, direction, running)

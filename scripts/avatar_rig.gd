@@ -15,6 +15,9 @@ var dust: OdeaAvatarDust
 var cycle: float = 0.0
 var gait_weight: float = 0.0
 var landing_weight: float = 0.0
+var breath: float = 0.0
+var wave_t: float = -1.0
+var celebrate_t: float = -1.0
 
 func _ready() -> void:
 	visual = Node3D.new()
@@ -55,6 +58,8 @@ func _build_arms(suit: StandardMaterial3D, sleeves: StandardMaterial3D) -> void:
 		var shoulder: Node3D = _pivot(torso, Vector3(0.4 * side, 0.48, 0.0))
 		_sphere(shoulder, Vector3.ZERO, 0.13, suit)
 		_capsule(shoulder, Vector3(0.0, -0.25, 0.0), 0.085, 0.5, sleeves)
+		# mano (guante)
+		_sphere(shoulder, Vector3(0.0, -0.52, 0.0), 0.1, suit)
 		shoulders.append(shoulder)
 
 func animate(delta: float, speed: float, running: bool, grounded: bool, vertical_speed: float) -> void:
@@ -81,7 +86,35 @@ func animate(delta: float, speed: float, running: bool, grounded: bool, vertical
 			arm_angle = -0.9 if vertical_speed > 0.0 else -0.4
 		hips[i].rotation.x = lerpf(hips[i].rotation.x, hip_angle, blend)
 		knees[i].rotation.x = lerpf(knees[i].rotation.x, knee_angle, blend)
-		shoulders[i].rotation.x = lerpf(shoulders[i].rotation.x, arm_angle, blend)
+		if wave_t < 0.0 and celebrate_t < 0.0:
+			shoulders[i].rotation.x = lerpf(shoulders[i].rotation.x, arm_angle, blend)
+			shoulders[i].rotation.z = lerpf(shoulders[i].rotation.z, 0.0, blend)
+	# saludo (wave) y celebración
+	if wave_t >= 0.0:
+		wave_t += delta
+		if wave_t > 1.8:
+			wave_t = -1.0
+		else:
+			shoulders[1].rotation.x = -1.4
+			shoulders[1].rotation.z = sin(wave_t * 16.0) * 0.6
+	if celebrate_t >= 0.0:
+		celebrate_t += delta
+		if celebrate_t > 2.0:
+			celebrate_t = -1.0
+		else:
+			for i: int in range(2):
+				shoulders[i].rotation.x = -2.2
+				shoulders[i].rotation.z = sin(celebrate_t * 14.0 + float(i) * 0.7) * 0.3
+	# respiración idle
+	var idle: float = clampf(1.0 - speed / 1.0, 0.0, 1.0) * (1.0 if grounded else 0.0)
+	if idle > 0.01:
+		breath += delta * 2.2
+		torso.scale.y = 1.0 + sin(breath) * 0.02 * idle
+		torso.scale.x = 1.0 - sin(breath) * 0.012 * idle
+		torso.scale.z = 1.0 - sin(breath) * 0.012 * idle
+	else:
+		breath = 0.0
+		torso.scale = Vector3.ONE
 	var bob: float = (1.0 - cos(cycle * TAU * 2.0)) * 0.035 * gait_weight
 	visual.position.y = bob - landing_weight * 0.14
 	torso.rotation.z = sin(cycle * TAU) * 0.07 * gait_weight
@@ -92,12 +125,22 @@ func land(impact: float) -> void:
 	landing_weight = clampf(impact / 12.0, 0.2, 1.0)
 	dust.puff(global_position, 12, clampf(impact / 8.0, 0.7, 1.8))
 
+func wave() -> void:
+	wave_t = 0.0
+
+func celebrate() -> void:
+	celebrate_t = 0.0
+
 func reset_pose() -> void:
 	cycle = 0.0
 	gait_weight = 0.0
 	landing_weight = 0.0
+	breath = 0.0
+	wave_t = -1.0
+	celebrate_t = -1.0
 	visual.position = Vector3.ZERO
 	torso.rotation = Vector3.ZERO
+	torso.scale = Vector3.ONE
 	for pivot: Node3D in hips + knees + shoulders:
 		pivot.rotation = Vector3.ZERO
 

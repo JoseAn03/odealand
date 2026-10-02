@@ -73,6 +73,7 @@ func animate(delta: float, speed: float, running: bool, grounded: bool, vertical
 	if grounded and speed > 0.8 and new_contact != old_contact:
 		var foot: float = -1.0 if new_contact % 2 == 0 else 1.0
 		dust.puff(global_position + global_basis.x * foot * 0.18, 3, 0.8 if running else 0.5)
+		AudioManager.play("step", 0.25)
 	cycle = fmod(cycle, 2.0)
 	var amplitude: float = 1.25 if running else 1.0
 	for i: int in range(2):

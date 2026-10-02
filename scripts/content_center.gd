@@ -211,6 +211,8 @@ func _complete_today() -> void:
 		return
 	GameState.complete_mission(nm)
 	GameState.register_day()
+	AudioManager.play("coin")
+	Haptics.vibrate(40)
 	_refresh_hoy()
 	_fill()
 	emit_signal("mission_completed")

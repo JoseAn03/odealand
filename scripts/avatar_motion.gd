@@ -36,6 +36,7 @@ func step(delta: float, direction: Vector3, running: bool) -> void:
 		jumps_used += 1
 		grounded = false
 		jump_buffer = 0.0
+		AudioManager.play("double_jump" if jumps_used == 2 else "jump")
 	jump_buffer = maxf(0.0, jump_buffer - delta)
 	if not grounded:
 		velocity.y -= GRAVITY * delta
@@ -48,6 +49,8 @@ func step(delta: float, direction: Vector3, running: bool) -> void:
 		jumps_used = 0
 		avatar.land(impact)
 		landed.emit(impact)
+		AudioManager.play("land", 0.5)
+		Haptics.vibrate(60)
 	var speed: float = Vector2(velocity.x, velocity.z).length()
 	if speed > 0.1:
 		var heading: float = atan2(velocity.x, velocity.z)

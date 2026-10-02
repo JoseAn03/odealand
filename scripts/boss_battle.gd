@@ -148,9 +148,11 @@ func _answer(correct: bool) -> void:
 	if correct:
 		boss_hp -= 1
 		feedback.text = "✅ ¡Correcto! El jefe pierde energía."
+		AudioManager.play("boss_hit")
 	else:
 		player_hp -= 1
 		feedback.text = "❌ Fallaste. Pierdes energía."
+		AudioManager.play("land", 0.4)
 	_update_hp()
 	if boss_hp <= 0:
 		_win()
@@ -173,6 +175,8 @@ func _win() -> void:
 	msg += "\n\nEl jefe ha sido derrotado."
 	feedback.text = msg
 	retry_btn.visible = false
+	AudioManager.play("boss_win")
+	Haptics.vibrate(120)
 	emit_signal("victory", xp, title)
 
 func _lose() -> void:
@@ -181,6 +185,8 @@ func _lose() -> void:
 		c.queue_free()
 	feedback.text = "El jefe fue demasiado. Repasá y volvé a intentar."
 	retry_btn.visible = true
+	AudioManager.play("boss_lose")
+	Haptics.vibrate(60)
 
 func _retry() -> void:
 	open(boss)

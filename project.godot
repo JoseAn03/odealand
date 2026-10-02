@@ -14,6 +14,8 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 
 GameState="*res://scripts/game_state.gd"
 ContentDB="*res://scripts/content_db.gd"
+AudioManager="*res://scripts/audio_manager.gd"
+Haptics="*res://scripts/haptics.gd"
 
 [display]
 

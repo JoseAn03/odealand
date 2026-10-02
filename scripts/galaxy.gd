@@ -907,6 +907,8 @@ func _open_missions(ch: int) -> void:
 			b.pressed.connect(func() -> void:
 				GameState.complete_mission(mm)
 				GameState.register_day()
+				AudioManager.play("coin")
+				Haptics.vibrate(40)
 				_refresh_hud()
 				_open_missions(cc)
 				_toast("+%d XP! ✓ Evidencia registrada" % int(mm.xp))

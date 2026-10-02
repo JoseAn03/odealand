@@ -6,6 +6,8 @@ const SAVE_PATH := "user://odea_save.json"
 
 var xp: int = 0
 var missions_done: Dictionary = {}
+var streak: int = 0
+var last_day: String = ""
 var loaded := false
 
 func _ready() -> void:
@@ -79,7 +81,7 @@ func chapter_unlocked(ch: int) -> bool:
 
 # ── Guardado ───────────────────────────────────────────
 func save_game() -> void:
-	var d := {"xp": xp, "missions": missions_done}
+	var d := {"xp": xp, "missions": missions_done, "streak": streak, "last_day": last_day}
 	var f := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if f:
 		f.store_string(JSON.stringify(d))
@@ -99,6 +101,8 @@ func load_game() -> void:
 	if typeof(parsed) == TYPE_DICTIONARY:
 		var d: Dictionary = parsed
 		xp = int(d.get("xp", 0))
+		streak = int(d.get("streak", 0))
+		last_day = str(d.get("last_day", ""))
 		var md: Variant = d.get("missions", {})
 		if typeof(md) == TYPE_DICTIONARY:
 			missions_done = md
@@ -107,4 +111,19 @@ func load_game() -> void:
 func reset() -> void:
 	xp = 0
 	missions_done = {}
+	streak = 0
+	last_day = ""
+	save_game()
+
+## Marca el día actual en la racha. Se llama al abrir el juego.
+## (v1: suma 1 por día distinto; el escudo/reglas de racha van en Fase 2).
+func register_day() -> void:
+	var today: String = Time.get_date_string_from_system()
+	if today == last_day:
+		return
+	if last_day == "":
+		streak = 1
+	else:
+		streak += 1
+	last_day = today
 	save_game()

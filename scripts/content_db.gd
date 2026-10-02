@@ -1,0 +1,66 @@
+extends Node
+## ContentDB — autoload que carga y normaliza data/odea_content.json (ya filtrado en Fase 0).
+## Expone listas de contenido por pestaña y utilidades de paginación/mapeo de campos.
+
+const CONTENT_PATH: String = "res://data/odea_content.json"
+
+var data: Dictionary = {}
+
+func _ready() -> void:
+	load_content()
+
+func load_content() -> void:
+	var f: FileAccess = FileAccess.open(CONTENT_PATH, FileAccess.READ)
+	if f == null:
+		push_warning("ContentDB: no se pudo abrir %s" % CONTENT_PATH)
+		return
+	var parsed: Variant = JSON.parse_string(f.get_as_text())
+	f.close()
+	if typeof(parsed) == TYPE_DICTIONARY:
+		data = parsed
+
+func _list(key: String) -> Array:
+	var v: Variant = data.get(key, [])
+	if typeof(v) == TYPE_ARRAY:
+		return v
+	return []
+
+# ── Acceso por pestaña ────────────────────────────────
+func campaign() -> Array: return _list("campaignMissions")
+func bosses() -> Array: return _list("bossMissions")
+func daily() -> Array: return _list("dailyMissions")
+func weekly() -> Array: return _list("weeklyMissions")
+func jobs() -> Array: return _list("employmentMissions")
+func retos() -> Array: return _list("RETOS")
+func logros() -> Array: return _list("achievements")
+func recompensas() -> Array: return _list("REWARDS")
+
+func vida() -> Array:
+	var out: Array = []
+	out.append_array(_list("HABITOS"))
+	out.append_array(_list("VIDA_GROWTH"))
+	return out
+
+## Diarias obligatorias (fijas del Playbook, sección 8.1).
+func daily_obligatorias() -> Array:
+	return [
+		{"id": "daily_english", "title": "Inglés hablado (20-30 min)", "desc": "Grabar o practicar en voz alta. Evidencia: nota o grabación corta.", "xp": 25},
+		{"id": "daily_sql", "title": "SQL o modelado (30-40 min)", "desc": "Un ejercicio cronometrado. Evidencia: query + tiempo.", "xp": 30},
+		{"id": "daily_commit", "title": "Commit o networking", "desc": "Un commit pequeño o un mensaje/seguimiento. Evidencia: hash o registro.", "xp": 30},
+	]
+
+# ── Utilidades ────────────────────────────────────────
+## Pagina una lista devolviendo como máximo `page_size` elementos desde `offset`.
+static func paginate(items: Array, offset: int, page_size: int) -> Array:
+	var end: int = mini(offset + page_size, items.size())
+	if offset >= end:
+		return []
+	return items.slice(offset, end)
+
+## Normaliza los campos de una misión (cada tipo del JSON usa claves distintas).
+static func fields(m: Dictionary) -> Dictionary:
+	var title: String = str(m.get("title", m.get("t", m.get("name", ""))))
+	var desc: String = str(m.get("description", m.get("desc", m.get("d", ""))))
+	var xp: int = int(m.get("xp", 0))
+	var id: String = str(m.get("id", ""))
+	return {"id": id, "title": title, "desc": desc, "xp": xp}

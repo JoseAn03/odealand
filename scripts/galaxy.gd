@@ -101,15 +101,20 @@ var panel_side: Control
 var side_box: VBoxContainer
 var toast: Label
 var touch_marker: Node2D
+var mission_title: Label
+var mission_close: Button
+var content_center: CanvasLayer
 
 func _ready() -> void:
 	if OS.get_environment("ODEASHOT") == "1":
 		shot = true
+	GameState.register_day()
 	_build_env()
 	_build_planets()
 	_build_avatar()
 	_build_camera()
 	_build_ui()
+	_build_content_center()
 	_refresh_hud()
 	_toast("Joystick / WASD: caminar · CORRER / Shift · SALTAR / Espacio ×2")
 	if OS.get_environment("ODEATEST") == "1":
@@ -159,7 +164,7 @@ func _run_autotest() -> void:
 func _physics_process(delta: float) -> void:
 	if motion == null or controls == null:
 		return
-	var modal: bool = panel_missions.visible or panel_side.visible
+	var modal: bool = _any_modal()
 	controls.set_enabled(not modal)
 	var direction: Vector3 = controls.movement()
 	var running: bool = controls.running()
@@ -401,6 +406,7 @@ func _build_ui() -> void:
 	var bh: HBoxContainer = HBoxContainer.new()
 	bh.add_theme_constant_override("separation", 8)
 	bottom.add_child(bh)
+	bh.add_child(_btn("CONTENIDO", func() -> void: _open_content()))
 	bh.add_child(_btn("MISIONES", func() -> void: _open_missions(current_chapter if current_chapter >= 0 else 0)))
 	bh.add_child(_btn("PROGRESO", func() -> void: _toggle_side(true)))
 	bh.add_child(_btn("CENTRAR", func() -> void: _center_view()))
@@ -410,11 +416,13 @@ func _build_ui() -> void:
 	touch_marker.draw.connect(func() -> void: _draw_touch_marker())
 	layer.add_child(touch_marker)
 
-	# ── panel de misiones
+	# ── panel de misiones (responsive, CERRAR fijo)
 	panel_missions = PanelContainer.new()
-	panel_missions.set_anchors_preset(Control.PRESET_CENTER)
-	panel_missions.custom_minimum_size = Vector2(500, 520)
-	panel_missions.position = Vector2(20, 250)
+	panel_missions.set_anchors_preset(Control.PRESET_FULL_RECT)
+	panel_missions.offset_left = 14
+	panel_missions.offset_top = 110
+	panel_missions.offset_right = -14
+	panel_missions.offset_bottom = -130
 	panel_missions.visible = false
 	var msb: StyleBoxFlat = StyleBoxFlat.new()
 	msb.bg_color = Color(0.03, 0.02, 0.08, 0.97)
@@ -424,19 +432,36 @@ func _build_ui() -> void:
 	msb.set_content_margin_all(14)
 	panel_missions.add_theme_stylebox_override("panel", msb)
 	layer.add_child(panel_missions)
+	var mcol: VBoxContainer = VBoxContainer.new()
+	mcol.add_theme_constant_override("separation", 10)
+	panel_missions.add_child(mcol)
+	mission_title = Label.new()
+	mission_title.add_theme_font_size_override("font_size", 17)
+	mission_title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	mcol.add_child(mission_title)
 	var mscroll: ScrollContainer = ScrollContainer.new()
-	mscroll.custom_minimum_size = Vector2(470, 480)
-	panel_missions.add_child(mscroll)
+	mscroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	mcol.add_child(mscroll)
 	missions_box = VBoxContainer.new()
-	missions_box.custom_minimum_size = Vector2(460, 0)
+	missions_box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	missions_box.add_theme_constant_override("separation", 8)
 	mscroll.add_child(missions_box)
+	mission_close = Button.new()
+	mission_close.text = "CERRAR"
+	mission_close.custom_minimum_size = Vector2(140, 60)
+	mission_close.add_theme_font_size_override("font_size", 17)
+	mission_close.pressed.connect(func() -> void:
+		panel_missions.visible = false
+		controls.set_enabled(not _any_modal())
+	)
+	mcol.add_child(mission_close)
 
-	# ── panel lateral (barra lateral de progreso)
+	# ── panel lateral (responsive, ancho flexible 80%)
 	panel_side = PanelContainer.new()
 	panel_side.set_anchors_preset(Control.PRESET_LEFT_WIDE)
-	panel_side.custom_minimum_size = Vector2(330, 0)
-	panel_side.offset_right = 330
+	panel_side.anchor_right = 0.8
+	panel_side.offset_left = 0
+	panel_side.offset_right = 0
 	panel_side.offset_top = 104
 	panel_side.offset_bottom = -104
 	panel_side.visible = false
@@ -448,10 +473,10 @@ func _build_ui() -> void:
 	panel_side.add_theme_stylebox_override("panel", ssb)
 	layer.add_child(panel_side)
 	var sscroll: ScrollContainer = ScrollContainer.new()
-	sscroll.custom_minimum_size = Vector2(300, 600)
+	sscroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	panel_side.add_child(sscroll)
 	side_box = VBoxContainer.new()
-	side_box.custom_minimum_size = Vector2(290, 0)
+	side_box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	side_box.add_theme_constant_override("separation", 8)
 	sscroll.add_child(side_box)
 
@@ -616,11 +641,30 @@ func _center_view() -> void:
 		camera_rig.snap()
 		_toast("Volviste al centro de la galaxia")
 
+func _any_modal() -> bool:
+	return panel_missions.visible or panel_side.visible or (content_center != null and content_center.visible)
+
+func _build_content_center() -> void:
+	content_center = ContentCenter.new()
+	add_child(content_center)
+	content_center.closed.connect(func() -> void:
+		controls.set_enabled(not _any_modal())
+	)
+	content_center.mission_completed.connect(_refresh_hud)
+
+func _open_content() -> void:
+	if content_center == null:
+		return
+	content_center.open_panel()
+	walking = false
+	controls.set_enabled(false)
+	motion.stop_horizontal()
+
 func _toggle_side(show_it: bool) -> void:
 	if panel_side == null:
 		return
 	panel_side.visible = show_it
-	controls.set_enabled(not show_it and not panel_missions.visible)
+	controls.set_enabled(not _any_modal())
 	if show_it:
 		_fill_side()
 
@@ -671,13 +715,8 @@ func _open_missions(ch: int) -> void:
 	for c: Node in missions_box.get_children():
 		c.queue_free()
 	var chd: Dictionary = GameData.CHAPTERS[ch]
-	var title: Label = Label.new()
-	title.text = "%s — %s" % [str(chd.code), str(chd.title)]
-	title.add_theme_font_size_override("font_size", 16)
-	title.add_theme_color_override("font_color", Color(chd.color))
-	title.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	title.custom_minimum_size = Vector2(450, 0)
-	missions_box.add_child(title)
+	mission_title.text = "%s — %s" % [str(chd.code), str(chd.title)]
+	mission_title.add_theme_color_override("font_color", Color(chd.color))
 	if not GameState.chapter_unlocked(ch):
 		var lock_lbl: Label = Label.new()
 		lock_lbl.text = "🔒 Completá el capítulo anterior para desbloquear"
@@ -700,14 +739,15 @@ func _open_missions(ch: int) -> void:
 			var b: Button = Button.new()
 			b.text = "COMPLETAR"
 			b.custom_minimum_size = Vector2(160, 58)
-			b.add_theme_font_size_override("font_size", 12)
+			b.add_theme_font_size_override("font_size", 14)
 			var mm: Dictionary = m
 			var cc: int = ch
 			b.pressed.connect(func() -> void:
 				GameState.complete_mission(mm)
+				GameState.register_day()
 				_refresh_hud()
 				_open_missions(cc)
-				_toast("+%d XP!" % int(mm.xp))
+				_toast("+%d XP! ✓ Evidencia registrada" % int(mm.xp))
 			)
 			row.add_child(b)
 		else:
@@ -724,17 +764,9 @@ func _open_missions(ch: int) -> void:
 		boss.add_theme_color_override("font_color", Color(1.0, 0.2, 0.33))
 		boss.text = ("👑 JEFE DERROTADO: " if GameState.chapter_complete(ch) else "⚔️ JEFE FINAL: ") + str(bs.name)
 		boss.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		boss.custom_minimum_size = Vector2(450, 0)
+		boss.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		missions_box.add_child(boss)
 		break
-	var close: Button = Button.new()
-	close.text = "CERRAR"
-	close.custom_minimum_size = Vector2(0, 60)
-	close.pressed.connect(func() -> void:
-		panel_missions.visible = false
-		controls.set_enabled(not panel_side.visible)
-	)
-	missions_box.add_child(close)
 	_fix_text(missions_box)
 	panel_missions.visible = true
 	walking = false

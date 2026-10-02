@@ -15,6 +15,11 @@ uniform vec3 bot_col : source_color = vec3(0.10, 0.02, 0.16);
 void sky() {
 	float h = clamp(EYEDIR.y * 0.5 + 0.5, 0.0, 1.0);
 	vec3 col = mix(bot_col, top_col, h);
+	// nebulosas de color (nubes suaves)
+	float n1 = sin(EYEDIR.x * 3.0 + 1.7) * sin(EYEDIR.y * 2.0 + 0.5) * 0.5 + 0.5;
+	float n2 = sin(EYEDIR.x * 2.0 + 4.0) * sin(EYEDIR.z * 3.0 + 2.0) * 0.5 + 0.5;
+	col += vec3(0.22, 0.05, 0.38) * smoothstep(0.62, 1.0, n1) * 0.7;
+	col += vec3(0.38, 0.10, 0.18) * smoothstep(0.68, 1.0, n2) * 0.5;
 	vec3 d = floor(EYEDIR * 340.0);
 	float s = step(0.9974, fract(sin(dot(d, vec3(12.9898, 78.233, 45.164))) * 43758.5453));
 	float tw = 0.75 + 0.25 * sin(TIME * 2.2 + d.x);
@@ -75,6 +80,23 @@ void fragment() {
 }
 """
 
+const POSTFX_SHADER: String = """
+shader_type canvas_item;
+uniform sampler2D screen_tex : hint_screen_texture, filter_linear_mipmap;
+void fragment() {
+	vec2 uv = SCREEN_UV;
+	vec2 c = uv - 0.5;
+	float dist = length(c);
+	float vig = smoothstep(0.85, 0.35, dist);
+	vec3 r = texture(screen_tex, uv - c * 0.004 * dist).rgb;
+	vec3 b = texture(screen_tex, uv + c * 0.004 * dist).rgb;
+	vec3 g = texture(screen_tex, uv).rgb;
+	vec3 final = vec3(r.r, g.g, b.b);
+	final *= mix(0.6, 1.0, vig);
+	COLOR = vec4(final, 1.0);
+}
+"""
+
 var planets: Array[Dictionary] = []
 var avatar: OdeaAvatarRig = null
 var motion: OdeaAvatarMotion = null
@@ -113,6 +135,7 @@ func _ready() -> void:
 		shot = true
 	GameState.register_day()
 	_build_env()
+	_build_postfx()
 	_build_planets()
 	_build_paths()
 	_build_avatar()
@@ -235,18 +258,44 @@ func _build_env() -> void:
 	sky.sky_material = sm
 	env.sky = sky
 	env.glow_enabled = true
-	env.glow_intensity = 0.85
-	env.glow_bloom = 0.22
-	env.glow_hdr_threshold = 0.9
+	env.glow_intensity = 1.0
+	env.glow_bloom = 0.35
+	env.glow_hdr_threshold = 0.85
 	env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
 	env.ambient_light_color = Color(0.3, 0.35, 0.5)
-	env.ambient_light_energy = 0.55
+	env.ambient_light_energy = 0.6
+	# post-proceso: saturación neón + contraste
+	env.adjustment_enabled = true
+	env.adjustment_saturation = 1.25
+	env.adjustment_contrast = 1.06
 	we.environment = env
 	add_child(we)
 	var sun: DirectionalLight3D = DirectionalLight3D.new()
-	sun.light_energy = 1.15
+	sun.light_energy = 1.2
 	sun.rotation_degrees = Vector3(-40.0, 30.0, 0.0)
+	sun.shadow_enabled = true
+	sun.directional_shadow_max_distance = 60.0
 	add_child(sun)
+	# luz de relleno (color magenta, lado opuesto)
+	var fill: DirectionalLight3D = DirectionalLight3D.new()
+	fill.light_energy = 0.45
+	fill.light_color = Color(0.6, 0.3, 1.0)
+	fill.rotation_degrees = Vector3(-25.0, 210.0, 0.0)
+	add_child(fill)
+
+func _build_postfx() -> void:
+	var layer: CanvasLayer = CanvasLayer.new()
+	layer.layer = 5
+	add_child(layer)
+	var rect: ColorRect = ColorRect.new()
+	rect.set_anchors_preset(Control.PRESET_FULL_RECT)
+	rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var mat: ShaderMaterial = ShaderMaterial.new()
+	var psh: Shader = Shader.new()
+	psh.code = POSTFX_SHADER
+	mat.shader = psh
+	rect.material = mat
+	layer.add_child(rect)
 
 func _planet_pos(i: int) -> Vector3:
 	var ang: float = float(i) * 0.785

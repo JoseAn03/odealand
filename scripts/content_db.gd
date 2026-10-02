@@ -4,13 +4,16 @@ extends Node
 
 const CONTENT_PATH: String = "res://data/odea_content.json"
 const PLAYBOOK_PATH: String = "res://data/playbook_45_days.json"
+const BOSS_QUESTIONS_PATH: String = "res://data/boss_questions.json"
 
 var data: Dictionary = {}
 var playbook: Dictionary = {}
+var boss_questions_data: Dictionary = {}
 
 func _ready() -> void:
 	load_content()
 	load_playbook()
+	load_boss_questions()
 
 func load_content() -> void:
 	var f: FileAccess = FileAccess.open(CONTENT_PATH, FileAccess.READ)
@@ -31,6 +34,16 @@ func load_playbook() -> void:
 	f.close()
 	if typeof(parsed) == TYPE_DICTIONARY:
 		playbook = parsed
+
+func load_boss_questions() -> void:
+	var f: FileAccess = FileAccess.open(BOSS_QUESTIONS_PATH, FileAccess.READ)
+	if f == null:
+		push_warning("ContentDB: no se pudo abrir %s" % BOSS_QUESTIONS_PATH)
+		return
+	var parsed: Variant = JSON.parse_string(f.get_as_text())
+	f.close()
+	if typeof(parsed) == TYPE_DICTIONARY:
+		boss_questions_data = parsed
 
 func _list(key: String) -> Array:
 	var v: Variant = data.get(key, [])
@@ -63,6 +76,12 @@ func playbook_planets() -> Array:
 
 func playbook_bosses() -> Array:
 	var v: Variant = playbook.get("bosses", [])
+	if typeof(v) == TYPE_ARRAY:
+		return v
+	return []
+
+func boss_questions(id: String) -> Array:
+	var v: Variant = boss_questions_data.get(id, [])
 	if typeof(v) == TYPE_ARRAY:
 		return v
 	return []

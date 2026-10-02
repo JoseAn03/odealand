@@ -1,0 +1,37 @@
+{
+  "boss_0": [
+    {"q": "Un reclutador lee tu CV en 15 segundos. ¿Qué debe ver primero?", "options": ["La lista de herramientas que conoces", "El problema que resuelves y el resultado medible", "Tus cursos y certificaciones", "Tu foto y datos personales"], "answer": 1},
+    {"q": "¿Cuál describe mejor una evidencia 'defendible'?", "options": ["Participé en reportes del área", "Reduje la conciliación de reservas de 6h a 30 min con un pipeline automatizado", "Sé usar Power BI y SQL", "Terminé 5 cursos de análisis"], "answer": 1},
+    {"q": "¿Qué pregunta responde un buen logro del CV?", "options": ["¿Qué herramientas usé?", "¿Qué problema resolví, cómo y qué cambió?", "¿Cuántos años de experiencia tengo?", "¿Dónde estudié?"], "answer": 1}
+  ],
+  "boss_1": [
+    {"q": "¿Qué significa que un pipeline de ingesta sea idempotente?", "options": ["Que corre más rápido cada vez", "Que ejecutarlo dos veces no duplica los datos", "Que nunca falla", "Que usa solo SQL"], "answer": 1},
+    {"q": "¿Qué es un 'watermark' en ingesta de datos?", "options": ["Una marca de agua visual", "La marca que indica hasta dónde ya se procesaron los datos", "Un tipo de partición", "Un test de rendimiento"], "answer": 1},
+    {"q": "Ejecutas el mismo batch dos veces. ¿Qué debe pasar?", "options": ["Se duplica cada fila", "El segundo run se salta las filas ya cargadas", "Borra los datos anteriores", "Da error y detiene todo"], "answer": 1}
+  ],
+  "boss_2": [
+    {"q": "¿Qué hace un test estructural 'not_null' en dbt?", "options": ["Verifica que una columna no tenga nulos", "Mide el rendimiento", "Comprime los datos", "Exporta a PDF"], "answer": 0},
+    {"q": "¿Qué es un 'singular test' en dbt?", "options": ["Un test que corre una sola vez", "Un test SQL personalizado para una regla de negocio", "Un test que siempre pasa", "Un test de velocidad"], "answer": 1},
+    {"q": "¿Qué demuestra un 'fallo controlado'?", "options": ["Que el proyecto nunca falla", "Que el pipeline detecta un error y lo puedes corregir con evidencia", "Que no necesitas tests", "Que el código es perfecto"], "answer": 1}
+  ],
+  "boss_3": [
+    {"q": "¿Qué significa 'PR rojo → corrección → PR verde'?", "options": ["Un PR que falla un test, se corrige y vuelve a pasar", "Colores de la interfaz", "Un error de git", "Un merge sin revisión"], "answer": 0},
+    {"q": "¿Para qué sirve un 'gate de calidad' en un PR?", "options": ["Para bloquear el merge si los tests fallan", "Para acelerar el merge", "Para borrar tests", "Para saltarse la revisión"], "answer": 0},
+    {"q": "¿Qué revisa 'source freshness'?", "options": ["Que los datos fuente estén actualizados dentro del SLA", "El color de los datos", "La velocidad de la red", "El tamaño de las tablas"], "answer": 0}
+  ],
+  "boss_4": [
+    {"q": "¿Qué debe entender un lector en 5 minutos de tu README?", "options": ["El problema, el grano y cómo reproducir el proyecto", "Toda tu vida profesional", "El código fuente completo", "Tus certificaciones"], "answer": 0},
+    {"q": "¿Qué es el 'grano' de una fact table?", "options": ["El nivel de detalle que representa cada fila", "Un tipo de visual", "El nombre de la tabla", "Una métrica de ventas"], "answer": 0},
+    {"q": "¿Qué NO debe ir en un README ejecutivo?", "options": ["El problema y los usuarios", "Cómo ejecutar y las pruebas", "Fallos conocidos y recuperación", "Párrafos largos contando lo difícil que fue"], "answer": 3}
+  ],
+  "boss_5": [
+    {"q": "¿Qué registras antes de enviar una candidatura?", "options": ["Solo el link de la vacante", "Requisito, evidencia, país, modalidad, salario y contacto", "Tu sueldo actual", "Nada, aplicas y ya"], "answer": 1},
+    {"q": "¿Qué es una aplicación 'verificada'?", "options": ["Donde confirmaste elegibilidad (país, modalidad, nivel) antes de invertir tiempo", "Cualquier clic en 'aplicar'", "Una que te rechazaron", "Un mensaje genérico masivo"], "answer": 0},
+    {"q": "¿Qué es el 'punto de fuga' del embudo?", "options": ["La etapa donde más candidatos se pierden", "Un error de SQL", "El nombre de un dashboard", "Un tipo de reclutador"], "answer": 0}
+  ],
+  "boss_6": [
+    {"q": "¿Qué hace un JOIN en SQL?", "options": ["Combina filas de dos tablas según una condición", "Borra una tabla", "Ordena los datos", "Crea un índice"], "answer": 0},
+    {"q": "¿Qué es una window function en SQL?", "options": ["Un cálculo sobre un conjunto de filas sin colapsarlas", "Una función que abre ventanas", "Un tipo de índice", "Un comando de backup"], "answer": 0},
+    {"q": "¿Qué causa un 'grano' incorrecto en un reporte de ingresos?", "options": ["Contar la misma reserva varias veces por cada cambio de estado", "Usar SUM correctamente", "Filtrar por fecha", "Tener una primary key"], "answer": 0}
+  ]
+}

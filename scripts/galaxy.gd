@@ -104,6 +104,7 @@ var touch_marker: Node2D
 var mission_title: Label
 var mission_close: Button
 var content_center: CanvasLayer
+var boss_battle: CanvasLayer
 var path_materials: Array[StandardMaterial3D] = []
 var moon_orbiters: Array[Node3D] = []
 
@@ -118,6 +119,7 @@ func _ready() -> void:
 	_build_camera()
 	_build_ui()
 	_build_content_center()
+	_build_boss_battle()
 	_refresh_hud()
 	_toast("Joystick / WASD: caminar · CORRER / Shift · SALTAR / Espacio ×2")
 	if OS.get_environment("ODEATEST") == "1":
@@ -493,6 +495,7 @@ func _build_ui() -> void:
 	bh.add_child(_btn("CONTENIDO", func() -> void: _open_content()))
 	bh.add_child(_btn("MISIONES", func() -> void: _open_missions(current_chapter if current_chapter >= 0 else 0)))
 	bh.add_child(_btn("PROGRESO", func() -> void: _toggle_side(true)))
+	bh.add_child(_btn("JEFE", func() -> void: _open_boss()))
 	bh.add_child(_btn("CENTRAR", func() -> void: _center_view()))
 
 	# ── marcador de toque
@@ -726,7 +729,7 @@ func _center_view() -> void:
 		_toast("Volviste al centro de la galaxia")
 
 func _any_modal() -> bool:
-	return panel_missions.visible or panel_side.visible or (content_center != null and content_center.visible)
+	return panel_missions.visible or panel_side.visible or (content_center != null and content_center.visible) or (boss_battle != null and boss_battle.visible)
 
 func _build_content_center() -> void:
 	content_center = ContentCenter.new()
@@ -735,6 +738,31 @@ func _build_content_center() -> void:
 		controls.set_enabled(not _any_modal())
 	)
 	content_center.mission_completed.connect(_refresh_hud)
+
+func _build_boss_battle() -> void:
+	boss_battle = BossBattle.new()
+	add_child(boss_battle)
+	boss_battle.victory.connect(func(_xp: int, _title: String) -> void: _refresh_hud())
+	boss_battle.closed.connect(func() -> void:
+		controls.set_enabled(not _any_modal())
+	)
+
+func _open_boss() -> void:
+	if boss_battle == null:
+		return
+	var idx: int = current_chapter if current_chapter >= 0 else 0
+	var boss: Dictionary = {}
+	for b: Dictionary in ContentDB.playbook_bosses():
+		if int(b.planet) == idx:
+			boss = b
+			break
+	if boss.is_empty():
+		_toast("Completá misiones para desbloquear jefes")
+		return
+	boss_battle.open(boss)
+	walking = false
+	controls.set_enabled(false)
+	motion.stop_horizontal()
 
 func _open_content() -> void:
 	if content_center == null:

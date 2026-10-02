@@ -104,6 +104,8 @@ var touch_marker: Node2D
 var mission_title: Label
 var mission_close: Button
 var content_center: CanvasLayer
+var path_materials: Array[StandardMaterial3D] = []
+var moon_orbiters: Array[Node3D] = []
 
 func _ready() -> void:
 	if OS.get_environment("ODEASHOT") == "1":
@@ -111,6 +113,7 @@ func _ready() -> void:
 	GameState.register_day()
 	_build_env()
 	_build_planets()
+	_build_paths()
 	_build_avatar()
 	_build_camera()
 	_build_ui()
@@ -196,6 +199,14 @@ func _process(delta: float) -> void:
 	for p: Dictionary in planets:
 		var node: Node3D = p.node
 		node.rotate_y(delta * float(p.spin))
+	# orbitas de lunas
+	for o: Node3D in moon_orbiters:
+		o.rotate_y(delta * 0.5)
+	# pulso de los caminos de energia
+	var pulse: float = Time.get_ticks_msec() / 1000.0
+	for i: int in range(path_materials.size()):
+		var k: float = 0.72 + 0.28 * sin(pulse * 2.4 + float(i))
+		path_materials[i].albedo_color = Color(0.0, 1.0, 0.85, k)
 	# marcador de toque
 	if touch_marker and marker_t < 1.0:
 		marker_t += delta * 1.6
@@ -295,6 +306,37 @@ func _build_planets() -> void:
 			ringm.material_override = rmat
 			ringm.rotation_degrees = Vector3(16.0, 0.0, 14.0)
 			node.add_child(ringm)
+		# luna orbitando (planetas pares)
+		if i % 2 == 0:
+			var orbit: Node3D = Node3D.new()
+			node.add_child(orbit)
+			var moon: MeshInstance3D = MeshInstance3D.new()
+			var sm: SphereMesh = SphereMesh.new()
+			sm.radius = radius * 0.3
+			sm.height = radius * 0.6
+			sm.radial_segments = 16
+			sm.rings = 8
+			moon.mesh = sm
+			var moonm: StandardMaterial3D = StandardMaterial3D.new()
+			moonm.albedo_color = Color(0.78, 0.8, 0.86)
+			moon.material_override = moonm
+			moon.position = Vector3(radius * 1.65, radius * 0.45, 0.0)
+			orbit.add_child(moon)
+			moon_orbiters.append(orbit)
+		# capa de nubes (planetas impares)
+		if i % 2 == 1:
+			var cloudm: MeshInstance3D = MeshInstance3D.new()
+			var cm: SphereMesh = SphereMesh.new()
+			cm.radius = radius * 1.12
+			cm.height = radius * 2.24
+			cm.radial_segments = 24
+			cm.rings = 12
+			cloudm.mesh = cm
+			var clmat: StandardMaterial3D = StandardMaterial3D.new()
+			clmat.albedo_color = Color(1, 1, 1, 0.3)
+			clmat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+			cloudm.material_override = clmat
+			node.add_child(cloudm)
 		# numero del capitulo flotando
 		var lbl: Label3D = Label3D.new()
 		lbl.text = str(i + 1)
@@ -307,6 +349,48 @@ func _build_planets() -> void:
 		lbl.no_depth_test = false
 		node.add_child(lbl)
 		planets.append({"node": node, "chapter": i, "radius": radius, "pos": pos, "spin": 0.07 + float(i % 3) * 0.04})
+
+# ─────────────────────────── caminos de energia (Fase 3)
+
+func _build_paths() -> void:
+	for i: int in range(CHAPTER_COUNT - 1):
+		var a: Vector3 = planets[i].pos
+		var b: Vector3 = planets[i + 1].pos
+		path_materials.append(_add_ribbon(a, b, Color(0.0, 1.0, 0.85)))
+
+func _add_ribbon(a: Vector3, b: Vector3, col: Color) -> StandardMaterial3D:
+	var mid: Vector3 = (a + b) * 0.5
+	var ctrl: Vector3 = mid + Vector3.UP * (a.distance_to(b) * 0.4)
+	var segs: int = 28
+	var width: float = 0.4
+	var st: SurfaceTool = SurfaceTool.new()
+	st.begin(Mesh.PRIMITIVE_TRIANGLE_STRIP)
+	for s: int in range(segs + 1):
+		var t: float = float(s) / float(segs)
+		var p: Vector3 = _bezier(a, ctrl, b, t)
+		var tangent: Vector3 = (_bezier(a, ctrl, b, minf(t + 0.02, 1.0)) - _bezier(a, ctrl, b, maxf(t - 0.02, 0.0))).normalized()
+		var side: Vector3 = tangent.cross(Vector3.UP).normalized()
+		if side.length() < 0.001:
+			side = Vector3.RIGHT
+		st.set_uv(Vector2(float(s), 0.0))
+		st.add_vertex(p + side * width)
+		st.set_uv(Vector2(float(s), 1.0))
+		st.add_vertex(p - side * width)
+	var mesh: ArrayMesh = st.commit()
+	var mat: StandardMaterial3D = StandardMaterial3D.new()
+	mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	mat.albedo_color = col
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	mat.cull_mode = BaseMaterial3D.CULL_DISABLED
+	var mi: MeshInstance3D = MeshInstance3D.new()
+	mi.mesh = mesh
+	mi.material_override = mat
+	add_child(mi)
+	return mat
+
+func _bezier(a: Vector3, c: Vector3, b: Vector3, t: float) -> Vector3:
+	var u: float = 1.0 - t
+	return a * (u * u) + c * (2.0 * u * t) + b * (t * t)
 
 func _build_avatar() -> void:
 	avatar = AvatarRig.new()

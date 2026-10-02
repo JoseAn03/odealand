@@ -1,0 +1,34 @@
+; ODEALAND Cyberpunk - Godot 4
+; Proyecto separado de la app web (plan-analista-datos)
+
+config_version=5
+
+[application]
+
+config/name="ODEALAND Cyberpunk"
+config/description="El juego definitivo de ODEA - galaxia 3D, mundos, misiones y jefes"
+run/main_scene="res://scenes/galaxy.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+
+[autoload]
+
+GameState="*res://scripts/game_state.gd"
+
+[display]
+
+window/size/viewport_width=540
+window/size/viewport_height=960
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+textures/canvas_textures/default_texture_filter=1

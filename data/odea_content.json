@@ -1,0 +1,5016 @@
+{
+ "LEVELS": [
+  {
+   "xp": 0,
+   "name": "Novato de Datos"
+  },
+  {
+   "xp": 500,
+   "name": "Aprendiz Analista"
+  },
+  {
+   "xp": 1500,
+   "name": "Explorador de Insights"
+  },
+  {
+   "xp": 3000,
+   "name": "Caballero SQL"
+  },
+  {
+   "xp": 5000,
+   "name": "Mago de Pandas"
+  },
+  {
+   "xp": 7500,
+   "name": "Guerrero de la IA"
+  },
+  {
+   "xp": 10000,
+   "name": "Maestro del Dashboard"
+  },
+  {
+   "xp": 15000,
+   "name": "Analista Legendario"
+  },
+  {
+   "xp": 20000,
+   "name": "Dios de los Datos"
+  }
+ ],
+ "MAX_XP_LEVEL": 20000,
+ "CHAPTERS": [
+  {
+   "id": 0,
+   "code": "CAPÍTULO 0",
+   "title": "Cimientos del Analista de Datos",
+   "color": "#00ff88",
+   "icon": "🛡️",
+   "narrative": "Tu arsenal base: entorno profesional, Python limpio y buenas prácticas de código. Sin cimientos sólidos, no hay torre de datos que aguante."
+  },
+  {
+   "id": 1,
+   "code": "CAPÍTULO 1",
+   "title": "SQL y Modelado de Negocio",
+   "color": "#00ccff",
+   "icon": "⚔️",
+   "narrative": "El idioma universal de los datos. Domina SQL de verdad y aprende a modelar datos que respondan preguntas de negocio, incluidas las de marketing."
+  },
+  {
+   "id": 2,
+   "code": "CAPÍTULO 2",
+   "title": "ETL y Automatización",
+   "color": "#7c6cff",
+   "icon": "🧬",
+   "narrative": "Los datos no llegan solos: extrae, transforma y carga con calidad de producción. Automatiza con n8n y scripts para que el análisis fluya solo."
+  },
+  {
+   "id": 3,
+   "code": "CAPÍTULO 3",
+   "title": "IA Aplicada al Análisis",
+   "color": "#ff00ff",
+   "icon": "🤖",
+   "narrative": "La IA es tu escudero: prompts expertos, código asistido y análisis auditados. La máquina acelera, pero tú verificas y decides."
+  },
+  {
+   "id": 4,
+   "code": "CAPÍTULO 4",
+   "title": "Dashboards y Storytelling",
+   "color": "#ffaa00",
+   "icon": "📊",
+   "narrative": "Datos sin historia no mueven decisiones. Construye dashboards de nivel consultor y aprende a contar hallazgos con impacto."
+  },
+  {
+   "id": 5,
+   "code": "CAPÍTULO 5",
+   "title": "Marketing Analytics",
+   "color": "#ff6600",
+   "icon": "🎯",
+   "narrative": "Tu ventaja diferencial: métricas de negocio, cohortes, A/B testing y web analytics. Convierte el marketing en decisiones basadas en datos."
+  },
+  {
+   "id": 6,
+   "code": "CAPÍTULO 6",
+   "title": "IA Productiva y Apps de Datos",
+   "color": "#f72585",
+   "icon": "👾",
+   "narrative": "Del análisis al producto: analistas virtuales con IA, reportes automáticos y un portafolio que demuestra lo que eres capaz de construir."
+  },
+  {
+   "id": 7,
+   "code": "CAPÍTULO 7",
+   "title": "Empleo: La Corona Final",
+   "color": "#ff3355",
+   "icon": "🏆",
+   "narrative": "Todo el poder acumulado se lanza al asedio: marca personal, entrevistas impecables y la campaña de aplicaciones que abrirá la puerta."
+  }
+ ],
+ "CAT": {
+  "analyst": {
+   "label": "Analista",
+   "tag": "cat-analyst"
+  },
+  "ai": {
+   "label": "IA",
+   "tag": "cat-ai"
+  },
+  "employability": {
+   "label": "Empleabilidad",
+   "tag": "cat-employability"
+  }
+ },
+ "CAT_COLORS": {
+  "analyst": "#00ff88",
+  "ai": "#ff00ff",
+  "employability": "#ffaa00"
+ },
+ "campaignMissions": [
+  {
+   "id": "m0_1",
+   "chapter": 0,
+   "title": "Entorno de Nivel Profesional",
+   "description": "Configurar VS Code, Python y Git como un profesional: extensiones clave, entornos virtuales, alias y un repo organizado para tus scripts.",
+   "xp": 150,
+   "category": "analyst",
+   "estimatedTime": "3-4 horas",
+   "verification": "Repo personal organizado con README y estructura clara"
+  },
+  {
+   "id": "m0_2",
+   "chapter": 0,
+   "title": "Trío de Scripts Limpios",
+   "description": "Escribir 3 scripts Python con docstrings, manejo de errores y funciones puras: automatización, procesamiento de datos y un caso real.",
+   "xp": 250,
+   "category": "analyst",
+   "estimatedTime": "5-6 horas",
+   "verification": "3 scripts de calidad publicados en GitHub"
+  },
+  {
+   "id": "m0_3",
+   "chapter": 0,
+   "title": "Ritual de Calidad de Código",
+   "description": "Aplicar buenas prácticas: requirements, .gitignore, estructura de carpetas y revisión de estilo (PEP8, linters).",
+   "xp": 150,
+   "category": "analyst",
+   "estimatedTime": "3-4 horas",
+   "verification": "Repo con requirements, .gitignore y estilo consistente"
+  },
+  {
+   "id": "m1_1",
+   "chapter": 1,
+   "title": "SQL Esencial y Avanzado",
+   "description": "Completar 60+ ejercicios (SQLZoo, LeetCode) incluyendo JOINs, window functions y CTEs hasta dominarlos.",
+   "xp": 250,
+   "category": "analyst",
+   "estimatedTime": "8-10 horas",
+   "verification": "60+ ejercicios SQL resueltos y documentados"
+  },
+  {
+   "id": "m1_2",
+   "chapter": 1,
+   "title": "Modelo de Datos de Negocio",
+   "description": "Diseñar tu propia base de datos (4+ tablas con relaciones) y escribir 25 consultas que respondan preguntas de negocio reales.",
+   "xp": 300,
+   "category": "analyst",
+   "estimatedTime": "10-12 horas",
+   "verification": "BD propia + 25 queries publicadas con README"
+  },
+  {
+   "id": "m1_3",
+   "chapter": 1,
+   "title": "SQL para Marketing",
+   "description": "Escribir consultas de cohortes, embudos y segmentación de clientes sobre un dataset de negocio.",
+   "xp": 200,
+   "category": "analyst",
+   "estimatedTime": "6-8 horas",
+   "verification": "Queries de marketing (cohortes y embudo) funcionando"
+  },
+  {
+   "id": "m2_1",
+   "chapter": 2,
+   "title": "Pipeline ETL con Tests",
+   "description": "Llevar tu pipeline ETL a producción: tests automatizados, logging y validación de datos en cada etapa.",
+   "xp": 300,
+   "category": "analyst",
+   "estimatedTime": "8-10 horas",
+   "verification": "Pipeline con tests y logging funcionando"
+  },
+  {
+   "id": "m2_2",
+   "chapter": 2,
+   "title": "Automatización con n8n",
+   "description": "Crear un workflow de automatización real (alertas, reportes o integración) usando n8n, como tu job aggregator.",
+   "xp": 250,
+   "category": "analyst",
+   "estimatedTime": "6-8 horas",
+   "verification": "Workflow n8n activo y documentado"
+  },
+  {
+   "id": "m2_3",
+   "chapter": 2,
+   "title": "Orquestación y Calidad",
+   "description": "Programar tus pipelines (cron/n8n) con monitoreo de errores y notificaciones de éxito o fallo.",
+   "xp": 200,
+   "category": "analyst",
+   "estimatedTime": "5-6 horas",
+   "verification": "Pipeline programado con alertas automáticas"
+  },
+  {
+   "id": "m3_1",
+   "chapter": 3,
+   "title": "Prompt Engineering Maestro",
+   "description": "Construir una biblioteca de 30 prompts avanzados (rol, few-shot, cadena de pensamiento) para análisis y código.",
+   "xp": 150,
+   "category": "ai",
+   "estimatedTime": "4-5 horas",
+   "verification": "Biblioteca de 30 prompts documentada"
+  },
+  {
+   "id": "m3_2",
+   "chapter": 3,
+   "title": "Código Asistido y Auditado",
+   "description": "Refactorizar un proyecto con IA (Copilot/Claude) y auditar cada cambio propuesto contra las reglas del código.",
+   "xp": 200,
+   "category": "ai",
+   "estimatedTime": "5-6 horas",
+   "verification": "Refactor con IA auditado y documentado"
+  },
+  {
+   "id": "m3_3",
+   "chapter": 3,
+   "title": "Análisis Asistido por IA",
+   "description": "Realizar un análisis completo con ayuda de IA y verificar cada respuesta contra los datos reales.",
+   "xp": 250,
+   "category": "ai",
+   "estimatedTime": "6-8 horas",
+   "verification": "Análisis con IA verificado y publicado"
+  },
+  {
+   "id": "m4_1",
+   "chapter": 4,
+   "title": "Dashboard de Nivel Consultor",
+   "description": "Construir un dashboard de 3 páginas con filtros, medidas DAX y una historia clara sobre datos reales (tipo ANC).",
+   "xp": 350,
+   "category": "analyst",
+   "estimatedTime": "10-12 horas",
+   "verification": "Dashboard de 3 páginas publicado"
+  },
+  {
+   "id": "m4_2",
+   "chapter": 4,
+   "title": "Estadística Aplicada",
+   "description": "Proyecto de estadística con Python: distribuciones, intervalos y correlación sobre un dataset real, con scipy.",
+   "xp": 250,
+   "category": "analyst",
+   "estimatedTime": "6-8 horas",
+   "verification": "Análisis estadístico completo documentado"
+  },
+  {
+   "id": "m4_3",
+   "chapter": 4,
+   "title": "Historia con Datos (STAR)",
+   "description": "Grabar un video de 3 minutos explicando tus hallazgos con estructura STAR a audiencia no técnica.",
+   "xp": 200,
+   "category": "employability",
+   "estimatedTime": "3-4 horas",
+   "verification": "Video STAR de 3 minutos grabado"
+  },
+  {
+   "id": "m5_1",
+   "chapter": 5,
+   "title": "Cohortes y Embudo en Acción",
+   "description": "Analizar retención por cohortes y embudo de conversión con Python/SQL sobre un dataset de e-commerce.",
+   "xp": 250,
+   "category": "analyst",
+   "estimatedTime": "6-8 horas",
+   "verification": "Análisis de cohortes y embudo documentado"
+  },
+  {
+   "id": "m5_2",
+   "chapter": 5,
+   "title": "A/B Testing Real (P2)",
+   "description": "Diseñar y ejecutar un A/B test completo: hipótesis, tamaño de muestra, análisis con scipy y reporte ejecutivo.",
+   "xp": 300,
+   "category": "analyst",
+   "estimatedTime": "8-10 horas",
+   "verification": "Proyecto P2 publicado con reporte y recomendación"
+  },
+  {
+   "id": "m5_3",
+   "chapter": 5,
+   "title": "Web Analytics (P4)",
+   "description": "Analizar un dataset público estilo GA4: adquisición, comportamiento y conversión, con 5+ insights accionables.",
+   "xp": 250,
+   "category": "analyst",
+   "estimatedTime": "6-8 horas",
+   "verification": "Análisis web (P4) publicado con insights"
+  },
+  {
+   "id": "m6_1",
+   "chapter": 6,
+   "title": "Analista Virtual con IA (P3)",
+   "description": "Construir una app Streamlit con chat que responda preguntas de negocio sobre tus datos, con verificación de cifras.",
+   "xp": 350,
+   "category": "ai",
+   "estimatedTime": "10-12 horas",
+   "verification": "App P3 publicada y funcionando en línea"
+  },
+  {
+   "id": "m6_2",
+   "chapter": 6,
+   "title": "Reportes Automáticos con IA (P6)",
+   "description": "Automatizar un reporte semanal: datos procesados, resumen generado con IA y entrega programada.",
+   "xp": 300,
+   "category": "ai",
+   "estimatedTime": "8-10 horas",
+   "verification": "Reporte automático P6 entregándose solo"
+  },
+  {
+   "id": "m6_3",
+   "chapter": 6,
+   "title": "Portafolio de Nivel Experto",
+   "description": "Publicar tus proyectos insignia (P1-P5) con casos de estudio, métricas y página STAR en tu portafolio web.",
+   "xp": 300,
+   "category": "employability",
+   "estimatedTime": "8-10 horas",
+   "verification": "Portafolio experto con P1-P5 publicado"
+  },
+  {
+   "id": "m7_1",
+   "chapter": 7,
+   "title": "Marca Personal en Acción",
+   "description": "Publicar contenido en LinkedIn 2 veces por semana contando tus proyectos y aprendizajes, con perfil optimizado.",
+   "xp": 200,
+   "category": "employability",
+   "estimatedTime": "5-6 horas",
+   "verification": "8+ posts publicados en un mes"
+  },
+  {
+   "id": "m7_2",
+   "chapter": 7,
+   "title": "Máquina de Entrevistas",
+   "description": "Completar 5 simulacros de entrevista con IA (SQL, Python, métricas y casos) y pulir tus respuestas STAR.",
+   "xp": 300,
+   "category": "employability",
+   "estimatedTime": "8-10 horas",
+   "verification": "5 simulacros completados con mejoras aplicadas"
+  },
+  {
+   "id": "m7_3",
+   "chapter": 7,
+   "title": "Tracker Estratégico de Aplicaciones",
+   "description": "Gestionar 50+ aplicaciones con seguimiento de respuestas, iteración de CV y métricas de éxito por canal.",
+   "xp": 300,
+   "category": "employability",
+   "estimatedTime": "8-10 horas",
+   "verification": "Tracker con 50+ aplicaciones y análisis de respuesta"
+  }
+ ],
+ "bossMissions": [
+  {
+   "id": "b0",
+   "chapter": 0,
+   "boss": true,
+   "title": "El Juicio Técnico",
+   "description": "Proyecto integrador de fundamentos: un script Python bien estructurado (funciones, archivos, datos) + repo público con README impecable y commits limpios.",
+   "xp": 300,
+   "category": "analyst",
+   "estimatedTime": "6-8 horas",
+   "verification": "Repo público con proyecto Python documentado"
+  },
+  {
+   "id": "b1",
+   "chapter": 1,
+   "boss": true,
+   "title": "El Trono de SQL",
+   "description": "Base de datos de negocio propia (4+ tablas) con 25 consultas comentadas y una sección de consultas para marketing (cohortes). Publicar con README.",
+   "xp": 450,
+   "category": "analyst",
+   "estimatedTime": "10-12 horas",
+   "verification": "Proyecto SQL completo: schema + 25 queries publicadas"
+  },
+  {
+   "id": "b2",
+   "chapter": 2,
+   "boss": true,
+   "title": "La Bestia ETL",
+   "description": "Pipeline ETL de producción: 2 fuentes, tests automatizados, logging, validaciones y despliegue programado. Documentado como caso de estudio.",
+   "xp": 400,
+   "category": "analyst",
+   "estimatedTime": "10-12 horas",
+   "verification": "Pipeline ETL en producción con tests y README"
+  },
+  {
+   "id": "b3",
+   "chapter": 3,
+   "boss": true,
+   "title": "El Pacto con la Máquina",
+   "description": "Usar IA para construir un análisis de datos completo y auditar cada respuesta contra los datos reales. Documentar prompts y decisiones.",
+   "xp": 350,
+   "category": "ai",
+   "estimatedTime": "6-8 horas",
+   "verification": "Análisis con IA auditado + prompts documentados"
+  },
+  {
+   "id": "b4",
+   "chapter": 4,
+   "boss": true,
+   "title": "El Artefacto Definitivo",
+   "description": "Dashboard interactivo de 3 páginas con filtros, medidas y una historia clara. Publicarlo y grabarlo explicándolo con STAR.",
+   "xp": 400,
+   "category": "analyst",
+   "estimatedTime": "10-12 horas",
+   "verification": "Dashboard de 3 páginas publicado + video STAR"
+  },
+  {
+   "id": "b5",
+   "chapter": 5,
+   "boss": true,
+   "title": "El Embudo de Oro (P1)",
+   "description": "Proyecto insignia de Marketing Analytics: funnel + cohortes + LTV por canal, publicado con código, dashboard y README.",
+   "xp": 500,
+   "category": "analyst",
+   "estimatedTime": "12-14 horas",
+   "verification": "Proyecto P1 completo publicado"
+  },
+  {
+   "id": "b6",
+   "chapter": 6,
+   "boss": true,
+   "title": "El Oráculo Digital (P3+P6)",
+   "description": "Tu analista virtual con IA en vivo (Streamlit + LLM) y un reporte automático semanal funcionando sin intervención.",
+   "xp": 550,
+   "category": "ai",
+   "estimatedTime": "12-14 horas",
+   "verification": "App P3 en línea + reporte P6 automático activo"
+  },
+  {
+   "id": "b7",
+   "chapter": 7,
+   "boss": true,
+   "title": "La Corona Final",
+   "description": "El asedio definitivo: 50 aplicaciones personalizadas registradas, CV ATS final, LinkedIn impecable y 5 entrevistas simuladas superadas.",
+   "xp": 700,
+   "category": "employability",
+   "estimatedTime": "20-24 horas",
+   "verification": "50 aplicaciones + CV + entrevistas completadas"
+  }
+ ],
+ "dailyMissions": [
+  {
+   "id": "1A",
+   "day": 1,
+   "week": 1,
+   "slot": "A",
+   "title": "📚 Preparación del Entorno",
+   "description": "Explorar VS Code a fondo: atajos, terminal integrada y extensiones para Python. Configurar Anaconda y crear tu primer entorno virtual.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Entorno virtual creado y VS Code configurado"
+  },
+  {
+   "id": "1B",
+   "day": 1,
+   "week": 1,
+   "slot": "B",
+   "title": "🛠️ El Ritual de Iniciación",
+   "description": "Instalar VS Code, Python (Anaconda) y Git. Crear tu cuenta de GitHub y hacer tu primer commit con un archivo README.",
+   "xp": 80,
+   "category": "analyst",
+   "time": 120,
+   "verification": "Primer commit visible en tu perfil de GitHub"
+  },
+  {
+   "id": "1C",
+   "day": 1,
+   "week": 1,
+   "slot": "C",
+   "title": "🎯 Primer Commit Épico",
+   "description": "Subir un repositorio con README, estructura de carpetas y tu primer commit bien hecho.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Repo inicial público con commit descriptivo"
+  },
+  {
+   "id": "2A",
+   "day": 2,
+   "week": 1,
+   "slot": "A",
+   "title": "📚 Fundamentos: Datos en Python",
+   "description": "Estudiar tipos de datos, listas y diccionarios con un curso o video. Tomar notas tipo chuleta.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas de tipos de datos en tu bitácora"
+  },
+  {
+   "id": "2B",
+   "day": 2,
+   "week": 1,
+   "slot": "B",
+   "title": "🛠️ Despertar Python: Datos",
+   "description": "Aprender variables, tipos, listas y diccionarios. Resolver 15 ejercicios de HackerRank (nivel Easy).",
+   "xp": 100,
+   "category": "analyst",
+   "time": 90,
+   "verification": "15 ejercicios Python resueltos en HackerRank (captura)"
+  },
+  {
+   "id": "2C",
+   "day": 2,
+   "week": 1,
+   "slot": "C",
+   "title": "🎯 Quiz Relámpago",
+   "description": "Autoexamen de 10 preguntas sobre tipos de datos, listas y diccionarios sin apuntes.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Quiz resuelto y corregido"
+  },
+  {
+   "id": "3A",
+   "day": 3,
+   "week": 1,
+   "slot": "A",
+   "title": "📚 Fundamentos: Control de Flujo",
+   "description": "Estudiar condicionales y bucles con un recurso interactivo. Explicar cada concepto con tus palabras.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas + 3 ejemplos propios documentados"
+  },
+  {
+   "id": "3B",
+   "day": 3,
+   "week": 1,
+   "slot": "B",
+   "title": "🛠️ Despertar Python: Control",
+   "description": "Dominar condicionales if/elif/else y bucles for/while. Resolver 15 ejercicios más de HackerRank.",
+   "xp": 100,
+   "category": "analyst",
+   "time": 90,
+   "verification": "15 ejercicios de bucles y condicionales resueltos"
+  },
+  {
+   "id": "3C",
+   "day": 3,
+   "week": 1,
+   "slot": "C",
+   "title": "🎯 Cazador de Bugs",
+   "description": "Corregir 5 ejercicios con errores intencionales de bucles y condicionales.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "5 bugs encontrados y explicados"
+  },
+  {
+   "id": "4A",
+   "day": 4,
+   "week": 1,
+   "slot": "A",
+   "title": "📚 Fundamentos: Funciones y Módulos",
+   "description": "Estudiar funciones, alcance de variables y módulos estándar (os, datetime, random).",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas de funciones con ejemplos reales"
+  },
+  {
+   "id": "4B",
+   "day": 4,
+   "week": 1,
+   "slot": "B",
+   "title": "🛠️ Despertar Python: Funciones",
+   "description": "Dominar funciones, parámetros y retornos. Escribir un script que automatice algo de tu día (renombrar archivos, organizar carpetas...).",
+   "xp": 120,
+   "category": "analyst",
+   "time": 90,
+   "verification": "Script funcional guardado en tu repo de scripts"
+  },
+  {
+   "id": "4C",
+   "day": 4,
+   "week": 1,
+   "slot": "C",
+   "title": "🎯 Automatiza tu Día",
+   "description": "Escribir un script con funciones que automatice una tarea real.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Script funcionando en tu repo"
+  },
+  {
+   "id": "5A",
+   "day": 5,
+   "week": 1,
+   "slot": "A",
+   "title": "📚 Git: Ramas y Flujo de Trabajo",
+   "description": "Estudiar branches, merge, pull requests y buenas prácticas de commits.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Esquema propio del flujo de Git en notas"
+  },
+  {
+   "id": "5B",
+   "day": 5,
+   "week": 1,
+   "slot": "B",
+   "title": "🛠️ Git: El Libro de Hechizos",
+   "description": "Aprender a fondo: init, add, commit, branch, merge, push y pull. Subir tu carpeta de scripts a GitHub con commits limpios.",
+   "xp": 100,
+   "category": "analyst",
+   "time": 75,
+   "verification": "Repo público con mínimo 4 commits descriptivos"
+  },
+  {
+   "id": "5C",
+   "day": 5,
+   "week": 1,
+   "slot": "C",
+   "title": "🎯 Práctica de Ramas",
+   "description": "Crear ramas, hacer merge y resolver un conflicto a propósito en tu repo de práctica.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Flujo de ramas practicado y documentado"
+  },
+  {
+   "id": "6A",
+   "day": 6,
+   "week": 1,
+   "slot": "A",
+   "title": "📚 Pandas: Anatomía del DataFrame",
+   "description": "Estudiar cómo funciona pandas por dentro: índices, dtypes, memoria y split-apply-combine.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas con esquema visual del DataFrame"
+  },
+  {
+   "id": "6B",
+   "day": 6,
+   "week": 1,
+   "slot": "B",
+   "title": "🛠️ Pandas I: Leer el Mundo",
+   "description": "Instalar pandas, leer CSV y Excel, explorar con head(), info() y describe(). Usar un dataset real descargado de Kaggle.",
+   "xp": 130,
+   "category": "analyst",
+   "time": 90,
+   "verification": "Script .py explorando un dataset real (guardado en GitHub)"
+  },
+  {
+   "id": "6C",
+   "day": 6,
+   "week": 1,
+   "slot": "C",
+   "title": "🎯 Pandas de Memoria",
+   "description": "Escribir de memoria los 10 comandos pandas esenciales y probarlos.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Lista de 10 comandos verificados"
+  },
+  {
+   "id": "7A",
+   "day": 7,
+   "week": 1,
+   "slot": "A",
+   "title": "📚 Mapa Mental Semana 1",
+   "description": "Repasar toda la semana con un mapa mental: entorno, Python, Git y pandas.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Mapa mental de la semana 1 creado"
+  },
+  {
+   "id": "7B",
+   "day": 7,
+   "week": 1,
+   "slot": "B",
+   "title": "🛠️ Consolidación Semana 1",
+   "description": "Repasar lo aprendido: escribir tus notas en Markdown y hacer un mini-proyecto que combine Python + Git (listas, funciones y archivos).",
+   "xp": 120,
+   "category": "analyst",
+   "time": 75,
+   "verification": "Notas de la semana + mini-proyecto subidos a GitHub"
+  },
+  {
+   "id": "7C",
+   "day": 7,
+   "week": 1,
+   "slot": "C",
+   "title": "🎯 Técnica Feynman",
+   "description": "Explicar lo aprendido esta semana como si enseñaras a un niño.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Explicación Feynman escrita"
+  },
+  {
+   "id": "8A",
+   "day": 8,
+   "week": 2,
+   "slot": "A",
+   "title": "📚 Pandas: Indexación Avanzada",
+   "description": "Estudiar boolean indexing, loc/iloc, set_index y reset_index con casos reales.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas de indexación con 5 ejemplos"
+  },
+  {
+   "id": "8B",
+   "day": 8,
+   "week": 2,
+   "slot": "B",
+   "title": "🛠️ Pandas II: Filtrar el Caos",
+   "description": "Dominar filtros con condiciones, loc/iloc, sort_values y manejo de columnas. Practicar sobre el dataset de Kaggle del día 6.",
+   "xp": 120,
+   "category": "analyst",
+   "time": 90,
+   "verification": "10 filtros y consultas distintos documentados en tu script"
+  },
+  {
+   "id": "8C",
+   "day": 8,
+   "week": 2,
+   "slot": "C",
+   "title": "🎯 Filtros Sin Apuntes",
+   "description": "Escribir 10 filtros distintos de tu dataset sin consultar documentación.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "10 filtros funcionando en tu script"
+  },
+  {
+   "id": "9A",
+   "day": 9,
+   "week": 2,
+   "slot": "A",
+   "title": "📚 Data Quality: Datos Sucios",
+   "description": "Estudiar los problemas clásicos de datos sucios y cómo detectarlos y tratarlos.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Checklist de calidad de datos en notas"
+  },
+  {
+   "id": "9B",
+   "day": 9,
+   "week": 2,
+   "slot": "B",
+   "title": "🛠️ Limpieza de Datos",
+   "description": "Detectar y tratar valores nulos, duplicados y tipos incorrectos. Mini-proyecto: dejar un dataset impecable.",
+   "xp": 140,
+   "category": "analyst",
+   "time": 120,
+   "verification": "Dataset limpio exportado a CSV + resumen en tus notas"
+  },
+  {
+   "id": "9C",
+   "day": 9,
+   "week": 2,
+   "slot": "C",
+   "title": "🎯 Dataset Impecable",
+   "description": "Aplicar tu checklist de limpieza a un dataset nuevo y exportar la versión limpia.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "CSV limpio + resumen de cambios"
+  },
+  {
+   "id": "10A",
+   "day": 10,
+   "week": 2,
+   "slot": "A",
+   "title": "📚 Matplotlib: Anatomía de una Figura",
+   "description": "Estudiar figura, axes, estilos y guardado en alta calidad (dpi, formatos).",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas de anatomía de matplotlib"
+  },
+  {
+   "id": "10B",
+   "day": 10,
+   "week": 2,
+   "slot": "B",
+   "title": "🛠️ Matplotlib: Primera Luz",
+   "description": "Crear gráficos de líneas y barras con matplotlib. Darles títulos, etiquetas y colores profesionales.",
+   "xp": 110,
+   "category": "analyst",
+   "time": 90,
+   "verification": "2 gráficos (línea y barras) guardados como PNG"
+  },
+  {
+   "id": "10C",
+   "day": 10,
+   "week": 2,
+   "slot": "C",
+   "title": "🎯 Gráficos con Estilo",
+   "description": "Recrear 2 gráficos de referencia con tus datos (colores, anotaciones, títulos).",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "2 gráficos estilizados guardados"
+  },
+  {
+   "id": "11A",
+   "day": 11,
+   "week": 2,
+   "slot": "A",
+   "title": "📚 Seaborn: Gramática Visual",
+   "description": "Estudiar cuándo usar cada tipo de gráfico según la pregunta de negocio.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Guía de selección de gráficos en notas"
+  },
+  {
+   "id": "11B",
+   "day": 11,
+   "week": 2,
+   "slot": "B",
+   "title": "🛠️ Seaborn: Ojo de Artista",
+   "description": "Dominar histogramas, boxplots, scatterplots y heatmaps con seaborn. Explorar correlaciones de tu dataset.",
+   "xp": 120,
+   "category": "analyst",
+   "time": 90,
+   "verification": "4 tipos de gráfico distintos generados con seaborn"
+  },
+  {
+   "id": "11C",
+   "day": 11,
+   "week": 2,
+   "slot": "C",
+   "title": "🎯 Elige el Gráfico Correcto",
+   "description": "Para 5 preguntas de negocio, elegir el gráfico adecuado y justificarlo.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "5 decisiones documentadas"
+  },
+  {
+   "id": "12A",
+   "day": 12,
+   "week": 2,
+   "slot": "A",
+   "title": "📚 Storytelling Visual",
+   "description": "Estudiar jerarquía visual, color y narrativa en dashboards (Tufte, Few).",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas con 5 principios aplicados"
+  },
+  {
+   "id": "12B",
+   "day": 12,
+   "week": 2,
+   "slot": "B",
+   "title": "🛠️ Dashboard Estático",
+   "description": "Crear un dashboard estático con 4 gráficos que cuenten una historia sobre tu dataset, con insights incluidos.",
+   "xp": 160,
+   "category": "analyst",
+   "time": 120,
+   "verification": "Dashboard con 4 gráficos guardado (PNG o HTML)"
+  },
+  {
+   "id": "12C",
+   "day": 12,
+   "week": 2,
+   "slot": "C",
+   "title": "🎯 Crítica de Dashboards",
+   "description": "Analizar 2 dashboards reales: qué funciona y qué mejorarías.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Crítica escrita de 2 dashboards"
+  },
+  {
+   "id": "13A",
+   "day": 13,
+   "week": 2,
+   "slot": "A",
+   "title": "📚 README que Vende",
+   "description": "Estudiar estructura de READMEs efectivos para portafolio técnico.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Plantilla propia de README en notas"
+  },
+  {
+   "id": "13B",
+   "day": 13,
+   "week": 2,
+   "slot": "B",
+   "title": "🛠️ Bitácora del Analista",
+   "description": "Documentar tu primer análisis completo en un README: problema, proceso, gráficos y conclusiones. Subirlo a GitHub.",
+   "xp": 120,
+   "category": "analyst",
+   "time": 75,
+   "verification": "README con historia de datos publicada en GitHub"
+  },
+  {
+   "id": "13C",
+   "day": 13,
+   "week": 2,
+   "slot": "C",
+   "title": "🎯 README Mejorado",
+   "description": "Reescribir el README de tu análisis del día 6 con la estructura aprendida.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "README publicado y mejorado"
+  },
+  {
+   "id": "14A",
+   "day": 14,
+   "week": 2,
+   "slot": "A",
+   "title": "📚 Metodología EDA en 7 Pasos",
+   "description": "Estudiar un framework de análisis exploratorio completo y reproducible.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Checklist EDA de 7 pasos documentado"
+  },
+  {
+   "id": "14B",
+   "day": 14,
+   "week": 2,
+   "slot": "B",
+   "title": "🛠️ RETO SEMANA 2: EDA Completo",
+   "description": "Análisis exploratorio completo de UN dataset nuevo: limpieza, estadística descriptiva, 6+ visualizaciones y 5 insights accionables.",
+   "xp": 250,
+   "category": "analyst",
+   "time": 180,
+   "verification": "Notebook o script completo publicado con insights claros"
+  },
+  {
+   "id": "14C",
+   "day": 14,
+   "week": 2,
+   "slot": "C",
+   "title": "🎯 Autoevaluación EDA",
+   "description": "Revisar tu EDA contra la checklist de 7 pasos y completar lo que falte.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "EDA completo contra checklist"
+  },
+  {
+   "id": "15A",
+   "day": 15,
+   "week": 3,
+   "slot": "A",
+   "title": "📚 Modelo Relacional",
+   "description": "Estudiar tablas, claves primarias y foráneas, cardinalidad y normalización básica.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Diagrama ER de ejemplo en notas"
+  },
+  {
+   "id": "15B",
+   "day": 15,
+   "week": 3,
+   "slot": "B",
+   "title": "🛠️ SQL: El Idioma de las Tablas",
+   "description": "Instalar DB Browser for SQLite. Aprender SELECT, WHERE, ORDER BY y LIMIT. Practicar en SQLZoo (secciones 0-2).",
+   "xp": 110,
+   "category": "analyst",
+   "time": 90,
+   "verification": "Secciones 0-2 de SQLZoo completadas"
+  },
+  {
+   "id": "15C",
+   "day": 15,
+   "week": 3,
+   "slot": "C",
+   "title": "🎯 Diseña tu Schema",
+   "description": "Diseñar el esquema de tu futura base de datos (tablas y relaciones).",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Diagrama ER listo para el día 20"
+  },
+  {
+   "id": "16A",
+   "day": 16,
+   "week": 3,
+   "slot": "A",
+   "title": "📚 SQL: Orden de Ejecución",
+   "description": "Estudiar el orden lógico de ejecución de una consulta (FROM WHERE GROUP BY HAVING SELECT).",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Nota del orden de ejecución con ejemplo"
+  },
+  {
+   "id": "16B",
+   "day": 16,
+   "week": 3,
+   "slot": "B",
+   "title": "🛠️ SQL: Agrupar el Mundo",
+   "description": "Dominar GROUP BY, HAVING y agregaciones (COUNT, SUM, AVG, MIN, MAX). Practicar en SQLZoo (sección 5).",
+   "xp": 120,
+   "category": "analyst",
+   "time": 90,
+   "verification": "10 consultas propias con GROUP BY y HAVING funcionales"
+  },
+  {
+   "id": "16C",
+   "day": 16,
+   "week": 3,
+   "slot": "C",
+   "title": "🎯 Agrupa el Mundo Real",
+   "description": "Escribir 5 consultas GROUP BY sobre datos que te interesen.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "5 consultas agregadas funcionando"
+  },
+  {
+   "id": "17A",
+   "day": 17,
+   "week": 3,
+   "slot": "A",
+   "title": "📚 JOINs Visuales",
+   "description": "Estudiar INNER, LEFT, RIGHT y FULL JOIN con diagramas de Venn y ejemplos.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Diagramas de cada JOIN en tu bitácora"
+  },
+  {
+   "id": "17B",
+   "day": 17,
+   "week": 3,
+   "slot": "B",
+   "title": "🛠️ SQL: Unir Reinos (JOINs)",
+   "description": "Dominar INNER, LEFT, RIGHT y FULL JOIN. Practicar en SQLZoo (sección 6) y LeetCode (Easy).",
+   "xp": 130,
+   "category": "analyst",
+   "time": 100,
+   "verification": "Sección de JOINs de SQLZoo completada"
+  },
+  {
+   "id": "17C",
+   "day": 17,
+   "week": 3,
+   "slot": "C",
+   "title": "🎯 JOIN Visual",
+   "description": "Dibujar y ejecutar cada tipo de JOIN sobre 2 tablas de ejemplo.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "4 JOINs entendidos y anotados"
+  },
+  {
+   "id": "18A",
+   "day": 18,
+   "week": 3,
+   "slot": "A",
+   "title": "📚 CTEs vs Subconsultas",
+   "description": "Estudiar cuándo usar WITH (CTE) vs subconsultas y sus ventajas.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas con comparativa y 2 ejemplos"
+  },
+  {
+   "id": "18B",
+   "day": 18,
+   "week": 3,
+   "slot": "B",
+   "title": "🛠️ SQL: Subconsultas y CTEs",
+   "description": "Aprender subconsultas y WITH (CTEs) para consultas complejas y legibles. Resolver 10 ejercicios de LeetCode.",
+   "xp": 130,
+   "category": "analyst",
+   "time": 100,
+   "verification": "10 ejercicios de LeetCode SQL resueltos (Easy/Medium)"
+  },
+  {
+   "id": "18C",
+   "day": 18,
+   "week": 3,
+   "slot": "C",
+   "title": "🎯 Refactor a CTE",
+   "description": "Reescribir 5 consultas con subconsultas usando CTEs.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "5 consultas refactorizadas"
+  },
+  {
+   "id": "19A",
+   "day": 19,
+   "week": 3,
+   "slot": "A",
+   "title": "📚 Aprendizaje Efectivo",
+   "description": "Estudiar práctica espaciada y análisis de errores para retener SQL.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Plan de repaso espaciado de SQL creado"
+  },
+  {
+   "id": "19B",
+   "day": 19,
+   "week": 3,
+   "slot": "B",
+   "title": "🛠️ SQL: Entrenamiento Intensivo",
+   "description": "Sesión maratón: completar ejercicios SQL hasta acumular 50 resueltos en SQLZoo + LeetCode (meta de la campaña).",
+   "xp": 150,
+   "category": "analyst",
+   "time": 120,
+   "verification": "50 ejercicios SQL totales completados"
+  },
+  {
+   "id": "19C",
+   "day": 19,
+   "week": 3,
+   "slot": "C",
+   "title": "🎯 Análisis de Errores SQL",
+   "description": "Registrar tus errores SQL más comunes y la regla para no repetirlos.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Tabla de errores en notas"
+  },
+  {
+   "id": "20A",
+   "day": 20,
+   "week": 3,
+   "slot": "A",
+   "title": "📚 KPIs y Negocio",
+   "description": "Estudiar métricas de negocio: qué miden y cómo se calculan (ventas, retención, conversión).",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Lista de 10 KPIs con su fórmula"
+  },
+  {
+   "id": "20B",
+   "day": 20,
+   "week": 3,
+   "slot": "B",
+   "title": "🛠️ SQL: Consultas de Negocio",
+   "description": "Crear tu propia base de datos (ej: inventario o ventas) con 3+ tablas relacionadas y escribir 10 consultas de negocio.",
+   "xp": 150,
+   "category": "analyst",
+   "time": 120,
+   "verification": "Base de datos + 10 queries de negocio en tu repo"
+  },
+  {
+   "id": "20C",
+   "day": 20,
+   "week": 3,
+   "slot": "C",
+   "title": "🎯 Queries de Negocio",
+   "description": "Escribir 5 queries que respondan preguntas de negocio reales sobre tu BD.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "5 queries documentadas"
+  },
+  {
+   "id": "21A",
+   "day": 21,
+   "week": 3,
+   "slot": "A",
+   "title": "📚 SQL en Portafolio",
+   "description": "Estudiar cómo presentar proyectos SQL: contexto, schema y queries comentadas.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Rúbrica de proyecto SQL en notas"
+  },
+  {
+   "id": "21B",
+   "day": 21,
+   "week": 3,
+   "slot": "B",
+   "title": "🛠️ RETO SEMANA 3: Proyecto SQL",
+   "description": "Publicar tu proyecto SQL en GitHub: schema, 15 queries comentadas y README explicando qué negocio resuelve cada una.",
+   "xp": 250,
+   "category": "analyst",
+   "time": 150,
+   "verification": "Proyecto SQL completo y público en GitHub"
+  },
+  {
+   "id": "21C",
+   "day": 21,
+   "week": 3,
+   "slot": "C",
+   "title": "🎯 Revisión con Rúbrica",
+   "description": "Revisar tu proyecto SQL contra la rúbrica y corregir lo que falte.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Proyecto SQL pulido"
+  },
+  {
+   "id": "22A",
+   "day": 22,
+   "week": 4,
+   "slot": "A",
+   "title": "📚 Pandas: agg y transform",
+   "description": "Estudiar la diferencia entre groupby+agg y transform y cuándo usar cada una.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas con ejemplo comparativo"
+  },
+  {
+   "id": "22B",
+   "day": 22,
+   "week": 4,
+   "slot": "B",
+   "title": "🛠️ Pandas III: Groupby y Pivot",
+   "description": "Dominar groupby, agg, pivot_table y crosstab. Practicar con tu dataset de ventas o uno de Kaggle.",
+   "xp": 120,
+   "category": "analyst",
+   "time": 90,
+   "verification": "Análisis con groupby + pivot_table documentado"
+  },
+  {
+   "id": "22C",
+   "day": 22,
+   "week": 4,
+   "slot": "C",
+   "title": "🎯 Doble Entrada",
+   "description": "Crear una tabla dinámica que cruce 2 dimensiones y extraer 3 insights.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Pivot + 3 insights escritos"
+  },
+  {
+   "id": "23A",
+   "day": 23,
+   "week": 4,
+   "slot": "A",
+   "title": "📚 Merge sin Dolor",
+   "description": "Estudiar tipos de merge, sufijos y problemas comunes (duplicados, claves repetidas).",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas de troubleshooting de merge"
+  },
+  {
+   "id": "23B",
+   "day": 23,
+   "week": 4,
+   "slot": "B",
+   "title": "🛠️ Pandas IV: Fusionar Mundos",
+   "description": "Dominar merge, concat y join para combinar datasets. Juntar 2 datasets complementarios en uno solo.",
+   "xp": 120,
+   "category": "analyst",
+   "time": 90,
+   "verification": "Dataset combinado correctamente (script + resultado)"
+  },
+  {
+   "id": "23C",
+   "day": 23,
+   "week": 4,
+   "slot": "C",
+   "title": "🎯 Caza del Duplicado",
+   "description": "Depurar un merge que duplica filas: identificar la causa y corregirla.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Merge corregido sin duplicados"
+  },
+  {
+   "id": "24A",
+   "day": 24,
+   "week": 4,
+   "slot": "A",
+   "title": "📚 Vectorización",
+   "description": "Estudiar por qué evitar bucles en pandas y cómo vectorizar operaciones.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Benchmark bucles vs vectorizado en notas"
+  },
+  {
+   "id": "24B",
+   "day": 24,
+   "week": 4,
+   "slot": "B",
+   "title": "🛠️ Lambda: Magia en una Línea",
+   "description": "Dominar funciones lambda y apply/applymap para transformar columnas. Refactorizar 5 transformaciones del día 23.",
+   "xp": 110,
+   "category": "analyst",
+   "time": 75,
+   "verification": "Script refactorizado con lambda y apply en tu repo"
+  },
+  {
+   "id": "24C",
+   "day": 24,
+   "week": 4,
+   "slot": "C",
+   "title": "🎯 Carrera de Rendimiento",
+   "description": "Comparar bucles vs vectorización en un dataset grande.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Benchmark documentado"
+  },
+  {
+   "id": "25A",
+   "day": 25,
+   "week": 4,
+   "slot": "A",
+   "title": "📚 Análisis Multidimensional",
+   "description": "Estudiar drill-down: analizar por región, producto y tiempo de forma jerárquica.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas de análisis multidimensional"
+  },
+  {
+   "id": "25B",
+   "day": 25,
+   "week": 4,
+   "slot": "B",
+   "title": "🛠️ Análisis de Ventas",
+   "description": "Proyecto: analizar ventas por región, producto y tiempo. Crear tabla resumen + 3 visualizaciones clave.",
+   "xp": 160,
+   "category": "analyst",
+   "time": 120,
+   "verification": "Análisis de ventas completo (código + gráficos + conclusiones)"
+  },
+  {
+   "id": "25C",
+   "day": 25,
+   "week": 4,
+   "slot": "C",
+   "title": "🎯 Resumen Ejecutivo",
+   "description": "Escribir un resumen ejecutivo de 5 líneas con los hallazgos clave.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Resumen entregado"
+  },
+  {
+   "id": "26A",
+   "day": 26,
+   "week": 4,
+   "slot": "A",
+   "title": "📚 ETL: Arquitectura",
+   "description": "Estudiar qué es un pipeline ETL, herramientas y buenas prácticas de extracción.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Diagrama de tu pipeline ETL planeado"
+  },
+  {
+   "id": "26B",
+   "day": 26,
+   "week": 4,
+   "slot": "B",
+   "title": "🛠️ ETL I: Extracción",
+   "description": "Extraer datos de 2 fuentes distintas: un CSV local y una base SQL (o una API/web). Guardarlos en crudo.",
+   "xp": 140,
+   "category": "analyst",
+   "time": 100,
+   "verification": "2 datasets extraídos de fuentes distintas (código en repo)"
+  },
+  {
+   "id": "26C",
+   "day": 26,
+   "week": 4,
+   "slot": "C",
+   "title": "🎯 Fuentes de Datos",
+   "description": "Listar 5 fuentes de datos públicas para tu pipeline (APIs, CSVs, SQL).",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Lista de 5 fuentes con descripción"
+  },
+  {
+   "id": "27A",
+   "day": 27,
+   "week": 4,
+   "slot": "A",
+   "title": "📚 Validación de Datos",
+   "description": "Estudiar reglas de calidad y validación automática (rangos, tipos, unicidad, nulos).",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Reglas de validación escritas para tu pipeline"
+  },
+  {
+   "id": "27B",
+   "day": 27,
+   "week": 4,
+   "slot": "B",
+   "title": "🛠️ ETL II: Transformación",
+   "description": "Limpiar, transformar y unir tus 2 fuentes en un dataset final listo para analizar. Documentar cada paso.",
+   "xp": 180,
+   "category": "analyst",
+   "time": 130,
+   "verification": "Pipeline ETL completo con dataset final limpio"
+  },
+  {
+   "id": "27C",
+   "day": 27,
+   "week": 4,
+   "slot": "C",
+   "title": "🎯 Validaciones Automáticas",
+   "description": "Escribir checks que validen tu dataset final (nulos, rangos, tipos).",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Script de validación funcionando"
+  },
+  {
+   "id": "28A",
+   "day": 28,
+   "week": 4,
+   "slot": "A",
+   "title": "📚 Casos de Estudio",
+   "description": "Estudiar cómo estructurar un caso de estudio técnico (problema, proceso, resultado).",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Estructura de caso de estudio en notas"
+  },
+  {
+   "id": "28B",
+   "day": 28,
+   "week": 4,
+   "slot": "B",
+   "title": "🛠️ RETO SEMANA 4: Caso de Estudio ETL",
+   "description": "Escribir el caso de estudio de tu ETL (problema, proceso, resultado) y publicar el pipeline completo en GitHub con README.",
+   "xp": 250,
+   "category": "analyst",
+   "time": 120,
+   "verification": "Pipeline ETL público con README de caso de estudio"
+  },
+  {
+   "id": "28C",
+   "day": 28,
+   "week": 4,
+   "slot": "C",
+   "title": "🎯 Walkthrough de 3 Min",
+   "description": "Grabar un video corto explicando tu pipeline ETL.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Video grabado y guardado"
+  },
+  {
+   "id": "29A",
+   "day": 29,
+   "week": 5,
+   "slot": "A",
+   "title": "📚 Prompt Engineering: Técnicas",
+   "description": "Estudiar técnicas: rol, few-shot, cadena de pensamiento y prompts para SQL/Python.",
+   "xp": 60,
+   "category": "ai",
+   "time": 45,
+   "verification": "Notas con 5 técnicas y ejemplos"
+  },
+  {
+   "id": "29B",
+   "day": 29,
+   "week": 5,
+   "slot": "B",
+   "title": "🛠️ Prompt Engineering",
+   "description": "Aprender a crear prompts efectivos para ChatGPT/Claude/Gemini: código Python, SQL y explicaciones. Crear tu biblioteca de 20 prompts.",
+   "xp": 110,
+   "category": "ai",
+   "time": 75,
+   "verification": "Archivo Markdown con 20 prompts propios (guardado)"
+  },
+  {
+   "id": "29C",
+   "day": 29,
+   "week": 5,
+   "slot": "C",
+   "title": "🎯 Mejora tus Prompts",
+   "description": "Tomar 5 prompts débiles de tu biblioteca y mejorarlos con las técnicas aprendidas.",
+   "xp": 45,
+   "category": "ai",
+   "time": 30,
+   "verification": "5 prompts mejorados"
+  },
+  {
+   "id": "30A",
+   "day": 30,
+   "week": 5,
+   "slot": "A",
+   "title": "📚 IA en tu Editor",
+   "description": "Estudiar flujos con Copilot o Codeium: autocompletado, chat, refactor y revisión.",
+   "xp": 60,
+   "category": "ai",
+   "time": 45,
+   "verification": "Notas de atajos de tu editor"
+  },
+  {
+   "id": "30B",
+   "day": 30,
+   "week": 5,
+   "slot": "B",
+   "title": "🛠️ Copilot: Tu Escudero",
+   "description": "Usar GitHub Copilot, Codeium o la IA de tu editor para acelerar código. Refactorizar un proyecto anterior usándolos.",
+   "xp": 130,
+   "category": "ai",
+   "time": 90,
+   "verification": "Proyecto refactorizado con ayuda de IA (commits visibles)"
+  },
+  {
+   "id": "30C",
+   "day": 30,
+   "week": 5,
+   "slot": "C",
+   "title": "🎯 Refactor con IA",
+   "description": "Refactorizar un script tuyo con IA y documentar qué cambió y por qué.",
+   "xp": 45,
+   "category": "ai",
+   "time": 30,
+   "verification": "Refactor documentado"
+  },
+  {
+   "id": "31A",
+   "day": 31,
+   "week": 5,
+   "slot": "A",
+   "title": "📚 LLMs y Datos",
+   "description": "Estudiar capacidades y límites de los LLMs para análisis (alucinaciones, validación).",
+   "xp": 60,
+   "category": "ai",
+   "time": 45,
+   "verification": "Notas de límites y verificación de IA"
+  },
+  {
+   "id": "31B",
+   "day": 31,
+   "week": 5,
+   "slot": "B",
+   "title": "🛠️ PandasAI: Exploración con IA",
+   "description": "Probar pandasai o sklearn para análisis exploratorio automatizado. Hacer 5 preguntas de negocio en lenguaje natural.",
+   "xp": 140,
+   "category": "ai",
+   "time": 100,
+   "verification": "Análisis con IA respondiendo 5 preguntas (captura o notas)"
+  },
+  {
+   "id": "31C",
+   "day": 31,
+   "week": 5,
+   "slot": "C",
+   "title": "🎯 Verifica a la IA",
+   "description": "Hacer que una IA analice tu dataset y verificar 2 respuestas contra los datos.",
+   "xp": 45,
+   "category": "ai",
+   "time": 30,
+   "verification": "Verificación escrita"
+  },
+  {
+   "id": "32A",
+   "day": 32,
+   "week": 5,
+   "slot": "A",
+   "title": "📚 Modelo de Datos BI",
+   "description": "Estudiar modelo estrella vs copo y cómo preparar datos para dashboards.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Esquema de modelo estrella en notas"
+  },
+  {
+   "id": "32B",
+   "day": 32,
+   "week": 5,
+   "slot": "B",
+   "title": "🛠️ Power BI / Tableau I",
+   "description": "Aprender a conectar datos y crear visualizaciones en Power BI Desktop o Tableau Public. Primeras 2 visualizaciones interactivas.",
+   "xp": 130,
+   "category": "analyst",
+   "time": 100,
+   "verification": "Archivo de Power BI o Tableau con 2 visualizaciones"
+  },
+  {
+   "id": "32C",
+   "day": 32,
+   "week": 5,
+   "slot": "C",
+   "title": "🎯 Primer Visual BI",
+   "description": "Conectar tu dataset a Power BI o Tableau y crear tu primera visualización.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Visualización creada"
+  },
+  {
+   "id": "33A",
+   "day": 33,
+   "week": 5,
+   "slot": "A",
+   "title": "📚 UX de Dashboards",
+   "description": "Estudiar jerarquía, flujo de lectura y diseño de filtros en dashboards efectivos.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Checklist UX para dashboards en notas"
+  },
+  {
+   "id": "33B",
+   "day": 33,
+   "week": 5,
+   "slot": "B",
+   "title": "🛠️ El Tablero de Mando",
+   "description": "Crear un dashboard interactivo de 2 páginas con filtros, segmentadores y visualizaciones cruzadas.",
+   "xp": 170,
+   "category": "analyst",
+   "time": 140,
+   "verification": "Dashboard de 2 páginas con filtros funcionales"
+  },
+  {
+   "id": "33C",
+   "day": 33,
+   "week": 5,
+   "slot": "C",
+   "title": "🎯 Prueba de Usuario",
+   "description": "Pedirle a alguien que use tu dashboard y corregir 3 cosas que no entendió.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Dashboard mejorado tras feedback"
+  },
+  {
+   "id": "34A",
+   "day": 34,
+   "week": 5,
+   "slot": "A",
+   "title": "📚 Estadística Intuitiva",
+   "description": "Estudiar media, mediana, moda, desviación estándar y correlación con intuición y ejemplos.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas con ejemplos cotidianos"
+  },
+  {
+   "id": "34B",
+   "day": 34,
+   "week": 5,
+   "slot": "B",
+   "title": "🛠️ Estadística para Mortales",
+   "description": "Dominar media, mediana, moda, desviación estándar, correlación vs causalidad y probabilidad básica con numpy y pandas.",
+   "xp": 130,
+   "category": "analyst",
+   "time": 100,
+   "verification": "Análisis estadístico de un dataset con explicación en Markdown"
+  },
+  {
+   "id": "34C",
+   "day": 34,
+   "week": 5,
+   "slot": "C",
+   "title": "🎯 Correlaciones Espurias",
+   "description": "Encontrar 2 ejemplos de correlación sin causalidad y explicarlos.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "2 ejemplos documentados"
+  },
+  {
+   "id": "35A",
+   "day": 35,
+   "week": 5,
+   "slot": "A",
+   "title": "📚 STAR para Datos",
+   "description": "Estudiar el marco STAR aplicado a storytelling con datos y métricas.",
+   "xp": 60,
+   "category": "ai",
+   "time": 45,
+   "verification": "Historia STAR escrita de tu dashboard"
+  },
+  {
+   "id": "35B",
+   "day": 35,
+   "week": 5,
+   "slot": "B",
+   "title": "🛠️ RETO SEMANA 5: Presenta tu Historia",
+   "description": "Dashboard completo publicado + video de 2 minutos explicando tus hallazgos a audiencia no técnica (marco STAR).",
+   "xp": 250,
+   "category": "ai",
+   "time": 180,
+   "verification": "Dashboard publicado + video de 2 minutos grabado"
+  },
+  {
+   "id": "35C",
+   "day": 35,
+   "week": 5,
+   "slot": "C",
+   "title": "🎯 Elevator Pitch",
+   "description": "Grabar un pitch de 60 segundos explicando tu dashboard con STAR.",
+   "xp": 45,
+   "category": "ai",
+   "time": 30,
+   "verification": "Pitch grabado"
+  },
+  {
+   "id": "36A",
+   "day": 36,
+   "week": 6,
+   "slot": "A",
+   "title": "📚 Portafolios que Funcionan",
+   "description": "Estudiar qué hace un portafolio de analista irresistible (proyectos, métricas, diseño).",
+   "xp": 60,
+   "category": "employability",
+   "time": 45,
+   "verification": "Análisis de 3 portafolios reales"
+  },
+  {
+   "id": "36B",
+   "day": 36,
+   "week": 6,
+   "slot": "B",
+   "title": "🛠️ El Cartel de Recompensas (Portafolio)",
+   "description": "Crear portafolio web en GitHub Pages: Sobre mí, Proyectos (mínimo 4), Habilidades y Contacto.",
+   "xp": 160,
+   "category": "employability",
+   "time": 120,
+   "verification": "URL de portafolio en vivo y funcional"
+  },
+  {
+   "id": "36C",
+   "day": 36,
+   "week": 6,
+   "slot": "C",
+   "title": "🎯 Moodboard de Portafolio",
+   "description": "Recolectar 3 referencias de portafolios inspiradores y anotar qué copiarías.",
+   "xp": 45,
+   "category": "employability",
+   "time": 30,
+   "verification": "Moodboard con 3 referencias"
+  },
+  {
+   "id": "37A",
+   "day": 37,
+   "week": 6,
+   "slot": "A",
+   "title": "📚 LinkedIn Estratégico",
+   "description": "Estudiar algoritmo de LinkedIn y keywords del sector data.",
+   "xp": 60,
+   "category": "employability",
+   "time": 45,
+   "verification": "Notas de keywords y estrategia"
+  },
+  {
+   "id": "37B",
+   "day": 37,
+   "week": 6,
+   "slot": "B",
+   "title": "🛠️ Puliendo la Armadura (LinkedIn)",
+   "description": "Optimizar LinkedIn: foto profesional, titular Data Analyst | IA Aplicada, sección Acerca de con keywords y añadir proyectos.",
+   "xp": 140,
+   "category": "employability",
+   "time": 100,
+   "verification": "Perfil optimizado + 50 conexiones relevantes del sector"
+  },
+  {
+   "id": "37C",
+   "day": 37,
+   "week": 6,
+   "slot": "C",
+   "title": "🎯 Titulares A/B",
+   "description": "Escribir 3 versiones de titular de LinkedIn y elegir la mejor.",
+   "xp": 45,
+   "category": "employability",
+   "time": 30,
+   "verification": "Titular elegido"
+  },
+  {
+   "id": "38A",
+   "day": 38,
+   "week": 6,
+   "slot": "A",
+   "title": "📚 CV y ATS",
+   "description": "Estudiar cómo funcionan los parseadores ATS y qué formato respetan.",
+   "xp": 60,
+   "category": "employability",
+   "time": 45,
+   "verification": "Checklist ATS para tu CV"
+  },
+  {
+   "id": "38B",
+   "day": 38,
+   "week": 6,
+   "slot": "B",
+   "title": "🛠️ El Mensaje en la Botella (CV)",
+   "description": "Crear CV en formato ATS-friendly con métricas cuantificables. Escribir 3 modelos de carta de presentación.",
+   "xp": 140,
+   "category": "employability",
+   "time": 100,
+   "verification": "CV en PDF listo para enviar + 3 cartas modelo"
+  },
+  {
+   "id": "38C",
+   "day": 38,
+   "week": 6,
+   "slot": "C",
+   "title": "🎯 Métricas en tu CV",
+   "description": "Reescribir una experiencia laboral con 3 métricas cuantificables.",
+   "xp": 45,
+   "category": "employability",
+   "time": 30,
+   "verification": "Experiencia con métricas lista"
+  },
+  {
+   "id": "39A",
+   "day": 39,
+   "week": 6,
+   "slot": "A",
+   "title": "📚 Mercados Freelance",
+   "description": "Estudiar cómo funcionan Fiverr y Upwork: nichos, pricing y propuestas ganadoras.",
+   "xp": 60,
+   "category": "employability",
+   "time": 45,
+   "verification": "Notas de estrategia freelance"
+  },
+  {
+   "id": "39B",
+   "day": 39,
+   "week": 6,
+   "slot": "B",
+   "title": "🛠️ El Primer Contrato (Freelance)",
+   "description": "Crear perfiles en Fiverr y Upwork. Escribir 3 propuestas de servicio (limpieza de datos, dashboard Power BI, reporte automático con IA).",
+   "xp": 140,
+   "category": "employability",
+   "time": 100,
+   "verification": "Perfiles creados + 3 propuestas de servicio publicadas"
+  },
+  {
+   "id": "39C",
+   "day": 39,
+   "week": 6,
+   "slot": "C",
+   "title": "🎯 Análisis de Propuestas",
+   "description": "Analizar 5 propuestas freelance ganadoras y anotar su estructura.",
+   "xp": 45,
+   "category": "employability",
+   "time": 30,
+   "verification": "Estructura anotada"
+  },
+  {
+   "id": "40A",
+   "day": 40,
+   "week": 6,
+   "slot": "A",
+   "title": "📚 Mercado Laboral Data",
+   "description": "Investigar sueldos, skills más pedidas y empresas con cultura data en tu región.",
+   "xp": 60,
+   "category": "employability",
+   "time": 45,
+   "verification": "Informe de mercado en notas"
+  },
+  {
+   "id": "40B",
+   "day": 40,
+   "week": 6,
+   "slot": "B",
+   "title": "🛠️ El Mapa del Cazador",
+   "description": "Identificar 20 empresas objetivo y buscar ofertas de Data Analyst, Business Analyst o Junior Data Scientist. Crear hoja de seguimiento.",
+   "xp": 120,
+   "category": "employability",
+   "time": 90,
+   "verification": "Hoja de cálculo con 20 empresas y sus ofertas"
+  },
+  {
+   "id": "40C",
+   "day": 40,
+   "week": 6,
+   "slot": "C",
+   "title": "🎯 Top 10 Empresas",
+   "description": "Identificar 10 empresas con cultura data en tu región.",
+   "xp": 45,
+   "category": "employability",
+   "time": 30,
+   "verification": "Lista de 10 empresas investigadas"
+  },
+  {
+   "id": "41A",
+   "day": 41,
+   "week": 6,
+   "slot": "A",
+   "title": "📚 Entrevistas Técnicas",
+   "description": "Estudiar preguntas frecuentes de SQL, Python y estadística para analista.",
+   "xp": 60,
+   "category": "employability",
+   "time": 45,
+   "verification": "Lista de 25 preguntas frecuentes"
+  },
+  {
+   "id": "41B",
+   "day": 41,
+   "week": 6,
+   "slot": "B",
+   "title": "🛠️ Simulacro de Batalla (Entrevista)",
+   "description": "Practicar con 50 preguntas de entrevista técnica (SQL, Python, Estadística, Casos). Usar IA para simular 3 entrevistas completas.",
+   "xp": 160,
+   "category": "employability",
+   "time": 120,
+   "verification": "3 simulacros de entrevista completados con IA"
+  },
+  {
+   "id": "41C",
+   "day": 41,
+   "week": 6,
+   "slot": "C",
+   "title": "🎯 Simulacro con IA",
+   "description": "Hacer 1 entrevista técnica simulada con IA y anotar tus fallos.",
+   "xp": 45,
+   "category": "employability",
+   "time": 30,
+   "verification": "Simulacro + retroalimentación escrita"
+  },
+  {
+   "id": "42A",
+   "day": 42,
+   "week": 6,
+   "slot": "A",
+   "title": "📚 Aplicaciones Estratégicas",
+   "description": "Estudiar cómo personalizar cada aplicación: research de empresa y cover letters.",
+   "xp": 60,
+   "category": "employability",
+   "time": 45,
+   "verification": "Plantilla de research y cover letter lista"
+  },
+  {
+   "id": "42B",
+   "day": 42,
+   "week": 6,
+   "slot": "B",
+   "title": "🛠️ EL ASEDIO FINAL",
+   "description": "Enviar 10 aplicaciones de empleo personalizadas (CV + carta adaptada) y registrarlas en tu hoja de seguimiento.",
+   "xp": 220,
+   "category": "employability",
+   "time": 150,
+   "verification": "10 aplicaciones enviadas y registradas en tu hoja"
+  },
+  {
+   "id": "42C",
+   "day": 42,
+   "week": 6,
+   "slot": "C",
+   "title": "🎯 Kit de Aplicación",
+   "description": "Tener lista tu cover letter personalizable y el tracker de aplicaciones.",
+   "xp": 45,
+   "category": "employability",
+   "time": 30,
+   "verification": "Kit listo para el asedio final"
+  },
+  {
+   "id": "43A",
+   "day": 43,
+   "week": 7,
+   "slot": "A",
+   "title": "📚 Métricas de Marketing: El Lenguaje",
+   "description": "Dominar CAC, LTV, ROAS, CPA, conversión y retención. Qué mide cada una y cómo se calcula.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas con las 8 métricas clave y su fórmula"
+  },
+  {
+   "id": "43B",
+   "day": 43,
+   "week": 7,
+   "slot": "B",
+   "title": "🛠️ Calculadora de Métricas por Canal",
+   "description": "Con un dataset de campañas: calcular CAC, LTV, ROAS y conversión por canal. Identificar el canal más rentable.",
+   "xp": 160,
+   "category": "analyst",
+   "time": 110,
+   "verification": "Script con métricas por canal + 3 conclusiones"
+  },
+  {
+   "id": "43C",
+   "day": 43,
+   "week": 7,
+   "slot": "C",
+   "title": "🎯 Mini-quiz de Métricas",
+   "description": "Autoexamen de 10 preguntas sobre métricas de marketing sin apuntes.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Quiz resuelto y corregido"
+  },
+  {
+   "id": "44A",
+   "day": 44,
+   "week": 7,
+   "slot": "A",
+   "title": "📚 Cohortes: Retención en el Tiempo",
+   "description": "Estudiar análisis de cohortes: qué es, por qué importa y cómo leer una tabla de retención.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas con ejemplo de cohorte"
+  },
+  {
+   "id": "44B",
+   "day": 44,
+   "week": 7,
+   "slot": "B",
+   "title": "🛠️ Análisis de Cohortes Real",
+   "description": "Con datos de pedidos: crear cohortes por mes, calcular retención y graficar la tabla de cohortes.",
+   "xp": 180,
+   "category": "analyst",
+   "time": 120,
+   "verification": "Tabla de cohortes + heatmap guardado"
+  },
+  {
+   "id": "44C",
+   "day": 44,
+   "week": 7,
+   "slot": "C",
+   "title": "🎯 Explica tu Cohortes",
+   "description": "Escribir en 3 líneas qué cuenta la cohorte de tu análisis (insight accionable).",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Insight de cohorte escrito"
+  },
+  {
+   "id": "45A",
+   "day": 45,
+   "week": 7,
+   "slot": "A",
+   "title": "📚 A/B Testing: Diseño y Potencia",
+   "description": "Estudiar hipótesis, grupos control/test, tamaño de muestra y poder estadístico.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas de diseño A/B con ejemplo"
+  },
+  {
+   "id": "45B",
+   "day": 45,
+   "week": 7,
+   "slot": "B",
+   "title": "🛠️ Calcula tu Tamaño de Muestra",
+   "description": "Hacer power analysis con Python (statsmodels) para un caso real de conversión.",
+   "xp": 150,
+   "category": "analyst",
+   "time": 100,
+   "verification": "Tamaño de muestra calculado y justificado"
+  },
+  {
+   "id": "45C",
+   "day": 45,
+   "week": 7,
+   "slot": "C",
+   "title": "🎯 Hipótesis en Papel",
+   "description": "Escribir H0 y H1 para 3 casos de negocio de marketing.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "3 hipótesis bien formuladas"
+  },
+  {
+   "id": "46A",
+   "day": 46,
+   "week": 7,
+   "slot": "A",
+   "title": "📚 Pruebas Estadísticas: t-test y chi2",
+   "description": "Estudiar cuándo usar t-test, chi-cuadrado y cómo leer el p-valor sin trampas.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas de pruebas con ejemplos"
+  },
+  {
+   "id": "46B",
+   "day": 46,
+   "week": 7,
+   "slot": "B",
+   "title": "🛠️ Analiza un A/B Test en Python",
+   "description": "Con scipy: ejecutar t-test y chi2 sobre datos de conversión, interpretar resultados y escribir reporte ejecutivo.",
+   "xp": 190,
+   "category": "analyst",
+   "time": 120,
+   "verification": "Reporte A/B completo con recomendación"
+  },
+  {
+   "id": "46C",
+   "day": 46,
+   "week": 7,
+   "slot": "C",
+   "title": "🎯 Verifica Supuestos",
+   "description": "Comprobar normalidad/varianzas de tu A/B test y anotar limitaciones.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Supuestos validados y documentados"
+  },
+  {
+   "id": "47A",
+   "day": 47,
+   "week": 7,
+   "slot": "A",
+   "title": "📚 GA4 y Web Analytics",
+   "description": "Estudiar métricas web: sesiones, usuarios, conversión, embudo, adquisición (GA4).",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas de métricas web + glosario"
+  },
+  {
+   "id": "47B",
+   "day": 47,
+   "week": 7,
+   "slot": "B",
+   "title": "🛠️ Explora Datos de Google Analytics",
+   "description": "Descargar dataset público estilo GA (Google Merchandise) y analizar adquisición y comportamiento.",
+   "xp": 180,
+   "category": "analyst",
+   "time": 110,
+   "verification": "Análisis web con 5+ visualizaciones"
+  },
+  {
+   "id": "47C",
+   "day": 47,
+   "week": 7,
+   "slot": "C",
+   "title": "🎯 Insights de Adquisición",
+   "description": "Escribir 5 insights accionables sobre canales de adquisición de tu análisis.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "5 insights de tráfico documentados"
+  },
+  {
+   "id": "48A",
+   "day": 48,
+   "week": 7,
+   "slot": "A",
+   "title": "📚 SQL Avanzado para Marketing",
+   "description": "Estudiar window functions, CTEs y consultas de cohortes aplicadas a negocio.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Notas de SQL avanzado con ejemplos"
+  },
+  {
+   "id": "48B",
+   "day": 48,
+   "week": 7,
+   "slot": "B",
+   "title": "🛠️ Query de Cohortes en SQL",
+   "description": "Escribir consultas SQL con window functions para calcular cohortes y embudos.",
+   "xp": 170,
+   "category": "analyst",
+   "time": 110,
+   "verification": "Queries de cohorte funcionando (guardadas)"
+  },
+  {
+   "id": "48C",
+   "day": 48,
+   "week": 7,
+   "slot": "C",
+   "title": "🎯 Optimiza tus Queries",
+   "description": "Revisar 3 queries propias: explicar plan, simplificar y medir mejora.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "3 queries optimizadas con notas"
+  },
+  {
+   "id": "49A",
+   "day": 49,
+   "week": 7,
+   "slot": "A",
+   "title": "📚 Diseño del Proyecto Funnel",
+   "description": "Definir el alcance de tu proyecto P1: preguntas de negocio, métricas, datasets a usar y estructura del análisis.",
+   "xp": 60,
+   "category": "analyst",
+   "time": 45,
+   "verification": "Brief del proyecto P1 escrito"
+  },
+  {
+   "id": "49B",
+   "day": 49,
+   "week": 7,
+   "slot": "B",
+   "title": "🛠️ RETO SEMANA 7: Funnel a LTV",
+   "description": "Proyecto completo: análisis de funnel + cohortes + LTV por canal con visualizaciones y dashboard. Es tu proyecto P1.",
+   "xp": 280,
+   "category": "analyst",
+   "time": 200,
+   "verification": "P1 publicado: código + dashboard + README"
+  },
+  {
+   "id": "49C",
+   "day": 49,
+   "week": 7,
+   "slot": "C",
+   "title": "🎯 Autoevaluación P1",
+   "description": "Revisar tu proyecto P1 contra una checklist de calidad: datos, análisis, visualización, historia y documentación.",
+   "xp": 45,
+   "category": "analyst",
+   "time": 30,
+   "verification": "Checklist P1 completada"
+  },
+  {
+   "id": "50B",
+   "day": 50,
+   "week": 8,
+   "slot": "B",
+   "title": "🛠️ IA Aplicada al Análisis",
+   "description": "Estudiar APIs de LLMs, sus límites y buenas prácticas para análisis de datos.",
+   "xp": 60,
+   "category": "ai",
+   "time": 45,
+   "verification": "Notas de IA aplicada + límites"
+  },
+  {
+   "id": "50C",
+   "day": 50,
+   "week": 8,
+   "slot": "C",
+   "title": "🎯 Flujo Datos + LLM",
+   "description": "Construir un flujo: dataset → pregunta de negocio → respuesta del LLM → verificación contra datos.",
+   "xp": 170,
+   "category": "ai",
+   "time": 110,
+   "verification": "Flujo funcionando en script"
+  },
+  {
+   "id": "50A",
+   "day": 50,
+   "week": 8,
+   "slot": "A",
+   "title": "📚 10 Prompts de Análisis",
+   "description": "Escribir una biblioteca de 10 prompts de análisis de marketing con IA.",
+   "xp": 45,
+   "category": "ai",
+   "time": 30,
+   "verification": "Biblioteca de prompts en Markdown"
+  },
+  {
+   "id": "51B",
+   "day": 51,
+   "week": 8,
+   "slot": "B",
+   "title": "🛠️ Streamlit: Apps de Datos",
+   "description": "Estudiar Streamlit: widgets, gráficos y layouts para apps de análisis.",
+   "xp": 60,
+   "category": "ai",
+   "time": 45,
+   "verification": "App mínima funcionando en local"
+  },
+  {
+   "id": "51C",
+   "day": 51,
+   "week": 8,
+   "slot": "C",
+   "title": "🎯 Tu Primera App Analítica",
+   "description": "Crear una app Streamlit con tu dataset: filtros, KPIs y 2 gráficos interactivos.",
+   "xp": 180,
+   "category": "ai",
+   "time": 120,
+   "verification": "App funcionando con datos reales"
+  },
+  {
+   "id": "51A",
+   "day": 51,
+   "week": 8,
+   "slot": "A",
+   "title": "📚 Publica tu App",
+   "description": "Desplegar la app en Streamlit Community Cloud y verificar el link.",
+   "xp": 50,
+   "category": "ai",
+   "time": 40,
+   "verification": "App publicada con URL en vivo"
+  },
+  {
+   "id": "52B",
+   "day": 52,
+   "week": 8,
+   "slot": "B",
+   "title": "🛠️ LLM dentro de tu App",
+   "description": "Estudiar cómo integrar un LLM (API) a Streamlit para responder preguntas de negocio.",
+   "xp": 60,
+   "category": "ai",
+   "time": 45,
+   "verification": "Notas de integración LLM+app"
+  },
+  {
+   "id": "52C",
+   "day": 52,
+   "week": 8,
+   "slot": "C",
+   "title": "🎯 Analista Virtual v1",
+   "description": "Construir tu proyecto P3: chat sobre tu dataset que responde con verificación (cifras reales).",
+   "xp": 200,
+   "category": "ai",
+   "time": 130,
+   "verification": "Analista virtual v1 funcionando"
+  },
+  {
+   "id": "52A",
+   "day": 52,
+   "week": 8,
+   "slot": "A",
+   "title": "📚 Ponlo a Prueba",
+   "description": "Hacer 5 preguntas reales, verificar cada respuesta contra los datos y anotar fallos.",
+   "xp": 45,
+   "category": "ai",
+   "time": 30,
+   "verification": "5 preguntas verificadas + mejoras"
+  },
+  {
+   "id": "53B",
+   "day": 53,
+   "week": 8,
+   "slot": "B",
+   "title": "🛠️ Reportes Automáticos con IA",
+   "description": "Estudiar automatización: scripts + n8n + LLM para reportes programados.",
+   "xp": 60,
+   "category": "ai",
+   "time": 45,
+   "verification": "Notas de arquitectura de reportes"
+  },
+  {
+   "id": "53C",
+   "day": 53,
+   "week": 8,
+   "slot": "C",
+   "title": "🎯 Reporte Semanal Automático",
+   "description": "Crear tu proyecto P6: reporte semanal automático (datos → resumen IA → mensaje/PDF).",
+   "xp": 180,
+   "category": "ai",
+   "time": 120,
+   "verification": "Reporte automático entregado a tiempo"
+  },
+  {
+   "id": "53A",
+   "day": 53,
+   "week": 8,
+   "slot": "A",
+   "title": "📚 Programa y Verifica",
+   "description": "Programar tu reporte (cron/n8n) y validar 2 entregas automáticas.",
+   "xp": 45,
+   "category": "ai",
+   "time": 30,
+   "verification": "2 entregas automáticas verificadas"
+  },
+  {
+   "id": "54B",
+   "day": 54,
+   "week": 8,
+   "slot": "B",
+   "title": "🛠️ Portafolio Marketing Analytics",
+   "description": "Estudiar portafolios de marketing analytics que consiguen entrevistas.",
+   "xp": 60,
+   "category": "employability",
+   "time": 45,
+   "verification": "Análisis de 3 referencias"
+  },
+  {
+   "id": "54C",
+   "day": 54,
+   "week": 8,
+   "slot": "C",
+   "title": "🎯 Publica tus Proyectos P1-P5",
+   "description": "Subir a GitHub y a tu web: P1 funnel, P2 A/B, P3 analista IA, P4 web analytics, P5 pipeline pulido. Cada uno con README y métricas.",
+   "xp": 170,
+   "category": "employability",
+   "time": 120,
+   "verification": "5 proyectos publicados con casos de estudio"
+  },
+  {
+   "id": "54A",
+   "day": 54,
+   "week": 8,
+   "slot": "A",
+   "title": "📚 Página de Proyecto Perfecta",
+   "description": "Escribir la página STAR de tu proyecto insignia (problema, métricas, impacto).",
+   "xp": 45,
+   "category": "employability",
+   "time": 30,
+   "verification": "Página de proyecto lista"
+  },
+  {
+   "id": "55B",
+   "day": 55,
+   "week": 8,
+   "slot": "B",
+   "title": "🛠️ Entrevista Marketing Analytics",
+   "description": "Estudiar preguntas típicas de marketing analytics: métricas, casos, SQL y estadística.",
+   "xp": 60,
+   "category": "employability",
+   "time": 45,
+   "verification": "Lista de 25 preguntas con respuestas clave"
+  },
+  {
+   "id": "55C",
+   "day": 55,
+   "week": 8,
+   "slot": "C",
+   "title": "🎯 Simulacro Completo con IA",
+   "description": "Hacer una entrevista simulada de Marketing Analytics con IA (SQL + métricas + caso + STAR).",
+   "xp": 180,
+   "category": "employability",
+   "time": 120,
+   "verification": "Simulacro completado con notas de mejora"
+  },
+  {
+   "id": "55A",
+   "day": 55,
+   "week": 8,
+   "slot": "A",
+   "title": "📚 Mejora tus Respuestas",
+   "description": "Reescribir 3 respuestas STAR con métricas y estructura clara.",
+   "xp": 45,
+   "category": "employability",
+   "time": 30,
+   "verification": "3 respuestas STAR pulidas"
+  },
+  {
+   "id": "56B",
+   "day": 56,
+   "week": 8,
+   "slot": "B",
+   "title": "🛠️ Estrategia: Empresas Objetivo",
+   "description": "Investigar 15 empresas que contratan marketing analytics/data en CR y remoto.",
+   "xp": 60,
+   "category": "employability",
+   "time": 45,
+   "verification": "Lista de 15 empresas con porqué"
+  },
+  {
+   "id": "56C",
+   "day": 56,
+   "week": 8,
+   "slot": "C",
+   "title": "🎯 EL ASEDIO 2.0: 20 Aplicaciones",
+   "description": "Enviar 20 aplicaciones personalizadas (CV marketing analytics + cover adaptada) y registrarlas en tu tracker.",
+   "xp": 230,
+   "category": "employability",
+   "time": 160,
+   "verification": "20 aplicaciones enviadas y registradas"
+  },
+  {
+   "id": "56A",
+   "day": 56,
+   "week": 8,
+   "slot": "A",
+   "title": "📚 Tracker Final Completo",
+   "description": "Actualizar tu hoja de seguimiento: estado de cada aplicación, contactos y próximos pasos.",
+   "xp": 45,
+   "category": "employability",
+   "time": 30,
+   "verification": "Tracker completo al día"
+  }
+ ],
+ "weeklyMissions": [
+  {
+   "week": 1,
+   "title": "Cimientos del Guerrero",
+   "description": "Completar al menos 6 de las 7 misiones diarias de la semana y tener tu entorno listo: VS Code + Python + Git + repo público en GitHub.",
+   "xp": 350,
+   "category": "analyst",
+   "time": 300,
+   "verification": "6+ misiones diarias completadas + entorno verificado"
+  },
+  {
+   "week": 2,
+   "title": "Señor de la Visualización",
+   "description": "Completar al menos 6 misiones diarias de la semana y publicar un EDA completo (limpieza + 6+ gráficos + insights) de un dataset real.",
+   "xp": 400,
+   "category": "analyst",
+   "time": 360,
+   "verification": "EDA completo publicado (reto del día 14 incluido)"
+  },
+  {
+   "week": 3,
+   "title": "Oráculo SQL",
+   "description": "Completar al menos 6 misiones diarias de la semana y tener 50+ ejercicios SQL resueltos acumulados + proyecto SQL público.",
+   "xp": 400,
+   "category": "analyst",
+   "time": 360,
+   "verification": "50+ ejercicios SQL + proyecto SQL en GitHub"
+  },
+  {
+   "week": 4,
+   "title": "Arquitecto ETL",
+   "description": "Completar al menos 6 misiones diarias de la semana y publicar un pipeline ETL completo (2 fuentes → dataset limpio) con README de caso de estudio.",
+   "xp": 450,
+   "category": "analyst",
+   "time": 360,
+   "verification": "Pipeline ETL público con README completo"
+  },
+  {
+   "week": 5,
+   "title": "Brujo de la IA",
+   "description": "Completar al menos 6 misiones diarias de la semana y tener un dashboard interactivo publicado + video de 2 minutos contando tu historia con datos.",
+   "xp": 450,
+   "category": "ai",
+   "time": 360,
+   "verification": "Dashboard publicado + video STAR grabado"
+  },
+  {
+   "week": 6,
+   "title": "Conquistador del Empleo",
+   "description": "Completar al menos 6 misiones diarias de la semana y lanzar tu ataque final: portafolio en vivo, LinkedIn optimizado, CV ATS y 10 aplicaciones enviadas.",
+   "xp": 600,
+   "category": "employability",
+   "time": 420,
+   "verification": "Portafolio + LinkedIn + CV + 10 aplicaciones enviadas"
+  },
+  {
+   "week": 7,
+   "title": "Operación Marketing Analytics",
+   "description": "Completar al menos 6 misiones diarias de la semana y entregar el proyecto P1: funnel + cohortes + LTV por canal, publicado con código, dashboard y README.",
+   "xp": 500,
+   "category": "analyst",
+   "time": 480,
+   "verification": "Proyecto P1 de Marketing Analytics publicado"
+  },
+  {
+   "week": 8,
+   "title": "Lanzamiento del Experto",
+   "description": "Completar al menos 6 misiones diarias de la semana y lanzar tu arsenal: proyectos P1-P5 publicados, analista virtual IA en vivo y 20 aplicaciones enviadas.",
+   "xp": 650,
+   "category": "employability",
+   "time": 540,
+   "verification": "P1-P5 publicados + app IA en vivo + 20 aplicaciones"
+  }
+ ],
+ "achievements": [
+  {
+   "id": "ach_first",
+   "ico": "🩸",
+   "name": "Primera Sangre",
+   "desc": "Completar tu primera misión (campaña o diaria)",
+   "xp": 50
+  },
+  {
+   "id": "ach_ten",
+   "ico": "🗡️",
+   "name": "Cazador de Datos",
+   "desc": "Completar 10 días completos (30 misiones)",
+   "xp": 100
+  },
+  {
+   "id": "ach_d21",
+   "ico": "⛰️",
+   "name": "Mitad del Camino",
+   "desc": "Completar 21 días completos",
+   "xp": 200
+  },
+  {
+   "id": "ach_d42",
+   "ico": "🏁",
+   "name": "Plan Maestro Completado",
+   "desc": "Completar los 42 días del plan maestro",
+   "xp": 300
+  },
+  {
+   "id": "ach_d56",
+   "ico": "💠",
+   "name": "Experto Marketing Analytics",
+   "desc": "Completar los 56 días (168 misiones)",
+   "xp": 500
+  },
+  {
+   "id": "ach_st7",
+   "ico": "🔥",
+   "name": "Semana Imparable",
+   "desc": "Mantener racha de 7 días seguidos",
+   "xp": 100
+  },
+  {
+   "id": "ach_st14",
+   "ico": "🌋",
+   "name": "Quince Días de Fuego",
+   "desc": "Mantener racha de 14 días seguidos",
+   "xp": 150
+  },
+  {
+   "id": "ach_st21",
+   "ico": "⚡",
+   "name": "Imparable",
+   "desc": "Mantener racha de 21 días seguidos",
+   "xp": 150
+  },
+  {
+   "id": "ach_st30",
+   "ico": "☄️",
+   "name": "Mes de Datos",
+   "desc": "Mantener racha de 30 días seguidos",
+   "xp": 200
+  },
+  {
+   "id": "ach_w3",
+   "ico": "🎯",
+   "name": "Cazador Semanal",
+   "desc": "Completar 3 misiones semanales",
+   "xp": 200
+  },
+  {
+   "id": "ach_w6",
+   "ico": "👑",
+   "name": "Dominio Semanal Total",
+   "desc": "Completar las 8 misiones semanales",
+   "xp": 300
+  },
+  {
+   "id": "ach_j5",
+   "ico": "📮",
+   "name": "Primer Envío",
+   "desc": "Completar la primera ronda de 5 aplicaciones",
+   "xp": 80
+  },
+  {
+   "id": "ach_j25",
+   "ico": "🚀",
+   "name": "Cazador de Empleo",
+   "desc": "Completar 25 aplicaciones (5 rondas)",
+   "xp": 150
+  },
+  {
+   "id": "ach_j50",
+   "ico": "🏆",
+   "name": "Máquina de Aplicaciones",
+   "desc": "Completar las 50 aplicaciones (10 rondas)",
+   "xp": 250
+  },
+  {
+   "id": "ach_ch0",
+   "ico": "🛡️",
+   "name": "Cimientos Sólidos",
+   "desc": "Completar el Capítulo 0: Cimientos",
+   "xp": 150
+  },
+  {
+   "id": "ach_ch1",
+   "ico": "⚔️",
+   "name": "Oráculo SQL",
+   "desc": "Completar el Capítulo 1: SQL y Negocio",
+   "xp": 150
+  },
+  {
+   "id": "ach_ch2",
+   "ico": "🧬",
+   "name": "Automatizador",
+   "desc": "Completar el Capítulo 2: ETL y Automatización",
+   "xp": 150
+  },
+  {
+   "id": "ach_ch3",
+   "ico": "🤖",
+   "name": "Domador de Máquinas",
+   "desc": "Completar el Capítulo 3: IA Aplicada",
+   "xp": 150
+  },
+  {
+   "id": "ach_ch4",
+   "ico": "📊",
+   "name": "Narrador Visual",
+   "desc": "Completar el Capítulo 4: Dashboards y Storytelling",
+   "xp": 150
+  },
+  {
+   "id": "ach_ch5",
+   "ico": "🎯",
+   "name": "Estratega de Marketing",
+   "desc": "Completar el Capítulo 5: Marketing Analytics",
+   "xp": 150
+  },
+  {
+   "id": "ach_ch6",
+   "ico": "👾",
+   "name": "Constructor de IA",
+   "desc": "Completar el Capítulo 6: IA Productiva",
+   "xp": 150
+  },
+  {
+   "id": "ach_ch7",
+   "ico": "🏆",
+   "name": "Conquistador del Empleo",
+   "desc": "Completar el Capítulo 7: Empleo",
+   "xp": 150
+  },
+  {
+   "id": "ach_ai",
+   "ico": "🧠",
+   "name": "Genio de la IA",
+   "desc": "Completar todas las misiones de categoría IA",
+   "xp": 150
+  },
+  {
+   "id": "ach_legend",
+   "ico": "💎",
+   "name": "Leyenda de ODEA",
+   "desc": "Completar campaña, los 56 días, las 8 semanas y las 40 misiones de empleo",
+   "xp": 700
+  }
+ ],
+ "CHEERS": [
+  "¡La legión de datos te observa con orgullo!",
+  "Un paso más cerca del trono del analista.",
+  "Los dragones de SQL tiemblan ante ti.",
+  "Tu racha enciende el reino digital.",
+  "¡Sigue así, leyenda en construcción!",
+  "Cada misión cumplida afila más tu espada.",
+  "El dashboard del destino brilla para ti.",
+  "Ni la IA más potente supera tu constancia.",
+  "Las máquinas reconocen a su futuro maestro.",
+  "¡Excelente movimiento, estratega de datos!"
+ ],
+ "employmentMissions": [
+  {
+   "id": "j1",
+   "blk": 1,
+   "tag": "cv",
+   "title": "CV Maestro 2.0",
+   "description": "Revisar tu CV con lupa de reclutador: métricas en cada logro, ATS-friendly, una página si es posible, versión ES y EN.",
+   "xp": 200,
+   "verification": "2 versiones de CV (ES/EN) finales y pulidas"
+  },
+  {
+   "id": "j2",
+   "blk": 1,
+   "tag": "cv",
+   "title": "Kit de Cover Letters",
+   "description": "Escribir 3 plantillas de carta de presentación: data analyst, marketing analytics y soporte/BI. Cada una con huecos para personalizar.",
+   "xp": 150,
+   "verification": "3 plantillas de cover letter listas"
+  },
+  {
+   "id": "j3",
+   "blk": 1,
+   "tag": "cv",
+   "title": "Tracker Maestro",
+   "description": "Crear tu hoja de seguimiento: empresa, puesto, fecha, estado, salario, contacto, link, notas. Con filtros y métricas.",
+   "xp": 120,
+   "verification": "Tracker con 50 filas listo para usar"
+  },
+  {
+   "id": "j4",
+   "blk": 1,
+   "tag": "round",
+   "title": "Ronda 1: Envía 5 CVs",
+   "description": "Enviar 5 aplicaciones personalizadas (CV adaptado + cover letter) a ofertas reales de tu lista. Registrar cada una.",
+   "xp": 90,
+   "verification": "5 aplicaciones enviadas y registradas"
+  },
+  {
+   "id": "j5",
+   "blk": 1,
+   "tag": "round",
+   "title": "Ronda 2: +5 Aplicaciones",
+   "description": "Otras 5 aplicaciones personalizadas. Mejora algo del proceso en cada una (mensaje, portafolio, ajuste de CV).",
+   "xp": 100,
+   "verification": "10 aplicaciones acumuladas"
+  },
+  {
+   "id": "j6",
+   "blk": 1,
+   "tag": "round",
+   "title": "Ronda 3: +5 Aplicaciones",
+   "description": "5 aplicaciones más con foco en empresas donde ya hiciste networking.",
+   "xp": 110,
+   "verification": "15 aplicaciones acumuladas"
+  },
+  {
+   "id": "j7",
+   "blk": 1,
+   "tag": "round",
+   "title": "Ronda 4: +5 Aplicaciones",
+   "description": "5 aplicaciones más. Prueba 2 formatos distintos de cover letter y anota cuál responde mejor.",
+   "xp": 120,
+   "verification": "20 aplicaciones acumuladas"
+  },
+  {
+   "id": "j8",
+   "blk": 1,
+   "tag": "round",
+   "title": "Ronda 5: +5 Aplicaciones",
+   "description": "5 aplicaciones más incluyendo 2 puestos de marketing analytics (tu diferenciación).",
+   "xp": 130,
+   "verification": "25 aplicaciones acumuladas"
+  },
+  {
+   "id": "j9",
+   "blk": 1,
+   "tag": "round",
+   "title": "Ronda 6: +5 Aplicaciones",
+   "description": "5 aplicaciones más. Actualiza tu portafolio con los proyectos que mencionas en cada CV.",
+   "xp": 140,
+   "verification": "30 aplicaciones acumuladas"
+  },
+  {
+   "id": "j10",
+   "blk": 1,
+   "tag": "round",
+   "title": "Ronda 7: +5 Aplicaciones",
+   "description": "5 aplicaciones más. Agenda seguimiento de las primeras 10 enviadas (mensaje a reclutador).",
+   "xp": 150,
+   "verification": "35 aplicaciones acumuladas"
+  },
+  {
+   "id": "j11",
+   "blk": 1,
+   "tag": "round",
+   "title": "Ronda 8: +5 Aplicaciones",
+   "description": "5 aplicaciones más. Analiza tu tracker: qué canales responden mejor y ajusta tu estrategia.",
+   "xp": 160,
+   "verification": "40 aplicaciones acumuladas"
+  },
+  {
+   "id": "j12",
+   "blk": 1,
+   "tag": "round",
+   "title": "Ronda 9: +5 Aplicaciones",
+   "description": "5 aplicaciones más a empresas de tu lista de 30 con mensajes personalizados por research.",
+   "xp": 170,
+   "verification": "45 aplicaciones acumuladas"
+  },
+  {
+   "id": "j13",
+   "blk": 1,
+   "tag": "round",
+   "title": "Ronda 10: Asedio Final 50",
+   "description": "Últimas 5 aplicaciones para completar 50. Registra métricas finales: aplicaciones, respuestas, entrevistas por canal.",
+   "xp": 220,
+   "verification": "50 aplicaciones totales registradas"
+  },
+  {
+   "id": "j14",
+   "blk": 2,
+   "tag": "str",
+   "title": "Lista de 30 Empresas Objetivo",
+   "description": "Construir tu lista de 30 empresas (CR + remoto) con fit real: sector, stack, cultura, por qué te interesa.",
+   "xp": 140,
+   "verification": "30 empresas documentadas en tu tracker"
+  },
+  {
+   "id": "j15",
+   "blk": 2,
+   "tag": "str",
+   "title": "Research Profundo x10",
+   "description": "Investigar a fondo 10 empresas de la lista: misión, productos, vacantes actuales, empleados en data, tecnología.",
+   "xp": 140,
+   "verification": "10 fichas de research completas"
+  },
+  {
+   "id": "j16",
+   "blk": 2,
+   "tag": "str",
+   "title": "Radar de Empleos Automático",
+   "description": "Configurar tus alertas diarias (jobbot LinkedIn + n8n APIs) y revisar ofertas nuevas cada mañana 15 minutos.",
+   "xp": 100,
+   "verification": "Alertas activas y rutina diaria de revisión"
+  },
+  {
+   "id": "j17",
+   "blk": 2,
+   "tag": "str",
+   "title": "CV por Sector",
+   "description": "Tener 3 versiones de CV adaptadas: data analyst, marketing analytics y soporte/BI, con keywords distintas.",
+   "xp": 150,
+   "verification": "3 CVs sectoriales listos"
+  },
+  {
+   "id": "j18",
+   "blk": 2,
+   "tag": "str",
+   "title": "Banco de Métricas Personales",
+   "description": "Listar 15 logros medibles tuyos (ANC, Dokka, proyectos) escritos en formato STAR listos para CV y entrevistas.",
+   "xp": 120,
+   "verification": "15 métricas STAR documentadas"
+  },
+  {
+   "id": "j19",
+   "blk": 3,
+   "tag": "net",
+   "title": "+30 Conexiones Relevantes",
+   "description": "Conectar con 30 profesionales: reclutadores tech, analistas y managers de datos en CR y LATAM.",
+   "xp": 120,
+   "verification": "30 conexiones nuevas relevantes"
+  },
+  {
+   "id": "j20",
+   "blk": 3,
+   "tag": "net",
+   "title": "10 Mensajes Personalizados",
+   "description": "Escribir y enviar 10 mensajes de contacto personalizados (no plantilla) a personas de tus empresas objetivo.",
+   "xp": 130,
+   "verification": "10 conversaciones iniciadas"
+  },
+  {
+   "id": "j21",
+   "blk": 3,
+   "tag": "net",
+   "title": "Evento de Datos",
+   "description": "Asistir a un meetup, webinar o conferencia de datos (virtual o presencial) y participar activamente.",
+   "xp": 120,
+   "verification": "Evento asistido con 3+ contactos nuevos"
+  },
+  {
+   "id": "j22",
+   "blk": 3,
+   "tag": "net",
+   "title": "Entrevista Informativa #1",
+   "description": "Conversar 15 minutos con un analista o manager de datos sobre su rol, equipo y cómo entró.",
+   "xp": 140,
+   "verification": "Entrevista informativa realizada"
+  },
+  {
+   "id": "j23",
+   "blk": 3,
+   "tag": "net",
+   "title": "Entrevista Informativa #2",
+   "description": "Segunda entrevista informativa, esta vez en una empresa de tu lista top 10.",
+   "xp": 140,
+   "verification": "2ª entrevista informativa realizada"
+  },
+  {
+   "id": "j24",
+   "blk": 3,
+   "tag": "net",
+   "title": "3 Referidos",
+   "description": "Pedir referidos o recomendaciones a 3 contactos (excompañeros, reclutadores, conocidos en empresas objetivo).",
+   "xp": 130,
+   "verification": "3 referidos solicitados"
+  },
+  {
+   "id": "j25",
+   "blk": 4,
+   "tag": "li",
+   "title": "Perfil 10/10",
+   "description": "Optimizar LinkedIn: headline con keywords, banner, about con historia y métricas, featured con tus proyectos, skills.",
+   "xp": 130,
+   "verification": "Perfil revisado con checklist completa"
+  },
+  {
+   "id": "j26",
+   "blk": 4,
+   "tag": "li",
+   "title": "Contenido Semana A",
+   "description": "Publicar 2 posts esta semana contando un aprendizaje o resultado de tus proyectos (datos + historia).",
+   "xp": 120,
+   "verification": "2 posts publicados (semana A)"
+  },
+  {
+   "id": "j27",
+   "blk": 4,
+   "tag": "li",
+   "title": "Contenido Semana B",
+   "description": "Publicar 2 posts más: un mini caso práctico (SQL, Power BI, A/B test) y algo de tu proceso de aprendizaje.",
+   "xp": 120,
+   "verification": "2 posts publicados (semana B)"
+  },
+  {
+   "id": "j28",
+   "blk": 4,
+   "tag": "li",
+   "title": "Contenido Semana C",
+   "description": "Publicar 2 posts más: muestra un dashboard o insight real tuyo. Incluye visual.",
+   "xp": 120,
+   "verification": "2 posts publicados (semana C)"
+  },
+  {
+   "id": "j29",
+   "blk": 4,
+   "tag": "li",
+   "title": "Contenido Semana D",
+   "description": "Publicar 2 posts más: tu opinión del mercado data en CR o lección de tu búsqueda. Total 8+ posts.",
+   "xp": 120,
+   "verification": "2 posts publicados (semana D)"
+  },
+  {
+   "id": "j30",
+   "blk": 4,
+   "tag": "li",
+   "title": "Video Caso de Éxito",
+   "description": "Publicar un video corto explicando tu proyecto insignia y el impacto que tuvo. Etiqueta a personas de tu red.",
+   "xp": 150,
+   "verification": "Video publicado en LinkedIn"
+  },
+  {
+   "id": "j31",
+   "blk": 5,
+   "tag": "int",
+   "title": "Banco de 50 Preguntas",
+   "description": "Repasar y responder 50 preguntas técnicas (SQL, Python, estadística, casos) y conductuales con tus métricas.",
+   "xp": 150,
+   "verification": "50 respuestas preparadas por escrito"
+  },
+  {
+   "id": "j32",
+   "blk": 5,
+   "tag": "int",
+   "title": "Simulacro IA #1",
+   "description": "Entrevista técnica simulada con IA (SQL + Python + estadística). Graba o anota errores y corrige.",
+   "xp": 140,
+   "verification": "Simulacro 1 completado con notas de mejora"
+  },
+  {
+   "id": "j33",
+   "blk": 5,
+   "tag": "int",
+   "title": "Simulacro IA #2",
+   "description": "Simulacro de caso de negocio/marketing analytics: métricas, A/B testing, interpretación de resultados.",
+   "xp": 140,
+   "verification": "Simulacro 2 completado"
+  },
+  {
+   "id": "j34",
+   "blk": 5,
+   "tag": "int",
+   "title": "Simulacro IA #3",
+   "description": "Simulacro conductual/HR en inglés: STAR, motivación, salario. Practica tu inglés C1.",
+   "xp": 140,
+   "verification": "Simulacro 3 completado en inglés"
+  },
+  {
+   "id": "j35",
+   "blk": 5,
+   "tag": "int",
+   "title": "15 Preguntas para Reclutador",
+   "description": "Preparar 15 preguntas inteligentes para hacer al reclutador o hiring manager (equipo, datos, expectativas).",
+   "xp": 100,
+   "verification": "Lista de 15 preguntas lista"
+  },
+  {
+   "id": "j36",
+   "blk": 5,
+   "tag": "int",
+   "title": "Sistema Post-Entrevista",
+   "description": "Crear tu rutina: agradecimiento 24h, seguimiento a los 7 días, registro de feedback. Aplicarla a 2 entrevistas.",
+   "xp": 100,
+   "verification": "2 agradecimientos enviados y seguimiento registrado"
+  },
+  {
+   "id": "j37",
+   "blk": 6,
+   "tag": "free",
+   "title": "Perfiles Freelance Pulidos",
+   "description": "Completar perfiles en Fiverr y Upwork: portafolio, servicios claros, keywords y video de presentación si aplica.",
+   "xp": 130,
+   "verification": "2 perfiles freelance completos"
+  },
+  {
+   "id": "j38",
+   "blk": 6,
+   "tag": "free",
+   "title": "5 Propuestas Personalizadas",
+   "description": "Enviar 5 propuestas freelance bien escritas (nunca genéricas) a proyectos reales de limpieza/dashboards/reportes.",
+   "xp": 140,
+   "verification": "5 propuestas enviadas"
+  },
+  {
+   "id": "j39",
+   "blk": 6,
+   "tag": "free",
+   "title": "Vitrina Pública de Empleo",
+   "description": "Actualizar tu portafolio web con sección de proyectos destacados, CV descargable y GitHub README de perfil impecable.",
+   "xp": 130,
+   "verification": "Portafolio + GitHub listos para reclutadores"
+  },
+  {
+   "id": "j40",
+   "blk": 6,
+   "tag": "free",
+   "title": "Pitch de 60 Segundos",
+   "description": "Grabar tu elevator pitch (quién eres, qué haces, impacto) y una presentación de 1 página sobre ti.",
+   "xp": 120,
+   "verification": "Pitch grabado y presentación lista"
+  },
+  {
+   "id": "j41",
+   "blk": 7,
+   "tag": "final",
+   "title": "⚡ Día 1 — Primer Impacto",
+   "description": "5 mensajes directos a reclutadores o analistas de datos que ya trabajan en tus empresas objetivo. Revisa que tu LinkedIn diga exactamente lo mismo que tu CV maestro.",
+   "xp": 110,
+   "verification": "5 contactos directos enviados hoy + LinkedIn alineado con el CV"
+  },
+  {
+   "id": "j42",
+   "blk": 7,
+   "tag": "final",
+   "title": "⚡ Día 2 — Ola de Contacto",
+   "description": "5 mensajes directos más. Además, corre 1 simulacro de entrevista técnica (SQL o Power BI) y anota qué te falló.",
+   "xp": 120,
+   "verification": "5 contactos nuevos + 1 simulacro técnico con notas"
+  },
+  {
+   "id": "j43",
+   "blk": 7,
+   "tag": "final",
+   "title": "⚡ Día 3 — Seguimiento Táctico",
+   "description": "5 mensajes directos más. Da seguimiento a TODAS las aplicaciones enviadas que no han tenido respuesta (mensaje corto, directo, sin sonar desesperado).",
+   "xp": 130,
+   "verification": "5 contactos nuevos + seguimiento enviado a aplicaciones pendientes"
+  },
+  {
+   "id": "j44",
+   "blk": 7,
+   "tag": "final",
+   "title": "⚡ Día 4 — Preparación de Combate",
+   "description": "5 mensajes directos más. Repasa tus 3 respuestas STAR con métricas reales de ANC en voz alta, cronometradas a menos de 90 segundos cada una.",
+   "xp": 140,
+   "verification": "5 contactos nuevos + 3 respuestas STAR practicadas en voz alta"
+  },
+  {
+   "id": "j45",
+   "blk": 7,
+   "tag": "final",
+   "title": "⚡ Día 5 — Última Ofensiva",
+   "description": "5 mensajes directos más (o los que falten para llegar a 25+ en la semana). Simulacro final completo: técnico + conductual, sin pausas, como si fuera real.",
+   "xp": 150,
+   "verification": "Contactos de la semana cerrados + simulacro final completado"
+  },
+  {
+   "id": "j46",
+   "blk": 7,
+   "tag": "final",
+   "title": "👑 Jefe Final — Cierre de Operación Relámpago",
+   "description": "Cierra el sprint: cuenta cuántos contactos directos hiciste en la semana, cuántas respuestas obtuviste y cuántas entrevistas quedaron agendadas o en proceso. Documenta el resultado en tu tracker, sin importar el número — el dato es la victoria.",
+   "xp": 300,
+   "verification": "Métricas finales de la Operación Relámpago registradas en el tracker"
+  }
+ ],
+ "JOBS_BLOCKS": {
+  "1": "📨 Aplicaciones y CV",
+  "2": "🎯 Estrategia y Mercado",
+  "3": "🤝 Networking",
+  "4": "📣 LinkedIn y Marca",
+  "5": "🎤 Entrevistas",
+  "6": "🆓 Freelance y Extra",
+  "7": "⚡ Operación Relámpago"
+ },
+ "JOBS_TAGS": {
+  "cv": "CV",
+  "round": "Aplicaciones",
+  "str": "Estrategia",
+  "net": "Networking",
+  "li": "LinkedIn",
+  "int": "Entrevistas",
+  "free": "Freelance",
+  "final": "Semana Final"
+ },
+ "RETOS": [
+  {
+   "id": "reto1",
+   "t": "📖 Lee 20 minutos de tu libro actual",
+   "xp": 45
+  },
+  {
+   "id": "reto2",
+   "t": "🏃 Camina 30 minutos sin celular",
+   "xp": 45
+  },
+  {
+   "id": "reto3",
+   "t": "🧘 Medita o respira consciente 10 minutos",
+   "xp": 40
+  },
+  {
+   "id": "reto4",
+   "t": "💧 Toma 2 litros de agua hoy",
+   "xp": 35
+  },
+  {
+   "id": "reto5",
+   "t": "✍️ Escribe 3 cosas por las que estás agradecido",
+   "xp": 35
+  },
+  {
+   "id": "reto6",
+   "t": "🧾 Registra y revisa todos tus gastos del día",
+   "xp": 45
+  },
+  {
+   "id": "reto7",
+   "t": "🚫 Cero compras impulsivas hoy",
+   "xp": 40
+  },
+  {
+   "id": "reto8",
+   "t": "📞 Llama a alguien que quieres y dile algo bonito",
+   "xp": 40
+  },
+  {
+   "id": "reto9",
+   "t": "😴 Acuéstate 30 minutos antes de lo normal",
+   "xp": 40
+  },
+  {
+   "id": "reto10",
+   "t": "🎨 15 minutos de algo creativo (dibujo, música, LEGO)",
+   "xp": 40
+  },
+  {
+   "id": "reto11",
+   "t": "🧹 Ordena tu espacio 15 minutos (mesa, cuarto, escritorio)",
+   "xp": 35
+  },
+  {
+   "id": "reto12",
+   "t": "🤝 Haz un favor sin que te lo pidan",
+   "xp": 45
+  },
+  {
+   "id": "reto13",
+   "t": "☀️ Toma 10 minutos de sol (temprano o tarde)",
+   "xp": 35
+  },
+  {
+   "id": "reto14",
+   "t": "🎧 Escucha 20 min de podcast o audio educativo",
+   "xp": 40
+  },
+  {
+   "id": "reto15",
+   "t": "🧠 Aprende 3 palabras nuevas en inglés y úsalas",
+   "xp": 35
+  },
+  {
+   "id": "reto16",
+   "t": "🥗 Come algo verde y algo de proteína hoy",
+   "xp": 35
+  },
+  {
+   "id": "reto17",
+   "t": "🏋️ 20 lagartijas + 30 sentadillas (o tu serie del gym)",
+   "xp": 40
+  },
+  {
+   "id": "reto18",
+   "t": "💡 Escribe 3 ideas de ingreso extra (sin filtros)",
+   "xp": 45
+  },
+  {
+   "id": "reto19",
+   "t": "📵 1 hora sin redes sociales",
+   "xp": 40
+  },
+  {
+   "id": "reto20",
+   "t": "🎯 Haz esa cosa que llevas días posponiendo",
+   "xp": 50
+  },
+  {
+   "id": "reto21",
+   "t": "📚 Lee un cuento extra a tu hijo o llama a tu pareja a media mañana",
+   "xp": 40
+  },
+  {
+   "id": "reto22",
+   "t": "🪙 Averigua hoy el precio de 1 índice o cripto que sigues",
+   "xp": 35
+  }
+ ],
+ "REWARDS": [
+  {
+   "id": "rw_d1",
+   "ico": "🧤",
+   "sec": "🛡️ Campaña",
+   "n": "Guantelete del Recluta"
+  },
+  {
+   "id": "rw_d7",
+   "ico": "🪖",
+   "sec": "🛡️ Campaña",
+   "n": "Casco de la Primera Semana"
+  },
+  {
+   "id": "rw_d14",
+   "ico": "🦾",
+   "sec": "🛡️ Campaña",
+   "n": "Brazo Cibernético"
+  },
+  {
+   "id": "rw_d21",
+   "ico": "🛡️",
+   "sec": "🛡️ Campaña",
+   "n": "Escudo de los 21 Días"
+  },
+  {
+   "id": "rw_d28",
+   "ico": "⚔️",
+   "sec": "🛡️ Campaña",
+   "n": "Espada de los 28 Días"
+  },
+  {
+   "id": "rw_d42",
+   "ico": "🏆",
+   "sec": "🛡️ Campaña",
+   "n": "Corona del Plan Maestro"
+  },
+  {
+   "id": "rw_boss3",
+   "ico": "🏹",
+   "sec": "🛡️ Campaña",
+   "n": "Ballesta de los Capítulos"
+  },
+  {
+   "id": "rw_boss6",
+   "ico": "🗡️",
+   "sec": "🛡️ Campaña",
+   "n": "Espada Legendaria de Datos"
+  },
+  {
+   "id": "rw_boss8",
+   "ico": "👑",
+   "sec": "🛡️ Campaña",
+   "n": "Corona del Analista Legendario"
+  },
+  {
+   "id": "rw_sem4",
+   "ico": "🎖️",
+   "sec": "🎖️ General",
+   "n": "Medalla de la Constancia Semanal"
+  },
+  {
+   "id": "rw_racha",
+   "ico": "🔥",
+   "sec": "🎖️ General",
+   "n": "Brazalete de Fuego"
+  },
+  {
+   "id": "rw_jobs",
+   "ico": "💼",
+   "sec": "🎖️ General",
+   "n": "Maletín del Cazador"
+  },
+  {
+   "id": "rw_eq1",
+   "ico": "⚖️",
+   "sec": "⚖️ Equilibrio",
+   "n": "Amuleto del Equilibrio"
+  },
+  {
+   "id": "rw_eq7",
+   "ico": "🧘",
+   "sec": "⚖️ Equilibrio",
+   "n": "Túnica del Sabio"
+  },
+  {
+   "id": "rw_eq21",
+   "ico": "💠",
+   "sec": "⚖️ Equilibrio",
+   "n": "Gema del Código 8-8-8"
+  },
+  {
+   "id": "rw_gym",
+   "ico": "🏋️",
+   "sec": "⚖️ Equilibrio",
+   "n": "Cinturón de Hierro"
+  },
+  {
+   "id": "rw_read",
+   "ico": "📚",
+   "sec": "⚖️ Equilibrio",
+   "n": "Grimorio del Lector"
+  },
+  {
+   "id": "rw_ahorro",
+   "ico": "🏦",
+   "sec": "⚖️ Equilibrio",
+   "n": "Llave del Tesoro"
+  },
+  {
+   "id": "rw_grw",
+   "ico": "🕊️",
+   "sec": "⚖️ Equilibrio",
+   "n": "Alas del Crecimiento"
+  },
+  {
+   "id": "rw_kd10",
+   "ico": "🧸",
+   "sec": "👶 Legado",
+   "n": "Medallón de Papá"
+  },
+  {
+   "id": "rw_kh3",
+   "ico": "🎖️",
+   "sec": "👶 Legado",
+   "n": "Estrella del Legado"
+  },
+  {
+   "id": "rw_kw5",
+   "ico": "🗺️",
+   "sec": "👶 Legado",
+   "n": "Brújula del Explorador"
+  },
+  {
+   "id": "rw_cw5",
+   "ico": "💞",
+   "sec": "💑 Alianza",
+   "n": "Anillo de la Alianza"
+  },
+  {
+   "id": "rw_cg2",
+   "ico": "🏺",
+   "sec": "💑 Alianza",
+   "n": "Copa de los Sueños"
+  },
+  {
+   "id": "rw_cap1",
+   "ico": "🧭",
+   "sec": "📈 Capital",
+   "n": "Catalejo de Bronce"
+  },
+  {
+   "id": "rw_cap4",
+   "ico": "🔭",
+   "sec": "📈 Capital",
+   "n": "Catalejo de Plata"
+  },
+  {
+   "id": "rw_cap7",
+   "ico": "🔮",
+   "sec": "📈 Capital",
+   "n": "Orbe del Oráculo"
+  },
+  {
+   "id": "rw_rang3",
+   "ico": "🥉",
+   "sec": "📈 Capital",
+   "n": "Insignia de Bronce del Capital"
+  },
+  {
+   "id": "rw_rang6",
+   "ico": "🥈",
+   "sec": "📈 Capital",
+   "n": "Insignia de Plata del Capital"
+  },
+  {
+   "id": "rw_rang9",
+   "ico": "🥇",
+   "sec": "📈 Capital",
+   "n": "Insignia de Oro del Capital"
+  },
+  {
+   "id": "rw_life",
+   "ico": "🌟",
+   "sec": "🎖️ General",
+   "n": "Estrella del Héroe Integral"
+  }
+ ],
+ "HABITOS": [
+  {
+   "id": "hab-gym",
+   "p": "cuerpo",
+   "t": "🏋️ Ritual de Hierro",
+   "d": "Gimnasio o entrenamiento de 45 min (fuerza, cardio o tu deporte). La nave necesita motor.",
+   "xp": 25,
+   "time": "45-60 min"
+  },
+  {
+   "id": "hab-sueno",
+   "p": "cuerpo",
+   "t": "😴 Toque de Queda Nocturno",
+   "d": "Dormir 7-8 horas. Pantallas apagadas 30 min antes.",
+   "xp": 20,
+   "time": "7-8 h"
+  },
+  {
+   "id": "hab-agua",
+   "p": "cuerpo",
+   "t": "💧 Combustible Limpio",
+   "d": "2 litros de agua + al menos una comida consciente y sana.",
+   "xp": 15,
+   "time": "todo el día"
+  },
+  {
+   "id": "hab-mov",
+   "p": "cuerpo",
+   "t": "🚶 Paso Firme",
+   "d": "8.000 pasos o una caminata activa de 30 min.",
+   "xp": 15,
+   "time": "30 min"
+  },
+  {
+   "id": "hab-leer",
+   "p": "mente",
+   "t": "📖 Lectura del Sabio",
+   "d": "20 min de libro de crecimiento personal, negocios, finanzas o biografías.",
+   "xp": 25,
+   "time": "20 min"
+  },
+  {
+   "id": "hab-journal",
+   "p": "mente",
+   "t": "✍️ Bitácora del Héroe",
+   "d": "Escribir 5 min: diario, gratitud o la lección del día.",
+   "xp": 15,
+   "time": "5 min"
+  },
+  {
+   "id": "hab-calma",
+   "p": "mente",
+   "t": "🧘 Sintonía Zen",
+   "d": "10 min de meditación, respiración profunda o silencio sin pantallas.",
+   "xp": 15,
+   "time": "10 min"
+  },
+  {
+   "id": "hab-estudio",
+   "p": "mente",
+   "t": "🎓 Sabiduría Diaria",
+   "d": "20 min de curso, podcast o documental que te haga crecer (finanzas, historia, ciencia...).",
+   "xp": 20,
+   "time": "20 min"
+  },
+  {
+   "id": "hab-reg",
+   "p": "dinero",
+   "t": "🧾 Auditor del Día",
+   "d": "Registrar cada gasto del día (app, Excel o libreta). Lo que se mide, se mejora.",
+   "xp": 15,
+   "time": "5 min"
+  },
+  {
+   "id": "hab-edufin",
+   "p": "dinero",
+   "t": "💰 Educación Financiera",
+   "d": "20 min de libro, curso o video sobre dinero, inversión o negocios.",
+   "xp": 25,
+   "time": "20 min"
+  },
+  {
+   "id": "hab-ahorro",
+   "p": "dinero",
+   "t": "🏦 Siembra de Capital",
+   "d": "Apartar hoy algo para tu ahorro o inversión, sin excusas (lo que sea, cuenta).",
+   "xp": 20,
+   "time": "5 min"
+  },
+  {
+   "id": "hab-idear",
+   "p": "dinero",
+   "t": "🚀 15 Min de Imperio",
+   "d": "15 min construyendo tu futuro ingreso extra: idea, producto, cliente o marca personal.",
+   "xp": 20,
+   "time": "15 min"
+  }
+ ],
+ "VIDA_GROWTH": [
+  {
+   "id": "grw-libro",
+   "t": "📚 Primer Libro del Sabio",
+   "d": "Terminar de leer completo tu primer libro de crecimiento personal o negocios (elige el que más te llame).",
+   "xp": 200,
+   "v": "Resumen o 3 lecciones aplicadas por escrito"
+  },
+  {
+   "id": "grw-biblio",
+   "t": "🏛️ Biblioteca del Sabio",
+   "d": "Leer 3 libros de crecimiento, negocios o finanzas en 3 meses, con notas de cada uno.",
+   "xp": 400,
+   "v": "3 libros terminados con resúmenes documentados"
+  },
+  {
+   "id": "grw-presu",
+   "t": "📊 Presupuesto de Combate",
+   "d": "Crear tu presupuesto mensual (ingresos, fijos, ahorro, ocio) y cumplirlo 30 días.",
+   "xp": 250,
+   "v": "Presupuesto del mes seguido sin romperlo"
+  },
+  {
+   "id": "grw-fondo",
+   "t": "🛡️ Colchón de Emergencia",
+   "d": "Ahorrar tu fondo de emergencia inicial: tu primera meta concreta (ej. 1 mes de gastos).",
+   "xp": 300,
+   "v": "Meta del fondo alcanzada (comprobante o registro)"
+  },
+  {
+   "id": "grw-curso",
+   "t": "🎓 Curso de Poder",
+   "d": "Terminar un curso completo (10+ h) de finanzas, ventas, negocios o una habilidad que te fortalezca.",
+   "xp": 250,
+   "v": "Certificado o proyecto final del curso"
+  },
+  {
+   "id": "grw-ideas",
+   "t": "💡 Chispa Emprendedora",
+   "d": "Escribir 10 ideas de negocio o ingreso extra y validar las 3 mejores con personas reales.",
+   "xp": 200,
+   "v": "Lista de 10 ideas + feedback de 3 validaciones"
+  },
+  {
+   "id": "grw-micro",
+   "t": "🛰️ Primer Satélite",
+   "d": "Lanzar tu primer ingreso extra real: freelance, venta, producto digital o servicio.",
+   "xp": 400,
+   "v": "Primer ingreso extra cobrado"
+  },
+  {
+   "id": "grw-mente",
+   "t": "🧠 Mente de Acero",
+   "d": "30 días con meditación o journaling diario (mínimo 25 de 30).",
+   "xp": 300,
+   "v": "Calendario con 25+ días marcados"
+  },
+  {
+   "id": "grw-cuerpo",
+   "t": "⚔️ Cuerpo de Guerrero",
+   "d": "30 días entrenando mínimo 4 veces por semana.",
+   "xp": 300,
+   "v": "Registro de 17+ entrenamientos en 30 días"
+  },
+  {
+   "id": "grw-888",
+   "t": "👑 Código 8-8-8",
+   "d": "21 días logrando el día equilibrado completo: 1+ hábito de cada pilar (cuerpo, mente, dinero).",
+   "xp": 500,
+   "v": "Racha de equilibrio de 21 días en la app"
+  }
+ ],
+ "PILARES": {
+  "cuerpo": {
+   "ico": "🏋️",
+   "n": "Cuerpo",
+   "c": "#00ff88"
+  },
+  "mente": {
+   "ico": "🧠",
+   "n": "Mente",
+   "c": "#00ccff"
+  },
+  "dinero": {
+   "ico": "💰",
+   "n": "Dinero",
+   "c": "#ffaa00"
+  }
+ },
+ "BALANCE_BONUS": 30,
+ "CAP_LADDER": [
+  {
+   "xp": 0,
+   "n": "Novato del Capital"
+  },
+  {
+   "xp": 400,
+   "n": "Aprendiz de Mercados"
+  },
+  {
+   "xp": 1000,
+   "n": "Principiante Informado"
+  },
+  {
+   "xp": 2000,
+   "n": "Explorador de Tendencias"
+  },
+  {
+   "xp": 3200,
+   "n": "Inversor en Formación"
+  },
+  {
+   "xp": 4800,
+   "n": "Analista de Capital"
+  },
+  {
+   "xp": 7000,
+   "n": "Inversor Consistente"
+  },
+  {
+   "xp": 10000,
+   "n": "Estratega de Cartera"
+  },
+  {
+   "xp": 14000,
+   "n": "Experto IA & Mercados"
+  },
+  {
+   "xp": 20000,
+   "n": "Súper Experto"
+  },
+  {
+   "xp": 30000,
+   "n": "Maestro del Capital"
+  },
+  {
+   "xp": 50000,
+   "n": "🔥 NIVEL EXTREMO"
+  }
+ ],
+ "CAP_CHAPTERS": [
+  {
+   "cap": 1,
+   "code": "CAPÍTULO 1",
+   "title": "El Mapa del Tesoro",
+   "ico": "🗺️",
+   "color": "#00ff88",
+   "narrative": "Antes de invertir hay que blindar la base: deudas caras fuera, presupuesto claro y el poder del interés compuesto trabajando a tu favor. El dinero primero se protege, luego se multiplica."
+  },
+  {
+   "cap": 2,
+   "code": "CAPÍTULO 2",
+   "title": "El Tablero de Juego",
+   "ico": "📊",
+   "color": "#00ccff",
+   "narrative": "Bolsa, ETFs, índices, cripto y cómo invertir desde Costa Rica. No puedes jugar bien si no conoces el tablero: aprende las piezas, las reglas y dónde están las trampas."
+  },
+  {
+   "cap": 3,
+   "code": "CAPÍTULO 3",
+   "title": "IA: La Nueva Frontera",
+   "ico": "🤖",
+   "color": "#ff00ff",
+   "narrative": "La inteligencia artificial está reescribiendo qué empresas ganan. Aprende a leer la cadena de valor de la IA sin caer en el hype — y úsala como tu analista personal."
+  },
+  {
+   "cap": 4,
+   "code": "CAPÍTULO 4",
+   "title": "El Catalejo del Analista",
+   "ico": "🔭",
+   "color": "#ffaa00",
+   "narrative": "Información de calidad y un ritual semanal: así se mantiene actualizado el que invierte bien. Fuentes serias, reportes de ganancias, métricas y un radar de tendencias."
+  },
+  {
+   "cap": 5,
+   "code": "CAPÍTULO 5",
+   "title": "El Arsenal: Tu Cartera",
+   "ico": "🛡️",
+   "color": "#ff6600",
+   "narrative": "Con la base lista, se construye la cartera: perfil de riesgo, diversificación, aportes automáticos y reglas escritas para no entrar en pánico. Aquí se hace tu primera piedra."
+  },
+  {
+   "cap": 6,
+   "code": "CAPÍTULO 6",
+   "title": "El General de tu Capital",
+   "ico": "🎖️",
+   "color": "#ff3355",
+   "narrative": "Invertir es un sistema, no un golpe de suerte: diario de decisiones, automatización, revisiones trimestrales y disciplina. El mercado premia la constancia, no la emoción."
+  },
+  {
+   "cap": 7,
+   "code": "CAPÍTULO 7",
+   "title": "El Oráculo: IA + Futuro",
+   "ico": "🔮",
+   "color": "#7c6cff",
+   "narrative": "La maestría final: combinar tu cerebro de analista de datos con la IA para construir tu radar de mercado personal y diseñar tu máquina de aprendizaje eterno. Aquí te vuelves el que ve venir las olas."
+  },
+  {
+   "cap": 8,
+   "code": "CAPÍTULO 8",
+   "title": "IA al Día: Noticias que Valen Oro",
+   "ico": "📡",
+   "color": "#00e5a0",
+   "narrative": "La ventaja silenciosa del profesional moderno: estar SIEMPRE al día con la IA que transforma su propio oficio. Aquí construyes tu radar personal de noticias IA alineado a tu perfil de datos y marketing — no para consumir ruido, sino para detectar las olas antes que los demás."
+  }
+ ],
+ "CAP_MISSIONS": [
+  {
+   "id": "ca1_1",
+   "cap": 1,
+   "t": "📸 Diagnóstico Financiero Completo",
+   "d": "Arma tu fotografía financiera real: ingresos, gastos, deudas, activos y pasivos. No se puede mejorar lo que no se mide.",
+   "xp": 150,
+   "time": 60,
+   "v": "Balance personal completo por escrito (hoja o nota)"
+  },
+  {
+   "id": "ca1_2",
+   "cap": 1,
+   "t": "⚔️ Guerra a la Deuda Cara",
+   "d": "Lista todas tus deudas con monto e interés. Diseña el plan: primero las de mayor costo (tarjetas, préstamos personales).",
+   "xp": 150,
+   "time": 45,
+   "v": "Plan de pago de deudas escrito, de mayor a menor interés"
+  },
+  {
+   "id": "ca1_3",
+   "cap": 1,
+   "t": "✨ Interés Compuesto: Tu Octava Maravilla",
+   "d": "Entiende el interés compuesto con números tuyos: simula ahorrar lo mismo durante 5, 10 y 20 años. Que el tiempo trabaje para ti.",
+   "xp": 180,
+   "time": 60,
+   "v": "3 proyecciones calculadas (5/10/20 años) documentadas"
+  },
+  {
+   "id": "ca1_4",
+   "cap": 1,
+   "t": "🛡️ Nace el Fondo de Emergencia",
+   "d": "Define tu meta (3-6 meses de gastos) y haz HOY tu primer aporte, aunque sea pequeño. Es tu escudo anti-imprevistos.",
+   "xp": 250,
+   "time": 45,
+   "v": "Primer aporte hecho + meta del fondo definida"
+  },
+  {
+   "id": "ca2_1",
+   "cap": 2,
+   "t": "🧩 Anatomía de la Bolsa",
+   "d": "Qué son acciones, bonos, ETFs e índices (S&P 500, Nasdaq 100) y cómo se negocian. Construye tu chuleta con 10 conceptos clave.",
+   "xp": 180,
+   "time": 75,
+   "v": "Chuleta propia con 10 conceptos explicados con tus palabras"
+  },
+  {
+   "id": "ca2_2",
+   "cap": 2,
+   "t": "🔍 Cazador de ETFs",
+   "d": "Compara 3 ETFs de índice: comisiones, tamaño, réplica, domicilio y liquidez. Educación pura, sin comprar todavía.",
+   "xp": 200,
+   "time": 90,
+   "v": "Comparativa de 3 ETFs documentada (tabla incluida)"
+  },
+  {
+   "id": "ca2_3",
+   "cap": 2,
+   "t": "🫀 El Pulso del Mercado",
+   "d": "Qué mueve los precios: tasas de interés, inflación, resultados de empresas y noticias. Sigue el mercado durante 5 días anotando qué pasó.",
+   "xp": 220,
+   "time": 90,
+   "v": "Bitácora de 5 días con los eventos que movieron precios"
+  },
+  {
+   "id": "ca2_4",
+   "cap": 2,
+   "t": "🪙 Cripto sin FOMO",
+   "d": "Qué es blockchain, bitcoin y ethereum, su volatilidad y casos de uso reales. Entiende la tecnología antes que el precio.",
+   "xp": 200,
+   "time": 75,
+   "v": "Análisis educativo de 2 criptomonedas (sin comprar aún)"
+  },
+  {
+   "id": "ca2_5",
+   "cap": 2,
+   "t": "🇨🇷 El Tablero desde Costa Rica",
+   "d": "Cómo invertir desde tu país: brokers internacionales, envío de dinero, impuestos y reglas. Investiga 2 opciones reales.",
+   "xp": 220,
+   "time": 90,
+   "v": "Nota con 2 opciones reales, requisitos y costos"
+  },
+  {
+   "id": "ca3_1",
+   "cap": 3,
+   "t": "🗺️ El Mapa de la IA",
+   "d": "Quién gana dinero con IA hoy: semiconductores, nubes, modelos y aplicaciones. Identifica la cadena de valor completa.",
+   "xp": 220,
+   "time": 90,
+   "v": "Mapa de la cadena de valor de la IA con 5+ actores"
+  },
+  {
+   "id": "ca3_2",
+   "cap": 3,
+   "t": "📡 IA que Mueve Mercados",
+   "d": "Cómo los anuncios de IA mueven acciones (piensa en las grandes de semiconductores) y cómo leerlo sin caer en el hype.",
+   "xp": 220,
+   "time": 75,
+   "v": "Análisis de un evento real de IA y su efecto en el mercado"
+  },
+  {
+   "id": "ca3_3",
+   "cap": 3,
+   "t": "🧑‍🏫 Tu Analista IA Personal",
+   "d": "Usa ChatGPT/Claude como tutor financiero: pídele explicar un concepto y AUDITA su respuesta contra una fuente real. La IA propone, tú verificas.",
+   "xp": 200,
+   "time": 60,
+   "v": "3 conversaciones guardadas + verificación con fuente confiable"
+  },
+  {
+   "id": "ca3_4",
+   "cap": 3,
+   "t": "🫧 Detector de Burbujas",
+   "d": "Señales de exceso: valoraciones extremas, FOMO, titulares eufóricos. Estudia un caso histórico (2000 o 2021) y compáralo con el hype actual de IA.",
+   "xp": 240,
+   "time": 90,
+   "v": "Nota comparando una burbuja pasada con el entusiasmo actual"
+  },
+  {
+   "id": "ca3_5",
+   "cap": 3,
+   "t": "⚡ IA + Datos = Tu Ventaja",
+   "d": "Conecta con tu plan de analista: script en Python para descargar y graficar un índice (yfinance) o alerta de precios con n8n. Tu skill diferencial.",
+   "xp": 300,
+   "time": 120,
+   "v": "Script o automatización funcionando con datos de mercado"
+  },
+  {
+   "id": "ca4_1",
+   "cap": 4,
+   "t": "📰 Tu Arsenal de Fuentes",
+   "d": "Arma tu lista de fuentes confiables (prensa financiera seria, canales, newsletters) y elige UNA que seguirás semanal.",
+   "xp": 150,
+   "time": 60,
+   "v": "Lista de 5+ fuentes curadas + newsletter elegida"
+  },
+  {
+   "id": "ca4_2",
+   "cap": 4,
+   "t": "🗓️ El Ritual del Sábado",
+   "d": "Bloque semanal de 45 min: qué pasó en mercados y qué tendencias de IA/negocios están creciendo. Sin excepción.",
+   "xp": 180,
+   "time": 45,
+   "v": "4 resúmenes semanales consecutivos (marca el hábito)"
+  },
+  {
+   "id": "ca4_3",
+   "cap": 4,
+   "t": "📑 Leer un Reporte de Ganancias",
+   "d": "Ingresos, gastos, márgenes y guía futura: analiza un reporte de ganancias real de una empresa que te interese.",
+   "xp": 240,
+   "time": 90,
+   "v": "Análisis de 1 earnings publicado (notas propias)"
+  },
+  {
+   "id": "ca4_4",
+   "cap": 4,
+   "t": "📐 Métricas que Importan",
+   "d": "P/E, crecimiento de ingresos, márgenes y deuda: aprende a leerlas y compara 2 empresas del mismo sector.",
+   "xp": 220,
+   "time": 90,
+   "v": "Comparativa con 6+ métricas documentada"
+  },
+  {
+   "id": "ca4_5",
+   "cap": 4,
+   "t": "🛰️ Radar de Tendencias",
+   "d": "Identifica 3 industrias con viento a favor (IA, energía, salud, automatización...) y argumenta POR QUÉ crecerían.",
+   "xp": 220,
+   "time": 75,
+   "v": "Informe de 3 tendencias con argumentos y fuentes"
+  },
+  {
+   "id": "ca5_1",
+   "cap": 5,
+   "t": "🎚️ Perfil de Riesgo y Horizonte",
+   "d": "Define tu perfil (conservador, moderado, agresivo) según edad, ingresos y tolerancia a caídas. Sin juicio: con honestidad.",
+   "xp": 150,
+   "time": 45,
+   "v": "Perfil escrito con horizonte y tolerancia definida"
+  },
+  {
+   "id": "ca5_2",
+   "cap": 5,
+   "t": "🏗️ Arquitectura de Cartera",
+   "d": "Diseña tu asignación objetivo (educativa): qué porcentaje en índice global, acciones, bonos y efectivo según tu perfil.",
+   "xp": 220,
+   "time": 90,
+   "v": "Asignación objetivo documentada con porcentajes"
+  },
+  {
+   "id": "ca5_3",
+   "cap": 5,
+   "t": "🌧️ Dólar Costo Promedio (DCA)",
+   "d": "Por qué aportar igual cada mes vence a intentar adivinar el momento perfecto. Define tu plan mensual automático.",
+   "xp": 200,
+   "time": 60,
+   "v": "Plan de aportes mensuales por escrito"
+  },
+  {
+   "id": "ca5_4",
+   "cap": 5,
+   "t": "🛡️ El Escudo Anti-Pánico",
+   "d": "Escribe TUS reglas ANTES de una crisis: qué harás si el mercado cae -10%, -20%, -30%. Decidir con calma hoy te salva mañana.",
+   "xp": 220,
+   "time": 60,
+   "v": "Tus 5 reglas de disciplina escritas y firmadas"
+  },
+  {
+   "id": "ca5_5",
+   "cap": 5,
+   "t": "🧱 La Primera Piedra",
+   "d": "Con plataforma elegida, haz tu primera inversión pequeña (o activa tu ahorro programado) con dinero que no necesites a corto plazo.",
+   "xp": 400,
+   "time": 120,
+   "v": "Primera inversión o aporte programado ACTIVO"
+  },
+  {
+   "id": "ca6_1",
+   "cap": 6,
+   "t": "📓 Diario del Inversor",
+   "d": "Crea tu diario: cada decisión con su POR QUÉ y su resultado. Los grandes inversores aprenden de sus bitácoras.",
+   "xp": 150,
+   "time": 45,
+   "v": "Diario con 5 entradas registradas"
+  },
+  {
+   "id": "ca6_2",
+   "cap": 6,
+   "t": "🤖 Casa de Máquinas",
+   "d": "Automatiza tu vigilancia: alerta de precios o resumen de noticias con n8n/IA o un feed RSS de tus fuentes.",
+   "xp": 250,
+   "time": 90,
+   "v": "Automatización de alertas funcionando"
+  },
+  {
+   "id": "ca6_3",
+   "cap": 6,
+   "t": "🔄 Rebalanceo y Revisión",
+   "d": "Agenda tu revisión trimestral de cartera y practica el ejercicio: volver a tu asignación objetivo.",
+   "xp": 200,
+   "time": 60,
+   "v": "Primera revisión trimestral completada"
+  },
+  {
+   "id": "ca6_4",
+   "cap": 6,
+   "t": "🧾 Impuestos y Reglas",
+   "d": "Cómo tributan tus inversiones desde Costa Rica: ganancias, dividendos y declaraciones. Conocer las reglas evita sorpresas.",
+   "xp": 200,
+   "time": 60,
+   "v": "Nota con implicaciones fiscales claras (o cita a contador)"
+  },
+  {
+   "id": "ca6_5",
+   "cap": 6,
+   "t": "🎯 Meta de Capital",
+   "d": "Define tu meta con fecha y monto (ej. $X invertidos en 12 meses) y configura el aporte automático para lograrla sin pensarlo.",
+   "xp": 300,
+   "time": 75,
+   "v": "Meta escrita + aporte automático configurado"
+  },
+  {
+   "id": "ca7_1",
+   "cap": 7,
+   "t": "🔭 Visión de 5 Años",
+   "d": "¿Qué industrias crecerán con IA, tecnología y cambios demográficos? Escribe tu tesis de futuro: dónde estará el dinero.",
+   "xp": 250,
+   "time": 90,
+   "v": "Tesis de futuro escrita (5 años)"
+  },
+  {
+   "id": "ca7_2",
+   "cap": 7,
+   "t": "🌊 Cazador de Olas Nuevas",
+   "d": "Investiga a fondo 1 tema frontera (agentes de IA, robótica, energía, biotecnología) y mapea su cadena de valor.",
+   "xp": 250,
+   "time": 90,
+   "v": "Informe de la ola elegida con actores clave"
+  },
+  {
+   "id": "ca7_3",
+   "cap": 7,
+   "t": "🧠 Tu Motor de Aprendizaje Eterno",
+   "d": "Diseña tu sistema personal para estar SIEMPRE actualizado: fuentes, 1 hora semanal fija, IA como tutor y notas en un solo lugar.",
+   "xp": 250,
+   "time": 90,
+   "v": "Sistema documentado y funcionando 2 semanas"
+  },
+  {
+   "id": "ca7_4",
+   "cap": 7,
+   "t": "👑 Proyecto Maestro: Radar de Mercado",
+   "d": "Construye tu radar personal: script que baja datos + IA que resume la semana de mercados e IA. Tu analista virtual de capital.",
+   "xp": 450,
+   "time": 180,
+   "v": "Radar funcionando y probado 2 semanas seguidas"
+  },
+  {
+   "id": "ca7_5",
+   "cap": 7,
+   "t": "🧑‍🏫 El Mentor",
+   "d": "Enseña lo aprendido a alguien (pareja, hijo, amigo): explicar es la prueba final de que dominas. Si no lo puedes explicar, no lo sabes.",
+   "xp": 300,
+   "time": 90,
+   "v": "Sesión de enseñanza completada (y agradecimiento recibido)"
+  },
+  {
+   "id": "ca8_1",
+   "cap": 8,
+   "t": "📡 Tu Feed de IA Curado",
+   "d": "Configura tu arsenal de noticias IA: newsletters, canales y fuentes enfocadas en datos, marketing y negocios (mínimo 5). Nada de scroll sin rumbo: fuentes elegidas a propósito.",
+   "xp": 200,
+   "time": 75,
+   "v": "Lista de 5+ fuentes IA curadas y organizadas"
+  },
+  {
+   "id": "ca8_2",
+   "cap": 8,
+   "t": "☕ Ritual IA del Día",
+   "d": "15 minutos diarios de noticias IA durante 7 días, resumiendo cada día 1 línea con ayuda de IA (y verificando la fuente).",
+   "xp": 250,
+   "time": 90,
+   "v": "Bitácora de 7 días con 1 insight por día"
+  },
+  {
+   "id": "ca8_3",
+   "cap": 8,
+   "t": "🧭 Impacto en tu Perfil",
+   "d": "Analiza cómo 3 noticias IA recientes afectan a los analistas de datos y al marketing: herramientas, empleos, mercado. ¿Qué significa para TI?",
+   "xp": 220,
+   "time": 75,
+   "v": "Análisis de 3 noticias con implicaciones para tu carrera"
+  },
+  {
+   "id": "ca8_4",
+   "cap": 8,
+   "t": "🔬 Prueba la Herramienta Nueva",
+   "d": "Prueba una herramienta IA nueva que mejore tu flujo de analista/marketing y escribe una mini-review honesta: qué resuelve y qué no.",
+   "xp": 250,
+   "time": 90,
+   "v": "Mini-review publicada o documentada de la herramienta"
+  },
+  {
+   "id": "ca8_5",
+   "cap": 8,
+   "t": "💡 Insight Publicado",
+   "d": "Publica 1 insight de IA aplicado a datos o marketing en LinkedIn, alineado a tu marca personal. Enséñale al mercado que estás al día.",
+   "xp": 300,
+   "time": 90,
+   "v": "Post en vivo con tu insight de IA"
+  },
+  {
+   "id": "ca8_6",
+   "cap": 8,
+   "t": "👑 Radar IA Mensual (Jefe)",
+   "d": "Escribe tu resumen mensual de IA: top 5 noticias, 3 implicaciones para tu carrera y 1 acción concreta. Usa IA para el borrador y audítala contra fuentes reales.",
+   "xp": 400,
+   "time": 120,
+   "v": "Documento mensual de Radar IA terminado"
+  }
+ ],
+ "CAP_OBJ": {},
+ "LIFE_LADDER": [
+  {
+   "xp": 0,
+   "n": "Novato del Equilibrio"
+  },
+  {
+   "xp": 400,
+   "n": "Aprendiz del Bien Vivir"
+  },
+  {
+   "xp": 900,
+   "n": "Guardián de Hábitos"
+  },
+  {
+   "xp": 1600,
+   "n": "Forjador de Cuerpo y Mente"
+  },
+  {
+   "xp": 2600,
+   "n": "Sabio del Crecimiento"
+  },
+  {
+   "xp": 4000,
+   "n": "Arquitecto del Legado"
+  },
+  {
+   "xp": 6000,
+   "n": "Comandante del Hogar"
+  },
+  {
+   "xp": 9000,
+   "n": "Constructor de Futuro"
+  },
+  {
+   "xp": 13000,
+   "n": "Maestro del Equilibrio"
+  },
+  {
+   "xp": 20000,
+   "n": "HÉROE INTEGRAL"
+  }
+ ],
+ "EQ_LADDER": [
+  {
+   "xp": 0,
+   "n": "Novato del Equilibrio"
+  },
+  {
+   "xp": 300,
+   "n": "Aprendiz del Bien Vivir"
+  },
+  {
+   "xp": 800,
+   "n": "Guardián de Hábitos"
+  },
+  {
+   "xp": 1500,
+   "n": "Forjador de Cuerpo y Mente"
+  },
+  {
+   "xp": 2600,
+   "n": "Sabio del Crecimiento"
+  },
+  {
+   "xp": 4000,
+   "n": "Maestro del Equilibrio"
+  },
+  {
+   "xp": 6000,
+   "n": "HÉROE INTEGRAL"
+  }
+ ],
+ "KID_LADDER": [
+  {
+   "xp": 0,
+   "n": "Recluta Junior"
+  },
+  {
+   "xp": 300,
+   "n": "Explorador Curioso"
+  },
+  {
+   "xp": 700,
+   "n": "Aprendiz Veloz"
+  },
+  {
+   "xp": 1200,
+   "n": "Capitán de Aventuras"
+  },
+  {
+   "xp": 2000,
+   "n": "Pequeño Genio"
+  },
+  {
+   "xp": 3000,
+   "n": "Héroe en Entrenamiento"
+  }
+ ],
+ "ALY_LADDER": [
+  {
+   "xp": 0,
+   "n": "Compañeros de Ruta"
+  },
+  {
+   "xp": 250,
+   "n": "Equipo en Sintonía"
+  },
+  {
+   "xp": 600,
+   "n": "Alianza Sólida"
+  },
+  {
+   "xp": 1000,
+   "n": "Imperio en Construcción"
+  },
+  {
+   "xp": 1600,
+   "n": "Dupla Legendaria"
+  },
+  {
+   "xp": 2500,
+   "n": "Dinastía"
+  }
+ ],
+ "KID_DAILY": [
+  {
+   "id": "kd-cuento",
+   "t": "📖 El Cuentacuentos",
+   "d": "Leerle un cuento antes de dormir, con voz de narrador épico.",
+   "xp": 20
+  },
+  {
+   "id": "kd-letras",
+   "t": "🔤 Misión Letras y Números",
+   "d": "15 min practicando lectura, letras, números o sumas con juegos.",
+   "xp": 20
+  },
+  {
+   "id": "kd-juego",
+   "t": "🏃 Hora de Juego Activo",
+   "d": "30 min de juego físico juntos: pelota, correr, bici o escondite.",
+   "xp": 20
+  },
+  {
+   "id": "kd-crea",
+   "t": "🎨 Laboratorio Creativo",
+   "d": "20 min de dibujo, LEGO, plastilina, pintura o manualidades.",
+   "xp": 20
+  },
+  {
+   "id": "kd-fruta",
+   "t": "🍎 Ejército de la Fruta",
+   "d": "Que coma fruta o verdura hoy (y tú también: predica con el ejemplo).",
+   "xp": 15
+  },
+  {
+   "id": "kd-orden",
+   "t": "🧸 Operación Orden",
+   "d": "Recoger los juguetes juntos, convertido en juego de velocidad.",
+   "xp": 15
+  },
+  {
+   "id": "kd-sueno",
+   "t": "🌙 Rutina de Sueño",
+   "d": "Rutina tranquila y dormir temprano (aprox. 20:30) sin pelear.",
+   "xp": 15
+  }
+ ],
+ "KID_WEEK": [
+  {
+   "id": "kwk-parque",
+   "t": "🌳 Expedición al Parque",
+   "d": "Salida al parque, plaza o naturaleza: explorar, correr, descubrir bichos.",
+   "xp": 40
+  },
+  {
+   "id": "kwk-cocina",
+   "t": "👨‍🍳 Chef Junior",
+   "d": "Cocinar juntos una receta simple (él mide, mezcla y decora).",
+   "xp": 40
+  },
+  {
+   "id": "kwk-biblio",
+   "t": "🏫 Biblioteca o Librería",
+   "d": "Visitar la biblioteca o librería y que él escoja sus cuentos.",
+   "xp": 40
+  },
+  {
+   "id": "kwk-leccion",
+   "t": "🧭 La Lección Nueva",
+   "d": "Enseñarle algo nuevo y planificado: un valor, una canción, un oficio o un mini-experimento.",
+   "xp": 40
+  },
+  {
+   "id": "kwk-familia",
+   "t": "👨‍👩‍👦 Día del Escuadrón",
+   "d": "Actividad especial en familia (los tres juntos o con abuelos/primos).",
+   "xp": 50
+  }
+ ],
+ "KID_HITS": [
+  {
+   "id": "kht-zapatos",
+   "t": "👟 Zapatos Atados",
+   "d": "Aprende a amarrarse los zapatos completamente solo.",
+   "xp": 100
+  },
+  {
+   "id": "kht-bici",
+   "t": "🚲 Gran Ciclista",
+   "d": "Andar en bicicleta sin rueditas de apoyo.",
+   "xp": 150
+  },
+  {
+   "id": "kht-100",
+   "t": "🔢 Contador de Estrellas",
+   "d": "Contar hasta 100 y reconocer los números del 1 al 20.",
+   "xp": 120
+  },
+  {
+   "id": "kht-leer",
+   "t": "📚 Primer Lector",
+   "d": "Leer sus primeras 10 palabras completamente solo.",
+   "xp": 150
+  },
+  {
+   "id": "kht-nadar",
+   "t": "🏊 Pez en el Agua",
+   "d": "Nadar o flotar con confianza en la piscina.",
+   "xp": 120
+  },
+  {
+   "id": "kht-dientes",
+   "t": "🦷 Guardián de su Sonrisa",
+   "d": "Cepillarse los dientes solo sin pelear durante 2 semanas.",
+   "xp": 150
+  },
+  {
+   "id": "kht-bloques",
+   "t": "🧱 Arquitecto en Miniatura",
+   "d": "Construir algo complejo: LEGO de 100+ piezas o rompecabezas de 100+ piezas.",
+   "xp": 100
+  },
+  {
+   "id": "kht-cocina",
+   "t": "🥞 Pequeño Chef",
+   "d": "Preparar su primer desayuno simple casi solo (cereal, sándwich o fruta).",
+   "xp": 120
+  },
+  {
+   "id": "kht-amable",
+   "t": "🤝 Caballero de la Amabilidad",
+   "d": "Hábito instalado: por favor, gracias, compartir y esperar turnos.",
+   "xp": 100
+  },
+  {
+   "id": "kht-pregunton",
+   "t": "❓ Explorador Curioso",
+   "d": "Te hace 10 preguntas que te hacen pensar (anótalas, valen oro).",
+   "xp": 100
+  }
+ ],
+ "CPL_WEEK": [
+  {
+   "id": "cpw-cita",
+   "t": "💞 Misión Cita",
+   "d": "Cita de pareja sin pantallas: salir o quedarse en casa, pero solo ustedes dos.",
+   "xp": 50
+  },
+  {
+   "id": "cpw-habla",
+   "t": "🗨️ Conversación Profunda",
+   "d": "30 min hablando de sueños, miedos y sentimientos (nada de logística).",
+   "xp": 40
+  },
+  {
+   "id": "cpw-camina",
+   "t": "🚶 Caminata en Tándem",
+   "d": "Caminar juntos 30+ min, solos, sin niños ni pantallas.",
+   "xp": 35
+  },
+  {
+   "id": "cpw-cumbre",
+   "t": "🏦 Cumbre Financiera",
+   "d": "30 min revisando las finanzas del hogar juntos: números claros, decisiones en equipo.",
+   "xp": 45
+  },
+  {
+   "id": "cpw-equipo",
+   "t": "🧹 Escuadrón Hogar",
+   "d": "Tarea grande del hogar en equipo (cocinar, limpiar, ordenar) con música y buen humor.",
+   "xp": 30
+  },
+  {
+   "id": "cpw-nopant",
+   "t": "🌌 Noche Sin Pantallas",
+   "d": "Una noche entera sin celulares ni TV: juegos, charla, estrellas.",
+   "xp": 45
+  }
+ ],
+ "CPL_GOALS": [
+  {
+   "id": "cgo-presu",
+   "t": "📊 Presupuesto de Guerra",
+   "d": "Armar juntos el presupuesto familiar mensual: ingresos, gastos, ahorro y metas.",
+   "xp": 150,
+   "v": "Presupuesto del mes hecho en equipo"
+  },
+  {
+   "id": "cgo-vision",
+   "t": "🗺️ Mapa de Sueños",
+   "d": "Escribir su visión de pareja a 1, 3 y 5 años: hogar, hijos, trabajo, viajes y dinero.",
+   "xp": 150,
+   "v": "Visión escrita y acordada por los dos"
+  },
+  {
+   "id": "cgo-ahorro",
+   "t": "🏺 Arca Común",
+   "d": "Alcanzar su primera meta de ahorro en pareja (la que definan juntos).",
+   "xp": 300,
+   "v": "Meta de ahorro conjunta alcanzada"
+  },
+  {
+   "id": "cgo-extra",
+   "t": "💰 Primera Victoria Juntos",
+   "d": "Generar su primer ingreso extra en equipo: venta, servicio, proyecto o negocio.",
+   "xp": 350,
+   "v": "Primer ingreso conjunto cobrado"
+  },
+  {
+   "id": "cgo-plan",
+   "t": "🏗️ Plan del Imperio",
+   "d": "Definir por escrito en qué negocio o fuente de ingreso construirán, con pasos y fechas.",
+   "xp": 200,
+   "v": "Plan de negocio de pareja escrito"
+  },
+  {
+   "id": "cgo-viaje",
+   "t": "✈️ Aventura Planeada",
+   "d": "Elegir y apartar fecha de un viaje o experiencia juntos.",
+   "xp": 200,
+   "v": "Fecha apartada o reserva hecha"
+  },
+  {
+   "id": "cgo-ritual",
+   "t": "💍 Ritual Semanal",
+   "d": "Mantener su cita semanal 4 semanas seguidas sin faltar.",
+   "xp": 250,
+   "v": "4 semanas de cita cumplidas"
+  }
+ ],
+ "VIDA_OBJ": {},
+ "EMP_LADDER": [
+  {
+   "xp": 0,
+   "n": "Novato del Empleo"
+  },
+  {
+   "xp": 400,
+   "n": "Rastreador de Vacantes"
+  },
+  {
+   "xp": 1000,
+   "n": "Arquitecto de CV"
+  },
+  {
+   "xp": 1800,
+   "n": "Cazador de Oportunidades"
+  },
+  {
+   "xp": 3000,
+   "n": "Maestro del Networking"
+  },
+  {
+   "xp": 4500,
+   "n": "Ninja de Entrevistas"
+  },
+  {
+   "xp": 6500,
+   "n": "Oferta en la Mano"
+  },
+  {
+   "xp": 9000,
+   "n": "Leyenda del Empleo"
+  }
+ ],
+ "POW_LADDER": [
+  {
+   "xp": 0,
+   "n": "Observador"
+  },
+  {
+   "xp": 250,
+   "n": "Aprendiz de Estrategia"
+  },
+  {
+   "xp": 600,
+   "n": "Hombre de Presencia"
+  },
+  {
+   "xp": 1200,
+   "n": "Comunicador Magnético"
+  },
+  {
+   "xp": 2000,
+   "n": "Estratega Silencioso"
+  },
+  {
+   "xp": 3200,
+   "n": "🦁 León del Poder"
+  }
+ ],
+ "POW_WEEK": [
+  {
+   "id": "pwk-ley",
+   "t": "📜 La Ley de la Semana",
+   "d": "Estudia 1 ley del poder (o su resumen) y aplícala conscientemente esta semana. Las leyes se entienden aplicándolas.",
+   "xp": 45
+  },
+  {
+   "id": "pwk-pres",
+   "t": "🧍 Presencia de Líder",
+   "d": "5 min frente al espejo (o en tu día): postura erguida, voz pausada, contacto visual. La presencia se entrena.",
+   "xp": 35
+  },
+  {
+   "id": "pwk-img",
+   "t": "🪞 Imagen 10% Mejor",
+   "d": "Mejora hoy un detalle de tu imagen profesional: ropa, arreglo personal, foto de perfil. El mensaje empieza antes de hablar.",
+   "xp": 35
+  },
+  {
+   "id": "pwk-habla",
+   "t": "🗣️ Habla con Peso",
+   "d": "Explica una idea sin muletillas y con estructura clara (situación → idea → cierre). Grábate o pide feedback.",
+   "xp": 40
+  },
+  {
+   "id": "pwk-jugada",
+   "t": "♟️ Dos Jugadas Adelante",
+   "d": "Antes de una decisión importante escribe: qué quiero, qué quiere la otra parte, y mi plan B.",
+   "xp": 40
+  },
+  {
+   "id": "pwk-oferta",
+   "t": "🛠️ 1h para tu Oferta",
+   "d": "1 hora construyendo tu oferta de servicios: qué vendes, a quién, y cuánto cobras (o subes tu precio).",
+   "xp": 45
+  }
+ ],
+ "POW_HITS": [
+  {
+   "id": "pow-48",
+   "t": "📕 Las 48 Leyes del Poder",
+   "d": "Lee el libro completo (o una guía resumida seria) con notas de las 10 leyes que más te marcaron y cómo las aplicarás con integridad.",
+   "xp": 350,
+   "v": "Notas de 10 leyes con plan de aplicación"
+  },
+  {
+   "id": "pow-3m",
+   "t": "🗓️ 3 Leyes en 3 Meses",
+   "d": "Aplica 1 ley al mes durante 3 meses, con reflexión escrita de resultados.",
+   "xp": 250,
+   "v": "3 reflexiones mensuales documentadas"
+  },
+  {
+   "id": "pow-silen",
+   "t": "🤐 El Poder del Silencio",
+   "d": "Una semana hablando menos y escuchando más (la ley del silencio): responde después de pensar, no en automático.",
+   "xp": 200,
+   "v": "Semana completada + lección escrita"
+  },
+  {
+   "id": "pow-ropa",
+   "t": "👔 Armario de Éxito",
+   "d": "Revisa tu armario y arma 3-5 outfits que proyecten profesionalismo y seguridad. Tu imagen trabaja antes que tú.",
+   "xp": 200,
+   "v": "Outfits definidos y foto de referencia"
+  },
+  {
+   "id": "pow-marca",
+   "t": "💎 Marca Personal Clara",
+   "d": "Define en 1 frase: quién eres, a quién ayudas y con qué resultado. Tu mensaje de presentación profesional.",
+   "xp": 250,
+   "v": "Frase de marca personal pulida y validada"
+  },
+  {
+   "id": "pow-oferta",
+   "t": "🛒 Tu Oferta en Venta",
+   "d": "Publica tu primer servicio o paquete con precio claro y descripción atractiva (perfil, web, documento).",
+   "xp": 350,
+   "v": "Oferta publicada y visible"
+  },
+  {
+   "id": "pow-cli",
+   "t": "🤝 Primer Cliente",
+   "d": "Cierra tu primer cliente o proyecto pago, aunque sea pequeño. El primer sí cambia todo.",
+   "xp": 450,
+   "v": "Primer cliente confirmado (contrato o mensaje)"
+  },
+  {
+   "id": "pow-video",
+   "t": "🎥 Video de Autoridad",
+   "d": "Graba y publica un video corto mostrando tu expertise (explica un concepto de datos/marketing/IA).",
+   "xp": 250,
+   "v": "Video publicado"
+  },
+  {
+   "id": "pow-pitch",
+   "t": "🎤 Pitch de 60 Segundos",
+   "d": "Memoriza y presenta tu pitch personal sin titubear: quién eres, qué haces, qué buscas.",
+   "xp": 200,
+   "v": "Pitch presentado a 3+ personas"
+  },
+  {
+   "id": "pow-net",
+   "t": "🌐 Red de Aliados",
+   "d": "Conecta con 10 personas estratégicas: colegas, clientes potenciales, referentes. Networking de valor, no de spam.",
+   "xp": 250,
+   "v": "10 conexiones reales hechas"
+  },
+  {
+   "id": "pow-neg",
+   "t": "⚖️ Negociación Maestra",
+   "d": "Prepara y ejecuta una negociación importante (precio, salario, contrato): con tu número, alternativas y límite claro.",
+   "xp": 350,
+   "v": "Negociación realizada + resultado documentado"
+  },
+  {
+   "id": "pow-rutina",
+   "t": "🎯 Rutina del León",
+   "d": "30 días de rutina de campeón: madrugar, planificar el día, leer y entrenar. La disciplina es el poder silencioso.",
+   "xp": 350,
+   "v": "Calendario de 25+ días cumplidos"
+  },
+  {
+   "id": "pow-blind",
+   "t": "🧊 Blindaje Emocional",
+   "d": "Logra 1 semana sin reaccionar en caliente: ante el conflicto, pausa de 10 segundos antes de responder.",
+   "xp": 250,
+   "v": "Semana lograda + ejemplo anotado"
+  },
+  {
+   "id": "pow-mentor",
+   "t": "🧑‍🏫 Tus Modelos",
+   "d": "Identifica 3 personas a las que admiras (negocios, carrera, carácter) y estudia su camino con notas.",
+   "xp": 200,
+   "v": "Estudio de 3 modelos documentado"
+  }
+ ],
+ "MEN_LADDER": [
+  {
+   "xp": 0,
+   "n": "Curioso"
+  },
+  {
+   "xp": 250,
+   "n": "Estudiante de Gigantes"
+  },
+  {
+   "xp": 600,
+   "n": "Discípulo de Maestros"
+  },
+  {
+   "xp": 1200,
+   "n": "Sabio en Formación"
+  },
+  {
+   "xp": 2200,
+   "n": "Heredero de la Sabiduría"
+  },
+  {
+   "xp": 4000,
+   "n": "🏛️ Guardián del Conocimiento"
+  }
+ ],
+ "MEN_WEEK": [
+  {
+   "id": "men-ep",
+   "t": "🎧 Episodio de la Semana",
+   "d": "Escucha 1 episodio de tus podcasts seleccionados (datos, marketing, negocios o sabiduría) y anota la mejor idea.",
+   "xp": 40
+  },
+  {
+   "id": "men-fig",
+   "t": "🏛️ Gran Pensador de la Semana",
+   "d": "Estudia 30 min a la figura destacada de la semana (rota entre tus mentores) y escribe su lección más poderosa.",
+   "xp": 45
+  },
+  {
+   "id": "men-clase",
+   "t": "📖 Clásico Abierto",
+   "d": "20 min de lectura de un clásico de sabiduría (Marco Aurelio, Séneca, Carnegie, Sun Tzu...).",
+   "xp": 35
+  },
+  {
+   "id": "men-app",
+   "t": "🧩 Idea Aplicada",
+   "d": "Aplica HOY una idea aprendida de un mentor o podcast y anota el resultado real.",
+   "xp": 40
+  },
+  {
+   "id": "men-comp",
+   "t": "💬 Enseña la Lección",
+   "d": "Comparte con alguien una lección aprendida esta semana: enseñar duplica lo aprendido.",
+   "xp": 35
+  }
+ ],
+ "MEN_HITS": [
+  {
+   "id": "men-ng",
+   "t": "🎓 Andrew Ng — IA para Todos",
+   "d": "Estudia a Andrew Ng (curso, entrevista o bio): cómo la IA se vuelve herramienta escalable de educación, negocio y análisis.",
+   "xp": 200,
+   "v": "3 lecciones aplicables a tu perfil por escrito"
+  },
+  {
+   "id": "men-kozy",
+   "t": "🧠 Cassie Kozyrkov — Decisiones",
+   "d": "Estudia a Cassie Kozyrkov (Google): decision intelligence. Los datos solo valen si mejoran decisiones.",
+   "xp": 200,
+   "v": "Nota: cómo aplicarás el enfoque de decisión"
+  },
+  {
+   "id": "men-silver",
+   "t": "🎲 Nate Silver — Señal y Ruido",
+   "d": "Estudia a Nate Silver: predicción, probabilidad y cómo separar señal del ruido (libro o entrevistas).",
+   "xp": 220,
+   "v": "3 lecciones sobre análisis y sesgos"
+  },
+  {
+   "id": "men-marr",
+   "t": "📣 Bernard Marr — IA Explicada",
+   "d": "Estudia a Bernard Marr: cómo comunica la IA y los datos a los negocios. Traducir tecnología a valor.",
+   "xp": 180,
+   "v": "Ejemplo propio de IA explicada simple"
+  },
+  {
+   "id": "men-patil",
+   "t": "💽 DJ Patil — Dato como Producto",
+   "d": "Estudia a DJ Patil (primer Data Scientist de EE.UU.): los datos como producto y la ética del dato.",
+   "xp": 200,
+   "v": "Nota: tu mentalidad de dato-producto"
+  },
+  {
+   "id": "men-godin",
+   "t": "🦊 Seth Godin — Esto es Marketing",
+   "d": "Estudia a Seth Godin (libro o podcast): vender con permiso, tribus y mínimo viable. El marketing de la confianza.",
+   "xp": 220,
+   "v": "3 ideas aplicadas a cómo venderás tus servicios"
+  },
+  {
+   "id": "men-vayner",
+   "t": "📱 Gary Vaynerchuk — Marca Personal",
+   "d": "Estudia a Gary Vee: trabajar primero gratis, contenido que suma y paciencia. Construye tu nombre antes de vender.",
+   "xp": 200,
+   "v": "Plan de 1 acción de marca personal"
+  },
+  {
+   "id": "men-ogilvy",
+   "t": "🖋️ David Ogilvy — El Padre de la Publicidad",
+   "d": "Estudia a Ogilvy (Confesiones de un publicitario): escribir para vender con honestidad y claridad.",
+   "xp": 200,
+   "v": "Reescritura de tu presentación estilo Ogilvy"
+  },
+  {
+   "id": "men-cial",
+   "t": "🧲 Robert Cialdini — Influencia",
+   "d": "Estudia a Cialdini (Influencia): los 6 principios. Poder de persuasión ético, conectado con tus 48 Leyes.",
+   "xp": 220,
+   "v": "Nota: 3 principios y cómo usarlos con ética"
+  },
+  {
+   "id": "men-naval",
+   "t": "🌊 Naval Ravikant — Riqueza sin Suerte",
+   "d": "Estudia a Naval (podcast y tweets): conocimiento específico, leverage y dueños de su tiempo. La sabiduría del dinero moderno.",
+   "xp": 250,
+   "v": "3 lecciones de riqueza aplicadas a tu plan"
+  },
+  {
+   "id": "men-munger",
+   "t": "🧮 Charlie Munger — Modelos Mentales",
+   "d": "Estudia a Munger: inversión, modelos mentales y evitar la tontería. La sabiduría inversa (qué evitar).",
+   "xp": 250,
+   "v": "Lista de 5 modelos mentales + 1 aplicación"
+  },
+  {
+   "id": "men-buffett",
+   "t": "🐐 Warren Buffett — Paciencia Compuesta",
+   "d": "Estudia a Buffett (cartas a accionistas o biografía): el interés compuesto y la paciencia como superpoder.",
+   "xp": 250,
+   "v": "Nota: tu horizonte de inversión rediseñado"
+  },
+  {
+   "id": "men-dalio",
+   "t": "⚙️ Ray Dalio — Principios",
+   "d": "Estudia a Dalio (Principios): la vida como máquina, decisiones basadas en principios escritos.",
+   "xp": 220,
+   "v": "Tus 5 principios personales escritos"
+  },
+  {
+   "id": "men-housel",
+   "t": "💵 Morgan Housel — Psicología del Dinero",
+   "d": "Estudia a Housel: el comportamiento importa más que el IQ. La relación emocional con el dinero.",
+   "xp": 220,
+   "v": "3 lecciones de comportamiento financiero"
+  },
+  {
+   "id": "men-aurelio",
+   "t": "🏛️ Marco Aurelio — Meditaciones",
+   "d": "Lee Meditaciones: el diario de un emperador estoico. Dominio de uno mismo, deber y ecuanimidad.",
+   "xp": 220,
+   "v": "5 pasajes que te marcaron + por qué"
+  },
+  {
+   "id": "men-seneca",
+   "t": "⏳ Séneca — La Brevedad de la Vida",
+   "d": "Estudia a Séneca: el tiempo como único bien real. Ocuparse vs entretenerse.",
+   "xp": 200,
+   "v": "Auditoría de cómo gastas tus horas"
+  },
+  {
+   "id": "men-tzu",
+   "t": "⚔️ Sun Tzu — El Arte de la Guerra",
+   "d": "Lee El Arte de la Guerra: estrategia, conocer al enemigo (y a ti mismo), ganar sin pelear cuando se puede.",
+   "xp": 200,
+   "v": "3 estrategias aplicadas a tu carrera"
+  },
+  {
+   "id": "men-carnegie",
+   "t": "🤝 Dale Carnegie — Cómo Ganar Amigos",
+   "d": "Estudia a Carnegie: la sabiduría social del interés genuino, elogiar y escuchar. Influencia con calidez.",
+   "xp": 200,
+   "v": "Practica 1 principio al día por 1 semana"
+  },
+  {
+   "id": "men-frankl",
+   "t": "🌅 Viktor Frankl — Sentido de Vida",
+   "d": "Estudia a Frankl (El hombre en busca de sentido): el propósito resiste cualquier circunstancia.",
+   "xp": 250,
+   "v": "Tu declaración de propósito en 3 líneas"
+  },
+  {
+   "id": "men-clear",
+   "t": "🌱 James Clear — Hábitos Atómicos",
+   "d": "Estudia a Clear: hábitos basados en identidad. Mejorar 1% diario sin depender de la motivación.",
+   "xp": 200,
+   "v": "Rediseña 1 hábito tuyo con su método"
+  },
+  {
+   "id": "men-pods",
+   "t": "🎙️ Tu Biblioteca Sonora",
+   "d": "Elige 5 podcasts alineados (datos, marketing, negocios, sabiduría) y organízalos en tu app de podcasts.",
+   "xp": 200,
+   "v": "Lista de 5 podcasts elegidos y suscritos"
+  },
+  {
+   "id": "men-10h",
+   "t": "📻 10 Horas de Sabiduría (Jefe)",
+   "d": "Acumula 10 horas de podcasts o audiolibros de tus mentores, con notas de cada sesión.",
+   "xp": 400,
+   "v": "Registro de 10 horas con ideas anotadas"
+  }
+ ],
+ "AZ_METAFORA": {
+  "eq": "campo de entrenamiento",
+  "kid": "hogar & jardín",
+  "cpl": "templo de la unión",
+  "pow": "arena del león",
+  "men": "biblioteca del saber"
+ },
+ "BLK_COLORS": {
+  "1": "#ffaa00",
+  "2": "#ff6600",
+  "3": "#ffd700",
+  "4": "#00ccff",
+  "5": "#ff3355",
+  "6": "#ff00ff",
+  "7": "#39ff14"
+ },
+ "HOLO_TIERS": [
+  {
+   "col": "#4dd0ff",
+   "aura": "rgba(77,208,255,.5)",
+   "n": 3
+  },
+  {
+   "col": "#00ff88",
+   "aura": "rgba(0,255,136,.6)",
+   "n": 4
+  },
+  {
+   "col": "#ff00ff",
+   "aura": "rgba(255,0,255,.6)",
+   "n": 5
+  },
+  {
+   "col": "#ffd700",
+   "aura": "rgba(255,215,0,.75)",
+   "n": 6
+  }
+ ],
+ "RW_TIER_NAMES": [
+  "Común",
+  "Raro",
+  "Épico",
+  "Legendario"
+ ],
+ "RW_SEC_COLORS": {
+  "🛡️ Campaña": "#00ccff",
+  "🎖️ General": "#ffd700",
+  "⚖️ Equilibrio": "#00ff88",
+  "👶 Legado": "#2dd4bf",
+  "💑 Alianza": "#ff00aa",
+  "📈 Capital": "#7c6cff"
+ },
+ "HOLO_POS": {
+  "🛡️ Campaña": "hombro",
+  "🎖️ General": "pecho",
+  "⚖️ Equilibrio": "aura",
+  "👶 Legado": "base",
+  "💑 Alianza": "pecho",
+  "📈 Capital": "casco"
+ },
+ "PHRASES": [
+  "Los hábitos pequeños vencen a las metas gigantes.",
+  "Hoy solo tienes 3 misiones. Nada más. Nada menos.",
+  "El 1% diario compone el 100% en 56 días.",
+  "Un día a la vez: así se domina cualquier cosa.",
+  "Tu futuro yo te agradece cada día completo.",
+  "No necesitas motivación: necesitas el primer clic.",
+  "La constancia vence al talento cuando el talento no es constante.",
+  "Cierra el día con 3 palomitas y el nivel sube solo."
+ ],
+ "SLOT_META": {
+  "A": {
+   "label": "📚 Estudiar",
+   "col": "#00ccff",
+   "glow": "rgba(0,204,255,.45)"
+  },
+  "B": {
+   "label": "🛠️ Practicar",
+   "col": "#00ff88",
+   "glow": "rgba(0,255,136,.45)"
+  },
+  "C": {
+   "label": "🎯 Consolidar",
+   "col": "#ffaa00",
+   "glow": "rgba(255,170,0,.45)"
+  }
+ },
+ "WEEK_NAMES": [
+  "",
+  "Semana 1 · Cimientos",
+  "Semana 2 · Visualización",
+  "Semana 3 · SQL",
+  "Semana 4 · ETL",
+  "Semana 5 · IA + Dashboards",
+  "Semana 6 · Empleo",
+  "Semana 7 · Marketing Analytics",
+  "Semana 8 · IA y Lanzamiento"
+ ],
+ "WEEK_TITLES": [
+  "",
+  "Cimientos",
+  "Manipulación y Visualización",
+  "SQL",
+  "Pandas Avanzado + ETL",
+  "IA + Dashboards",
+  "Empleabilidad",
+  "Marketing Analytics",
+  "IA y Lanzamiento"
+ ],
+ "CONF_COLORS": [
+  "#ffd700",
+  "#00ff88",
+  "#00ccff",
+  "#ff00ff",
+  "#ffaa00",
+  "#ffffff",
+  "#ff3355"
+ ]
+}

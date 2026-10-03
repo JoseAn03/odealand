@@ -111,6 +111,7 @@ func open(b: Dictionary) -> void:
 	questions = ContentDB.boss_questions(bid)
 	if questions.is_empty():
 		return
+	questions.shuffle()
 	q_index = 0
 	player_hp = MAX_HP
 	boss_hp = MAX_HP
@@ -139,6 +140,7 @@ func _show_question() -> void:
 		b.custom_minimum_size = Vector2(0, 60)
 		b.alignment = HORIZONTAL_ALIGNMENT_LEFT
 		b.add_theme_font_size_override("font_size", 14)
+		_outline(b)
 		var is_correct: bool = (i == correct)
 		b.pressed.connect(func() -> void: _answer(is_correct))
 		answers_box.add_child(b)

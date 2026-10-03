@@ -54,8 +54,9 @@ func _tone(freq: float, duration: float, volume: float) -> AudioStreamWAV:
 	data.resize(count * 2)
 	for i: int in range(count):
 		var t: float = float(i) / 22050.0
-		var env: float = 1.0 - float(i) / float(count)
-		var v: float = sin(TAU * freq * t) * env * volume
+		var decay: float = 1.0 - float(i) / float(count)
+		var attack: float = clampf(float(i) / 44.0, 0.0, 1.0)
+		var v: float = sin(TAU * freq * t) * decay * attack * volume
 		data.encode_s16(i * 2, int(clampf(v, -1.0, 1.0) * 32767.0))
 	stream.data = data
 	return stream
@@ -72,8 +73,9 @@ func _two_tone(f1: float, f2: float, duration: float, volume: float) -> AudioStr
 		var t: float = float(i) / 22050.0
 		var half: float = float(i) / float(count)
 		var freq: float = f1 if half < 0.5 else f2
-		var env: float = 1.0 - float(i) / float(count)
-		var v: float = sin(TAU * freq * t) * env * volume
+		var decay: float = 1.0 - float(i) / float(count)
+		var attack: float = clampf(float(i) / 44.0, 0.0, 1.0)
+		var v: float = sin(TAU * freq * t) * decay * attack * volume
 		data.encode_s16(i * 2, int(clampf(v, -1.0, 1.0) * 32767.0))
 	stream.data = data
 	return stream
